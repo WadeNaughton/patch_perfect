@@ -1,0 +1,4 @@
+<%= button_to "Dashboard", "/users/#{@user.id}", method: :get %>
+<%= @hike.name %>
+<%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
+<%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %>

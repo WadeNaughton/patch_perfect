@@ -1,7 +1,5 @@
-<h1>Patch Perfect</h1>
-
 <% @hikes.each do |hike| %>
-  <h2><p>Name: <%=hike.name%></p></h2>
+  <h2><p>Name: <%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
   <p>Elevation: <%= hike.elevation %></p>
   <p>Prominence:<%= hike.prominence %></p>
   <p>Location: <%= hike.location %></p>

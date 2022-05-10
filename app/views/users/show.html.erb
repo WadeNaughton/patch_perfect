@@ -1,2 +1,12 @@
-<%= link_to "Discover Hikes", "/hikes" %>
-<%= @user.first_name %> <%= @user.last_name %>
+<%= link_to "Discover Hikes", "/users/#{@user.id}/discover" %>
+<p><%= @user.first_name %> <%= @user.last_name %></p>
+
+<h2>Favorited Hikes</h2>
+<% @favorites.each do |fav| %>
+<p><%= fav.hike.name %></p>
+<% end %>
+
+<h2>Completed Hikes</h2>
+<% @completes.each do |complete| %>
+<p><%= complete.hike.name %></p>
+<% end %>

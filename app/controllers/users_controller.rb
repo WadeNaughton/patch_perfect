@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @favorites = @user.favorites
+    @completes = @user.completes
   end
 
   def login
@@ -15,6 +17,13 @@ class UsersController < ApplicationController
       flash[:error] = "Sorry, your credentials are bad."
       render :login_form
     end
+  end
+
+  def discover
+
+  @user = User.find(params[:id])
+  @hikes = Hike.all
+
   end
 
   private

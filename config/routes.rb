@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   resources :hikes, only: [:index, :show]
 
-  resources :favorites, only: [:show]
+  # resources :favorites, only: [:show]
 
   get '/register', to: 'welcome#register'
   post '/register', to: 'welcome#create'
@@ -12,4 +12,15 @@ Rails.application.routes.draw do
 
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login'
+
+  get '/users/:id/discover', to: 'users#discover'
+
+  get '/users/:user_id/hikes/:id', to: 'favorites#show'
+
+  get '/users/:user_id/dashbaord', to: 'favorites#dashboard'
+  post '/users/:user_id/hikes/:id', to: 'favorites#create'
+
+  # get '/users/:user_id/dashbaord', to: 'completes#dashboard'
+  post '/users/:user_id/hikes/:id/complete', to: 'completes#create'
+
 end
