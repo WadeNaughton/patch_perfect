@@ -1,5 +1,18 @@
 <%= form_with url: "/register", method: :post, local:true do |form| %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
 
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
   <%= form.label :first_name %>
   <p><%= form.text_field :first_name %></p>
 
