@@ -1,11 +1,24 @@
 class UsersController < ApplicationController
 
-
   def show
     @user = User.find(params[:id])
     @favorites = @user.favorites
     @completes = @user.completes
   end
+
+  def new
+    @user = User.new(user_params)
+  end
+
+  def create
+   @user = User.new(user_params)
+   if @user.save
+     log_in @user
+     redirect_to user_path(@user.id)
+   else
+     render :new
+   end
+ end
 
   def login_form
 

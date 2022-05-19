@@ -1,5 +1,10 @@
 <%= link_to "Discover Hikes", "/users/#{@user.id}/discover" %>
-<p><%= @user.first_name %> <%= @user.last_name %></p>
+
+
+<h1>
+
+  <%= @user.first_name %>
+</h1>
 
 <h2>Favorited Hikes</h2>
 <% @favorites.each do |fav| %>
