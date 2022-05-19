@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # resources :favorites, only: [:show]
 
-  get '/register', to: 'welcome#register'
+  get '/register', to: 'welcome#new'
   post '/register', to: 'welcome#create'
 
   resources :users, only: [:show]
