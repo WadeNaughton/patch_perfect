@@ -1,0 +1,5 @@
+<% @complete.comments.each do |c| %>
+<p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
+<p>Entry: <%= c.body %></p>
+
+<% end %>
