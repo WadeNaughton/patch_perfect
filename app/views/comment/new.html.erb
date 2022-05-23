@@ -1,0 +1,8 @@
+
+    <%= form_with url: "/users/#{@user.id}/hikes/#{@complete.hike.id}/comment", method: :post, local:true do |form| %>
+
+      <%= form.label :Entry %>
+      <%= form.text_area :body, rows: 3 %>
+
+      <%= form.submit "Submit" %>
+    <% end %>

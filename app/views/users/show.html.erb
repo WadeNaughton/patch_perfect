@@ -1,17 +1,19 @@
 <%= link_to "Discover Hikes", "/users/#{@user.id}/discover" %>
 
-
 <h1>
-
   <%= @user.first_name %>
 </h1>
 
 <h2>Favorited Hikes</h2>
 <% @favorites.each do |fav| %>
-<p><%= fav.hike.name %></p>
+  <p><%= fav.hike.name %></p>
 <% end %>
 
 <h2>Completed Hikes</h2>
 <% @completes.each do |complete| %>
-<p><%= complete.hike.name %></p>
+  <p><%= complete.hike.name %></p>
+
+    <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{complete.hike.id}/comment/new" %>
+    <%= link_to "View Entrys", "/users/#{@user.id}/hikes/#{complete.hike.id}/comments" %>
+
 <% end %>

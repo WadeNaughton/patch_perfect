@@ -12,7 +12,7 @@ RSpec.describe 'User show page' do
   it "has users name displayed" do
     user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
     visit "/users/#{user.id}"
-    expect(page).to have_content("wade wade")
+    expect(page).to have_content("wade")
   end
   it "has favorited hikes and completed hikes listed" do
     user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")

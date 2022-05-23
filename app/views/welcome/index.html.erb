@@ -1,12 +1,6 @@
 <h1>Patch Perfect</h1>
 
 <% if logged_in? %>
-  <%= "#{@current_user.first_name} #{@current_user.last_name}" %>
+  <p><%= "#{@current_user.first_name} #{@current_user.last_name}" %></p>
   <p><%= link_to "Discover Hikes", "/users/#{@current_user.id}/discover" %></p>
-  <p><%= link_to "Log out", logout_path, method: :delete %></p>
-  <%= link_to "Profile", "/users/#{@current_user.id}" %>
-
-<% else %>
-  <p><%= link_to "Create a New User", "/register", method: :get %></p>
-  <p><%= link_to "Login", "/login" %></p>
 <% end %>
