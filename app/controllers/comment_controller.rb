@@ -13,8 +13,6 @@ class CommentController < ApplicationController
     @comment = Comment.new(complete_id: @complete.id)
   end
 
-
-
   def create
     @hike = Hike.find(params[:id])
     @user = User.find_by(id: params[:user_id])

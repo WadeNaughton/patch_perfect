@@ -11,22 +11,21 @@ class CompletesController < ApplicationController
     complete = Complete.find_or_create_by(hike_id: @hike.id, user_id: @user.id)
   end
 
-  def edit
-    @hike = Hike.find(params[:id])
-    @user = User.find_by(id: params[:user_id])
-    @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
-  end
+  # def edit
+  #   @hike = Hike.find(params[:id])
+  #   @user = User.find_by(id: params[:user_id])
+  #   @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
+  # end
 
-  def update
-    @hike = Hike.find(params[:id])
-    @user = User.find_by(id: params[:user_id])
-    @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
-    require "pry"; binding.pry
-    redirect_to "/users/#{@user.id}"
-
-    ##cannot figure out how to fucking upload and store image to complete table
-    
-  end
+  # def update
+  #   @hike = Hike.find(params[:id])
+  #   @user = User.find_by(id: params[:user_id])
+  #   @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
+  #   redirect_to "/users/#{@user.id}"
+  #
+  #   ##cannot figure out how to fucking upload and store image to complete table
+  #
+  # end
 
 
 
