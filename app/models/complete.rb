@@ -4,6 +4,7 @@ class Complete < ApplicationRecord
 
   has_many :comments
   has_many :photos
+  has_many :gears
 
   validates_presence_of :hike_id
   validates_presence_of :user_id

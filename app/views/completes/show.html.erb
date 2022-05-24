@@ -1,7 +1,14 @@
 <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
+<%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
+
 
 <% @complete.comments.each do |c| %>
 <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
 <p>Entry: <%= c.body%></p>
+<% end %>
 
+<h1><%=  "Gear Used On Hiking #{@hike.name}"%></h1>
+<% @gear_used.each do |gear|%>
+  <p>Name: <%= gear.name %></p>
+  <p>Weight: <%= gear.weight %> lbs</p>
 <% end %>
