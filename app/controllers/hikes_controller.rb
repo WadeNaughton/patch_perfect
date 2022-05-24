@@ -13,6 +13,11 @@ class HikesController < ApplicationController
     search = params[:search]
     @user = User.find_by(id: session[:user_id])
     @hike_result = Hike.find_hike(search)
+
+    if !@hike_result.exists?
+      flash.now.alert = "Hike not found"
+    end
+
   end
 
   private
