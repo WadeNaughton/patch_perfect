@@ -1,0 +1,7 @@
+<%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
+
+<% @complete.comments.each do |c| %>
+<p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
+<p>Entry: <%= c.body%></p>
+
+<% end %>

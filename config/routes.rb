@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   # get '/users/:user_id/dashbaord', to: 'completes#dashboard'
   post '/users/:user_id/hikes/:id/complete', to: 'completes#create'
   get '/users/:user_id/hikes/:id/complete/edit', to: 'completes#edit'
+  get '/users/:user_id/hikes/:id/complete', to: 'completes#show'
   patch '/users/:user_id/hikes/:id/complete', to: 'completes#update'
 
   get '/users/:user_id/hikes/:id/comments', to: 'comment#show'

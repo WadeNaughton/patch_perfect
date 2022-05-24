@@ -12,8 +12,6 @@
 <h2>Completed Hikes</h2>
 <% @completes.each do |complete| %>
   <p><%= complete.hike.name %></p>
-
-    <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{complete.hike.id}/comment/new" %>
-    <%= link_to "View Entrys", "/users/#{@user.id}/hikes/#{complete.hike.id}/comments" %>
+    <%= link_to "View Hike Details", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
 
 <% end %>
