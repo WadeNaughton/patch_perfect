@@ -1,7 +1,7 @@
 <% @hikes.each do |hike| %>
   <h2><p>Name: <%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
-  <p>Elevation: <%= hike.elevation %></p>
-  <p>Prominence:<%= hike.prominence %></p>
+  <p>Elevation: <%= hike.elevation %> feet</p>
+  <p>Prominence: <%= hike.prominence %> feet</p>
   <p>Location: <%= hike.location %></p>
   <p>State: <%= hike.state %></p>
   <p>Range: <%= hike.range %></p>

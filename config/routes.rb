@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
   resources :hikes, only: [:index, :show]
+  get '/search', to: 'hikes#search'
 
   # resources :favorites, only: [:show]
 
@@ -29,4 +30,6 @@ Rails.application.routes.draw do
   get '/users/:user_id/hikes/:id/comments', to: 'comment#show'
   get '/users/:user_id/hikes/:id/comment/new', to: 'comment#new'
   post '/users/:user_id/hikes/:id/comment', to: 'comment#create'
+
+
 end

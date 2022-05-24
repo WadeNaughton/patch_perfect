@@ -9,4 +9,8 @@ class Hike < ApplicationRecord
   validates_presence_of :location
   validates_presence_of :range
   validates_presence_of :features
+
+  def self.find_hike(search)
+   where("name ILIKE ?", "%#{search}%")
+ end
 end
