@@ -1,24 +1,24 @@
-# README
+# What this is (so far)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- A hiking application that lets a user discover hikes in the White Mountains that are above 4000 feet. A user can favorite a hike or mark the hike as completed. The user can then add journal entries for a completed hike, along with adding the gear that was used. This app will be designed as a sort of journal for hikers that want to grab all the 4000+ peaks in the White Mountains.
 
-Things you may want to cover:
 
-* Ruby version
+# Features so far
 
-* System dependencies
+- create user account
+- discover all hikes above 4000 feet
+- favorite a hike
+- mark a hike as completed
+- add journal entries to a completed hike
+- add gear used for the completed hike
+- total weight for a trip
 
-* Configuration
 
-* Database creation
+# Features to come (no time table)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- FE design
+- add coordinates to each hike to open up google maps to get directions
+- upload photos of a the completed hike to journal entries
+- share a trip report with friends
+- more data to add to the hike itself
+- add food to the trip report. (track calorie intake)
