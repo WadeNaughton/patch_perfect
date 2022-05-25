@@ -1,0 +1,11 @@
+
+    <%= form_with url: "/users/#{@user.id}/hikes/#{@complete.hike.id}/gear", method: :post, local:true do |form| %>
+
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+
+      <%= form.label :weight %>
+      <%= form.text_field :weight %>
+
+      <%= form.submit "Submit" %>
+    <% end %>

@@ -19,7 +19,7 @@ class CommentController < ApplicationController
     @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
     @comment = @complete.comments.create(comment_params)
     if @comment.save
-      redirect_to "/users/#{@user.id}"
+      redirect_to "/users/#{@user.id}/hikes/#{@hike.id}/complete"
     end
   end
 
