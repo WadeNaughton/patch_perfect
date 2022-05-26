@@ -3,9 +3,10 @@
 
 <h1><%=  "Journal Entries for #{@hike.name}"%></h1>
 
-<% @complete.comments.each do |c| %>
+<% @comments.each do |c| %>
 <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
 <p>Entry: <%= c.body%></p>
+<p> <%= button_to "Delete Comment", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
 <% end %>
 
 <h1><%=  "Gear Used While Hiking #{@hike.name}"%></h1>

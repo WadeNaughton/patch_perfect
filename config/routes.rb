@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get '/users/:user_id/hikes/:id/comments', to: 'comment#show'
   get '/users/:user_id/hikes/:id/comment/new', to: 'comment#new'
   post '/users/:user_id/hikes/:id/comment', to: 'comment#create'
+  delete '/users/:user_id/hikes/:hike_id/comment/:id', to: 'comment#destroy'
+
 
   get '/users/:user_id/hikes/:id/gear', to: 'gear#index'
   get '/users/:user_id/hikes/:id/gear/new', to: 'gear#new'
