@@ -13,6 +13,7 @@
 <% @gear_used.each do |gear|%>
   <p>Name: <%= gear.name %></p>
   <p>Weight: <%= gear.weight %> lbs</p>
+  <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>
 <% end %>
 
 

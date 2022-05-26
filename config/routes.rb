@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get '/users/:user_id/hikes/:id/gear', to: 'gear#index'
   get '/users/:user_id/hikes/:id/gear/new', to: 'gear#new'
   post '/users/:user_id/hikes/:id/gear', to: 'gear#create'
+  delete '/users/:user_id/hikes/:hike_id/gear/:id', to: 'gear#destroy'
 
 
 end
