@@ -3,6 +3,8 @@
 
       <%= form.label :Entry %>
       <%= form.text_area :body, rows: 3 %>
+      <%= form.label "Add Picture" %>
+      <%= form.file_field :image %>
 
       <%= form.submit "Submit" %>
     <% end %>

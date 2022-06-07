@@ -34,6 +34,6 @@ class CommentController < ApplicationController
 
   private
   def comment_params
-     params.permit(:body,:complete_id)
+     params.permit(:body,:complete_id, :image)
   end
 end

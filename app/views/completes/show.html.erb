@@ -6,6 +6,9 @@
 <% @comments.each do |c| %>
 <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
 <p>Entry: <%= c.body%></p>
+  <% if c.image.attached? %>
+    <%= image_tag c.image, style: "width: 250px; display: block" %>
+  <% end %>
 <p> <%= button_to "Delete Comment", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
 <% end %>
 
