@@ -12,6 +12,7 @@
 - add journal entries to a completed hike
 - add gear used for the completed hike
 - total weight for a trip
+- upload a photo for a journal entry
 
 
 # Features to come (no time table)
