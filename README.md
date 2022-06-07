@@ -19,7 +19,6 @@
 
 - FE design
 - add coordinates to each hike to open up google maps to get directions
-- upload photos of a the completed hike to journal entries
 - share a trip report with friends
 - more data to add to the hike itself
 - add food to the trip report. (track calorie intake)
