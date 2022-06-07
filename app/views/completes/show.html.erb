@@ -3,15 +3,20 @@
 
 <h1><%=  "Journal Entries for #{@hike.name}"%></h1>
 
-<% @complete.comments.each do |c| %>
+<% @comments.each do |c| %>
 <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
 <p>Entry: <%= c.body%></p>
+  <% if c.image.attached? %>
+    <%= image_tag c.image, style: "width: 250px; display: block" %>
+  <% end %>
+<p> <%= button_to "Delete Comment", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
 <% end %>
 
 <h1><%=  "Gear Used While Hiking #{@hike.name}"%></h1>
 <% @gear_used.each do |gear|%>
   <p>Name: <%= gear.name %></p>
   <p>Weight: <%= gear.weight %> lbs</p>
+  <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>
 <% end %>
 
 

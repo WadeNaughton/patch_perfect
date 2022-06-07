@@ -18,6 +18,15 @@ def create
   end
 end
 
+def destroy
+  @hike = Hike.find_by(id: params[:hike_id])
+  @user = User.find_by(id: params[:user_id])
+  @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
+  @gear = @complete.gears.find(params[:id])
+  @gear.destroy
+  redirect_to "/users/#{@user.id}/hikes/#{@hike.id}/complete"
+end
+
 private
 def gear_params
    params.permit(:name, :weight, :complete_id)

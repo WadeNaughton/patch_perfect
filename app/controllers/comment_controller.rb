@@ -23,8 +23,17 @@ class CommentController < ApplicationController
     end
   end
 
+  def destroy
+    @hike = Hike.find_by(id: params[:hike_id])
+    @user = User.find_by(id: params[:user_id])
+    @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
+    @comments = @complete.comments.find(params[:id])
+    @comments.destroy
+    redirect_to "/users/#{@user.id}/hikes/#{@hike.id}/complete"
+  end
+
   private
   def comment_params
-     params.permit(:body,:complete_id)
+     params.permit(:body,:complete_id, :image)
   end
 end
