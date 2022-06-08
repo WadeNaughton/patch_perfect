@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Welcome Register Page' do
   describe 'register view page' do
     it "has a form that is filled out and take you to new user show page" do
-      visit "/register"
+    visit "/register"
 
     fill_in('First name', with: 'bob')
     fill_in('Last name', with: 'bill')
