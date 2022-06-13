@@ -11,18 +11,21 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= form_tag(search_path, :method=> "get") do %>
-        <%= search_field_tag :search, params[:search], placeholder: "Search Name/Feature" %>
-        <%= button_tag "Find Hike" %>
-      <% end %>
-    <% end %>
+    <div class="container">
 
-    <% flash.each do |type, msg| %>
-    <div>
-    <%= msg %>
+      <% if logged_in? %>
+        <%= form_tag(search_path, :method=> "get") do %>
+          <%= search_field_tag :search, params[:search], placeholder: "Search Name/Feature" %>
+          <%= button_tag "Find Hike" %>
+        <% end %>
+      <% end %>
+
+      <% flash.each do |type, msg| %>
+      <div>
+      <%= msg %>
+      </div>
+      <% end %>
+      <%= yield %>
     </div>
-    <% end %>
-    <%= yield %>
   </body>
 </html>
