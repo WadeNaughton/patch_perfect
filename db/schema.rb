@@ -77,12 +77,12 @@ ActiveRecord::Schema.define(version: 2022_05_25_144457) do
     t.string "features"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.bigint "complete_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["complete_id"], name: "index_photos_on_complete_id"
-  end
+  # create_table "photos", force: :cascade do |t|
+  #   t.bigint "complete_id"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.index ["complete_id"], name: "index_photos_on_complete_id"
+  # end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"

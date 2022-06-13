@@ -1,7 +1,8 @@
-<%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
-<%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
+  <div id="user-complete-header">
+    <h1><%=  "Trip Report For Hiking Mount #{@hike.name}"%></h1>
+  </div>
 
-<h1><%=  "Journal Entries for #{@hike.name}"%></h1>
+<h1><%= "Journal Entries" %></h1>
 
 <% @comments.each do |c| %>
 <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
@@ -11,13 +12,16 @@
   <% end %>
 <p> <%= button_to "Delete Comment", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
 <% end %>
+<%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
 
-<h1><%=  "Gear Used While Hiking #{@hike.name}"%></h1>
+<h1><%=  "Gear Used"%></h1>
+
 <% @gear_used.each do |gear|%>
   <p>Name: <%= gear.name %></p>
   <p>Weight: <%= gear.weight %> lbs</p>
   <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>
 <% end %>
+<%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
 
 
   <h1>Total Weight</h1>

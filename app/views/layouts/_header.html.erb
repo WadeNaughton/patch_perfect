@@ -1,23 +1,22 @@
-<%= link_to "Home", "/" %>
 
-<% if logged_in? %>
-  <%= link_to "Profile", "/users/#{@current_user.id}" %>
+<nav class="navbar navbar-light ">
+  <div class="container">
+    <a id="header" class="navbar-brand" href="/"><img src="/assets/logo3.png"width="100" height="80"></a>
+    <p id='nav-blurb'> Discover The White Mountains</p>
+    
+      <div class="nav justify-content-end ">
+        <%= link_to "Home", "/", :class => "btn" %>
 
-  <%= link_to "Logout", logout_path, method: :delete %>
-  <%= form_tag(search_path, :method=> "get") do %>
-    <%= search_field_tag :search, params[:search], placeholder: "Search Name/Feature" %>
-    <%= button_tag "Search for hike" %>
-  <% end %>
+        <% if logged_in? %>
+          <%= link_to "Profile", "/users/#{@current_user.id}", :class => "nav-link" %>
+          <%= link_to "Discover Hikes", "/users/#{@current_user.id}/discover", :class => "nav-link" %>
 
-<% else %>
-  <%= link_to "Create User", "/register", method: :get %>
-  <%= link_to "Login", "/login" %>
-<% end %>
+          <%= link_to "Logout", logout_path, method: :delete, :class => "nav-link" %>
 
-
-
-<% flash.each do |type, msg| %>
-<div>
-<%= msg %>
-</div>
-<% end %>
+        <% else %>
+          <%= link_to "Create User", "/register", method: :get, :class => "nav-link" %>
+          <%= link_to "Login", "/login", :class => "nav-link" %>
+        <% end %>
+      </div>
+  </div>
+</nav>

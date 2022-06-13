@@ -1,6 +1,6 @@
-<h1>Patch Perfect</h1>
 
-<% if logged_in? %>
-  <p><%= "#{@current_user.first_name} #{@current_user.last_name}" %></p>
-  <p><%= link_to "Discover Hikes", "/users/#{@current_user.id}/discover" %></p>
-<% end %>
+  <% if logged_in? %>
+    <h1><p><%= "Welcome, #{@current_user.first_name} #{@current_user.last_name}" %></p></h1>
+  <% else %>
+    <h1><%= "Please Login/Create an Account to Contine" %></h1>
+  <% end %>

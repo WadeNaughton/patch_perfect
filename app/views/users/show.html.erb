@@ -1,17 +1,38 @@
-<%= link_to "Discover Hikes", "/users/#{@user.id}/discover" %>
+<div class="container">
+  <div class="col">
+    <div id="name">
 
-<h1>
-  <%= @user.first_name %>
-</h1>
+      <h1>
+        <p><%= @user.first_name %>'s Hikes</p>
+      </h1>
 
-<h2>Favorited Hikes</h2>
-<% @favorites.each do |fav| %>
-  <p><%= fav.hike.name %></p>
-<% end %>
+    </div>
+  </div>
 
-<h2>Completed Hikes</h2>
-<% @completes.each do |complete| %>
-  <p><%= complete.hike.name %></p>
-    <%= link_to "View Hike Details", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
+    <div class="row">
+      <div class="col ">
+        <div id="favorite-hikes">
 
-<% end %>
+          <h2>Favorited Hikes</h2>
+          <% @favorites.each do |fav| %>
+            <p><%= fav.hike.name %></p>
+          <% end %>
+
+        </div>
+      </div>
+
+      <div class="col">
+        <div id="completed-hikes">
+          <h2>Completed Hikes</h2>
+
+          <% @completes.each do |complete| %>
+            <%= complete.hike.name %>
+            <br>
+            <%= link_to "View Hike Details", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
+            <br>
+          <% end %>
+
+        </div>
+      </div>
+  </div>
+</div>
