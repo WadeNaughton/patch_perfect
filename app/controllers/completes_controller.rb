@@ -6,7 +6,7 @@ class CompletesController < ApplicationController
     @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
     @comments = @complete.comments
     @gear_used = @complete.complete_gears.all
-    # @total_weight = @complete.complete_gears.total_weight
+    @total_weight = @complete.total_weight
   end
 
   def create

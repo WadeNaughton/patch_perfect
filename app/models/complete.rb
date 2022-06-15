@@ -9,7 +9,7 @@ class Complete < ApplicationRecord
   validates_presence_of :hike_id
   validates_presence_of :user_id
 
-  # def total_weight
-  #   gears.sum(:weight)
-  # end
+  def total_weight
+    complete_gears.joins(:user_gear).sum(:weight)
+  end
 end
