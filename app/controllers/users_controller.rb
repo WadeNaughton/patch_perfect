@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
+
   def show
     @user = User.find(params[:id])
     @favorites = @user.favorites
     @completes = @user.completes
+    @gear = @user.user_gears.all
   end
 
   def new

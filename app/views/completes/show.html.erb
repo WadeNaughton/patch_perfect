@@ -17,8 +17,8 @@
 <h1><%=  "Gear Used"%></h1>
 
 <% @gear_used.each do |gear|%>
-  <p>Name: <%= gear.name %></p>
-  <p>Weight: <%= gear.weight %> lbs</p>
+  <p>Name: <%= gear.user_gear.name %></p>
+  <p>Weight: <%= gear.user_gear.weight %> lbs</p>
   <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>
 <% end %>
 <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>

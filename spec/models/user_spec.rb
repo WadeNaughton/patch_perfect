@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   describe 'relations' do
     it {should have_many(:favorites)}
     it {should have_many(:completes)}
+    it {should have_many(:user_gears)}
   end
   describe 'validations' do
     it {should validate_presence_of(:first_name)}

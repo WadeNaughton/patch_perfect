@@ -5,8 +5,8 @@ class CompletesController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
     @comments = @complete.comments
-    @gear_used = @complete.gears.all
-    @total_weight = @complete.total_weight
+    @gear_used = @complete.complete_gears.all
+    # @total_weight = @complete.complete_gears.total_weight
   end
 
   def create

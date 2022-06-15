@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   get '/users/:user_id/hikes/:id', to: 'favorites#show'
   post '/users/:user_id/hikes/:id', to: 'favorites#create'
 
+  get '/users/:id/gear/new', to:  'user_gears#new'
+  post '/users/:id/gear', to: 'user_gears#create'
+  delete '/users/:user_id/gear/:id', to: 'user_gears#destroy'
+
+
   post '/users/:user_id/hikes/:id/complete', to: 'completes#create'
   get '/users/:user_id/hikes/:id/complete/edit', to: 'completes#edit'
   get '/users/:user_id/hikes/:id/complete', to: 'completes#show'
@@ -30,10 +35,10 @@ Rails.application.routes.draw do
   delete '/users/:user_id/hikes/:hike_id/comment/:id', to: 'comment#destroy'
 
 
-  get '/users/:user_id/hikes/:id/gear', to: 'gear#index'
-  get '/users/:user_id/hikes/:id/gear/new', to: 'gear#new'
-  post '/users/:user_id/hikes/:id/gear', to: 'gear#create'
-  delete '/users/:user_id/hikes/:hike_id/gear/:id', to: 'gear#destroy'
+  get '/users/:user_id/hikes/:id/gear', to: 'complete_gears#index'
+  get '/users/:user_id/hikes/:id/gear/new', to: 'complete_gears#new'
+  post '/users/:user_id/hikes/:id/gear', to: 'complete_gears#create'
+  delete '/users/:user_id/hikes/:hike_id/gear/:id', to: 'complete_gears#destroy'
 
 
 end

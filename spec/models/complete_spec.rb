@@ -5,6 +5,7 @@ RSpec.describe Complete, type: :model do
     it {should belong_to(:user)}
     it {should belong_to(:hike)}
     it {should have_many(:comments)}
+    it {should have_many(:complete_gears)}
   end
   describe 'validations' do
     it {should validate_presence_of(:user_id)}
@@ -12,7 +13,7 @@ RSpec.describe Complete, type: :model do
   end
 
   describe 'model method' do
-    it "totals sum of gear weight" do
+    xit "totals sum of gear weight" do
       user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
       hike = Hike.create!(name: 'hike', elevation: 4000, prominence: 200, state: 'NH', location: 'Lincoln', range: 'Lincoln', features: "waterfalls")
       complete = Complete.create!(hike_id: hike.id, user_id: user.id)
