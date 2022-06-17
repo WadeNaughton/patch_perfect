@@ -4,8 +4,7 @@ def new
   @hike = Hike.find(params[:id])
   @user = User.find_by(id: params[:user_id])
   @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
-  # @usergear = @user.user_gears.find_by(params[:id])
-  # @gear = CompleteGear.new(complete_id: @complete.id, user_gear_id: @usergear.id)
+
 end
 
 def create
