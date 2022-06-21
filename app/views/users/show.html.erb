@@ -36,3 +36,13 @@
       </div>
   </div>
 </div>
+
+<h1> <%= "My Gear" %> </h1>
+
+<% @gear.each do |g| %>
+  <p><%= g.name %></p>
+  <p><%= g.weight %> lbs</p>
+  <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+<% end %>
+
+<%= link_to "Add Gear", "/users/#{@user.id}/gear/new" %>

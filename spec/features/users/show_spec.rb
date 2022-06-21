@@ -1,14 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User show page' do
-  it "has link to go to home page" do
-    user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
-    visit "/users/#{user.id}"
-    expect(page).to have_link("Home")
-    click_link("Home")
-    expect(current_path).to eq('/')
-
-  end
+  
   it "has users name displayed" do
     user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
     visit "/users/#{user.id}"
