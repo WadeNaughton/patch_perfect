@@ -7,6 +7,7 @@ class HikesController < ApplicationController
   def show
 
     @hike = Hike.find(params[:id])
+    @user = User.find_by(id: params[:user_id])
   end
 
   def search

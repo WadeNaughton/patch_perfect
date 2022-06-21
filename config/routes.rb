@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/users/:id/discover', to: 'users#discover'
 
-  get '/users/:user_id/hikes/:id', to: 'favorites#show'
+  get '/users/:user_id/hikes/:id', to: 'hikes#show'
   post '/users/:user_id/hikes/:id', to: 'favorites#create'
 
   get '/users/:id/gear/new', to:  'user_gears#new'
