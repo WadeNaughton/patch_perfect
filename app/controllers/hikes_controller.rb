@@ -2,12 +2,13 @@ class HikesController < ApplicationController
 
   def index
     @hikes = Hike.all
+    @user = User.find_by(id: session[:user_id])
   end
 
   def show
 
     @hike = Hike.find(params[:id])
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find_by(id: session[:user_id])
   end
 
   def search

@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
   def login_form
 
-
   end
 
   def login
@@ -38,13 +37,6 @@ class UsersController < ApplicationController
     else
       render :login_form
     end
-  end
-
-  def discover
-
-  @user = User.find(params[:id])
-  @hikes = Hike.all
-
   end
 
   private
