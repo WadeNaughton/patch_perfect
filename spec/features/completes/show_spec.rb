@@ -36,25 +36,36 @@ RSpec.describe 'Completed hike show page page' do
     expect(page).to_not have_content("Entry: test")
 
   end
-  xit "has link to add gear and delete gear" do
-    @user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
-    @user_gear = UserGear.create!(name: 'tent', weight: 4.5, user_id: @user.id)
-    @hike = Hike.create!(name: 'hike', elevation: 4000, prominence: 200, state: 'NH', location: 'Lincoln', range: 'Lincoln', features: "waterfalls")
-    @complete = Complete.create!(hike_id: @hike.id, user_id: @user.id)
+  it "has link to add gear and delete gear" do
 
-    visit("/users/#{@user.id}/hikes/#{@hike.id}/complete")
+    visit "/users/#{@user.id}"
+
+    click_link("Add Gear")
+
+    expect(current_path).to eq("/users/#{@user.id}/gear/new")
+
+    fill_in("Name", with: "Tent")
+    fill_in("Weight", with: 5.0)
+
+    click_button("Submit")
+
+
+    visit("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
+
     expect(page).to have_link("Add Gear Used")
-    click_link("Add Gear Used")
-    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike.id}/gear/new")
 
-    select("tent", from: :user_gear_id).select_option
+    click_link("Add Gear Used")
+
+    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/gear/new")
+
+    select("Tent", :from => "user_gear_id")
 
     click_button("Add To Trip")
 
-    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike.id}/complete")
+    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
 
-    expect(page).to have_content("Name: tent")
-    expect(page).to have_content("Weight: 4.5 lbs")
+    expect(page).to have_content("Name: Tent")
+    expect(page).to have_content("Weight: 5.0 lbs")
 
     expect(page).to have_button("Delete Item")
 
@@ -65,24 +76,47 @@ RSpec.describe 'Completed hike show page page' do
 
   end
 
-  xit "calculates total weight" do
+  it "calculates total weight" do
 
-    @user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
-    @user_gear = UserGear.create!(name: 'tent', weight: 4.5, user_id: @user.id)
-    @hike = Hike.create!(name: 'hike', elevation: 4000, prominence: 200, state: 'NH', location: 'Lincoln', range: 'Lincoln', features: "waterfalls")
-    @complete = Complete.create!(hike_id: @hike.id, user_id: @user.id)
+    visit "/users/#{@user.id}"
 
-    visit("/users/#{@user.id}/hikes/#{@hike.id}/complete")
+    click_link("Add Gear")
+
+    expect(current_path).to eq("/users/#{@user.id}/gear/new")
+
+    fill_in("Name", with: "Tent")
+    fill_in("Weight", with: 5.0)
+
+    click_button("Submit")
+
+    click_link("Add Gear")
+
+    fill_in("Name", with: "Tent2")
+    fill_in("Weight", with: 10.0)
+
+    click_button("Submit")
+
+    visit("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
+
+    expect(page).to have_link("Add Gear Used")
 
     click_link("Add Gear Used")
 
-    select "tent", :from => "user_gear_id"
+    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/gear/new")
+
+    select("Tent", :from => "user_gear_id")
 
     click_button("Add To Trip")
 
-    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike.id}/complete")
+    click_link("Add Gear Used")
 
-    expect(page).to have_content("4.5 lbs")
+    select("Tent2", :from => "user_gear_id")
+
+    click_button("Add To Trip")
+
+    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
+
+    expect(page).to have_content("15.0 lbs")
 
   end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
 
-  resources :hikes, only: [:index]
+  get '/users/:id/discover', to: 'hikes#index'
   get '/users/:user_id/hikes/:id', to: 'hikes#show'
   get '/search', to: 'hikes#search'
 
@@ -15,9 +15,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
-  get '/users/:id/discover', to: 'hikes#index'
-
 
   post '/users/:user_id/hikes/:id', to: 'favorites#create'
 
