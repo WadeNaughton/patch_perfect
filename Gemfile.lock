@@ -200,6 +200,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  bundle lock -unknown
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
