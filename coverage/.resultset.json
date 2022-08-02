@@ -458,9 +458,6 @@
           1,
           1,
           null,
-          null,
-          null,
-          null,
           1,
           null,
           1,
@@ -499,15 +496,15 @@
           1,
           null,
           1,
-          10,
+          9,
           null,
           null,
           1,
-          134,
+          126,
           null,
           null,
           1,
-          134,
+          126,
           null,
           null,
           1,
@@ -624,30 +621,6 @@
           null,
           1,
           null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/spec/features/layouts/application_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
           1,
           null,
           null
@@ -1073,6 +1046,47 @@
           null
         ]
       },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/spec/services/forecast_service_spec.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/app/services/forecast_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/wadenaughton/side_proj/new_patch/patch_perfect/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
@@ -1081,10 +1095,10 @@
           null,
           null,
           1,
-          9,
-          9,
-          9,
-          9,
+          8,
+          8,
+          8,
+          8,
           null,
           0,
           null,
@@ -1331,6 +1345,6 @@
         ]
       }
     },
-    "timestamp": 1656441724
+    "timestamp": 1659455598
   }
 }

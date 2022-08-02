@@ -5,5 +5,7 @@
 <p>Elevation: <%= @hike.elevation %> feet</p>
 <p>Prominence: <%= @hike.prominence %> feet</p>
 <p>Features: <%= @hike.features %></p>
+<p>Latitude: <%= @hike.latitude %></p>
+<p>Longitude: <%= @hike.longitude %></p>
 <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
 <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %>
