@@ -1,3 +1,5 @@
+require 'date'
+
 class Hike < ApplicationRecord
   has_many :favorites
   has_many :completes
@@ -13,4 +15,6 @@ class Hike < ApplicationRecord
   def self.find_hike(search)
    where("concat_ws(' ' , name, features) ILIKE ?", "%#{search}%")
  end
+
+
 end

@@ -1,3 +1,4 @@
+
 <h1><%= @hike.name %></h1>
 <p>Location: <%= @hike.location %></p>
 <p>State: <%= @hike.state %></p>
@@ -5,5 +6,41 @@
 <p>Elevation: <%= @hike.elevation %> feet</p>
 <p>Prominence: <%= @hike.prominence %> feet</p>
 <p>Features: <%= @hike.features %></p>
+<p>Latitude: <%= @hike.latitude %></p>
+<p>Longitude: <%= @hike.longitude %></p>
+
+<h3> Current Weather Conditions </h3>
+<p>Description: <%= @current[:weather].first[:description] %> </p>
+<p>Temperature: <%= @current[:temp] %>°F</p>
+<p>Wind: <%= @current[:wind_speed] %> MPH</p>
+<img src="http://openweathermap.org/img/w/<%=@current[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
+
+
+<h3> Daily Weather </h3>
+<% @daily.each do |d|%>
+    <p><b>Date: </b><%=Time.at(d[:dt]).to_formatted_s(:long)%></p>
+    <p>Sunrise: <%= Time.at(d[:sunrise]).to_formatted_s(:time)%> </p>
+    <p>Sunset: <%= Time.at(d[:sunset]).to_formatted_s(:time)%> </p>
+    <p>Min Temperature: <%= d[:temp][:min]%>°F  </p>
+    <p>Max Temperature: <%= d[:temp][:max]%>°F </p>
+    <p>Wind: <%= d[:wind_speed]%> </p>
+    <p>Description: <%= d[:weather].first[:description]%> </p>
+    <img src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
+<%end%>
+
+<h3>Hourly Weather </h3>
+
+<% @hourly[0..11].each do |h|%>
+    <p><b>Time: </b><%=Time.at(h[:dt]).to_formatted_s(:time)%></p>
+    <p>Temperature: <%= h[:temp]%>°F </p>
+    <p>Wind: <%= h[:wind_speed]%> </p>
+    <img src="http://openweathermap.org/img/w/<%=h[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
+
+<%end%>
+
+
+
 <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
 <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %>
+
+
