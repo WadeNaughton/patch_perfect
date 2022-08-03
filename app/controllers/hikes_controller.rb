@@ -9,6 +9,10 @@ class HikesController < ApplicationController
 
     @hike = Hike.find(params[:id])
     @user = User.find_by(id: session[:user_id])
+    forecast = ForecastFacade.get_forecast(@hike.latitude, @hike.longitude)
+    @current = forecast[:current]
+    @hourly =forecast[:hourly]
+    @daily = forecast[:daily]
   end
 
   def search

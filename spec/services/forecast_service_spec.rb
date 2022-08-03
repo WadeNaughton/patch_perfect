@@ -7,7 +7,6 @@ RSpec.describe ForecastService do
     lat = 44.270278
     lng = -71.303611
     search = ForecastService.get_forecast(lat,lng)
-    binding.pry
     expect(search).to be_a Hash
   end
 end
