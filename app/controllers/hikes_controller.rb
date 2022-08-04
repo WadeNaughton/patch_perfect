@@ -8,6 +8,7 @@ class HikesController < ApplicationController
   def show
 
     @hike = Hike.find(params[:id])
+    binding.pry
     @user = User.find_by(id: session[:user_id])
     forecast = ForecastFacade.get_forecast(@hike.latitude, @hike.longitude)
     @current = forecast[:current]
