@@ -21,7 +21,24 @@
     <p>Wind: <%= @current[:wind_speed] %> MPH</p>
     <img src="http://openweathermap.org/img/w/<%=@current[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
 
-   
+   <h3>Hourly Weather </h3>
+
+      
+        <div class="row">
+                    
+                <% @hourly[0..11].each do |h|%>
+                <div class="col-sm-2">
+                    <div class="card" style="width:200px">
+                     <img class="card-img-top" src="http://openweathermap.org/img/w/<%=h[:weather].first[:icon]%>.png" alt="weather">
+                        <div class="card-body">
+                            <p><b>Time: </b><%=Time.at(h[:dt]).to_formatted_s(:time)%></p>
+                            <p><b>Temperature: </b><%= h[:temp].round(1)%>°F </p>
+                            <p><b>Wind: </b><%= h[:wind_speed].round(1)%> MPH </p>
+                    </div>
+                </div>
+            </div>
+                <%end%>
+        </div>
 
 
 <h3> Daily Weather </h3>
@@ -30,32 +47,24 @@
         <div class="row">
             <% @daily.each do |d|%>
             <div class="col-sm-3">
+               <div class="card" style="width:300px">
+                    <img class="card-img-top" src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="weather">
+                    <div class="card-body">
+
                     <p><b>Date: </b><%=Time.at(d[:dt]).to_formatted_s(:long)%></p>
-                    <p>Sunrise: <%= Time.at(d[:sunrise]).to_formatted_s(:time)%> </p>
-                    <p>Sunset: <%= Time.at(d[:sunset]).to_formatted_s(:time)%> </p>
-                    <p>Min Temperature: <%= d[:temp][:min]%>°F  </p>
-                    <p>Max Temperature: <%= d[:temp][:max]%>°F </p>
-                    <p>Wind: <%= d[:wind_speed]%> </p>
-                    <p>Description: <%= d[:weather].first[:description]%> </p>
-                    <img src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
+                    <p><b>Sunrise: </b><%= Time.at(d[:sunrise]).to_formatted_s(:time)%> </p>
+                    <p><b>Sunset:</b> <%= Time.at(d[:sunset]).to_formatted_s(:time)%> </p>
+                    <p><b>Min Temperature: </b><%= d[:temp][:min]%>°F  </p>
+                    <p><b>Max Temperature: </b><%= d[:temp][:max]%>°F </p>
+                    <p><b>Wind: </b><%= d[:wind_speed]%> MPH</p>
+                    <p><b>Description:</b> <%= d[:weather].first[:description]%> </p>
+                    </div>
                 </div>
+            </div>
             <%end%>
         </div>
 
-<h3>Hourly Weather </h3>
 
-      
-        <div class="row">
-                    
-                <% @hourly[0..11].each do |h|%>
-                <div class="col-sm-3">
-                    <p><b>Time: </b><%=Time.at(h[:dt]).to_formatted_s(:time)%></p>
-                    <p>Temperature: <%= h[:temp]%>°F </p>
-                    <p>Wind: <%= h[:wind_speed]%> </p>
-                    <img src="http://openweathermap.org/img/w/<%=h[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
-                </div>
-                <%end%>
-        </div>
     
 
 
@@ -70,9 +79,11 @@
 
             <%@campgrounds.each do |c|%>
             <div class="col-sm-3">
+             <div id="camp">
                 <p> <b>Name: </b><%= c[:FacilityName]%></p>
                 <p> Reservable: <%= c[:Reservable]%></p>
                 <p> <a href="https://www.recreation.gov/camping/campgrounds/<%=c[:FacilityID]%>"> View <%= c[:FacilityName]%> </a> </p>
+             </div>
             </div>
             <%end%>
 
