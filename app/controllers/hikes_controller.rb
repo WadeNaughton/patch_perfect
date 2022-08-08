@@ -13,6 +13,9 @@ class HikesController < ApplicationController
     @current = forecast[:current]
     @hourly =forecast[:hourly]
     @daily = forecast[:daily]
+    camps = RecreationFacade.get_campgrounds(@hike.latitude, @hike.longitude)
+    @campgrounds = camps[:RECDATA]
+    @count = camps[:METADATA][:RESULTS][:CURRENT_COUNT]    
   end
 
   def search
@@ -28,6 +31,6 @@ class HikesController < ApplicationController
 
   private
   def hike_params
-    params.permit(:name, :elevation, :prominence, :state, :location, :range, :features)
+    params.permit(:name, :elevation, :prominence, :state, :location, :range, :features, :latitude, :longitude)
   end
 end
