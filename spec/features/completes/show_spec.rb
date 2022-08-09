@@ -29,9 +29,9 @@ RSpec.describe 'Completed hike show page page' do
     expect(page).to have_content("Entry: test")
     # expect(page).to have_content("Entry Date: 06-08-2022")
 
-    expect(page).to have_button("Delete Comment")
+    expect(page).to have_button("Delete Entry")
 
-    click_button("Delete Comment")
+    click_button("Delete Entry")
 
     expect(page).to_not have_content("Entry: test")
 
