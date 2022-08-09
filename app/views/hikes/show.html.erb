@@ -79,11 +79,14 @@
 
             <%@campgrounds.each do |c|%>
             <div class="col-sm-3">
-             <div id="camp">
-                <p> <b>Name: </b><%= c[:FacilityName]%></p>
-                <p> Reservable: <%= c[:Reservable]%></p>
-                <p> <a href="https://www.recreation.gov/camping/campgrounds/<%=c[:FacilityID]%>"> View <%= c[:FacilityName]%> </a> </p>
-             </div>
+                 <div class="card" style="width:280px">
+                    <div id="card-body">
+
+                    <p> <b>Name: </b><%= c[:FacilityName]%></p>
+                    <p> Reservable: <%= c[:Reservable]%></p>
+                    <p> <a href="https://www.recreation.gov/camping/campgrounds/<%=c[:FacilityID]%>"> View <%= c[:FacilityName]%> </a> </p>
+                    </div>
+                </div>
             </div>
             <%end%>
 
