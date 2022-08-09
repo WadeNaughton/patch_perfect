@@ -38,11 +38,14 @@
 </div>
 
 <h1> <%= "My Gear" %> </h1>
+  <div class="row">
 
-<% @gear.each do |g| %>
-  <p><%= g.name %></p>
-  <p><%= g.weight %> lbs</p>
-  <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
-<% end %>
-
+    <% @gear.each do |g| %>
+      <div class="col-sm-3">
+        <p><%= g.name %></p>
+        <p><%= g.weight %> lbs</p>
+        <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+        </div>
+    <% end %>
+  </div>
 <%= link_to "Add Gear", "/users/#{@user.id}/gear/new" %>

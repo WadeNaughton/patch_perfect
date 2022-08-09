@@ -1,27 +1,58 @@
-<%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
-<%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %>
 
  <div class="container">
+            <h1><%= @hike.name %></h1>
+                <p><b>Location: </b><%= @hike.location %> | <b>State: </b><%= @hike.state %> | <b>Range: </b><%= @hike.range %></p>
+                
+                
+                <p><b>Elevation: </b><%= @hike.elevation %> feet | <b>Prominence: </b><%= @hike.prominence %> feet</p>
+                <p><b>Features: </b><%= @hike.features %></p>
+                <p><b>Latitude: </b><%= @hike.latitude %> | <b>Longitude: </b><%= @hike.longitude %></p>
+                
+    <div class="row">
+        <div class="col-sm-1">
 
+            <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
+        </div>
+        <div class="col">
+            <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %>
 
-                <h1><%= @hike.name %></h1>
-                <p>Location: <%= @hike.location %></p>
-                <p>State: <%= @hike.state %></p>
-                <p>Range: <%= @hike.range %></p>
-                <p>Elevation: <%= @hike.elevation %> feet</p>
-                <p>Prominence: <%= @hike.prominence %> feet</p>
-                <p>Features: <%= @hike.features %></p>
-                <p>Latitude: <%= @hike.latitude %></p>
-                <p>Longitude: <%= @hike.longitude %></p>
-          
+        </div>
+    </div>   
 
     <h3> Current Weather Conditions </h3>
-    <p>Description: <%= @current[:weather].first[:description] %> </p>
-    <p>Temperature: <%= @current[:temp] %>°F</p>
-    <p>Wind: <%= @current[:wind_speed] %> MPH</p>
-    <img src="http://openweathermap.org/img/w/<%=@current[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
+      <div class="row">
 
-   
+      <div class="col-sm-2">
+                    <div class="card" style="width:200px">
+                     <img class="card-img-top" src="http://openweathermap.org/img/w/<%=@current[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
+                        <div class="card-body">
+                            <p><b>Description: </b><%= @current[:weather].first[:description] %> </p>
+                            <p><b>Temperature:</b> <%= @current[:temp] %>°F</p>
+                            <p><b>Wind: </b><%= @current[:wind_speed] %> MPH</p>
+
+                      </div>
+                </div>
+            </div>
+        </div>
+
+   <h3>Hourly Weather </h3>
+
+      
+        <div class="row">
+                    
+                <% @hourly[0..11].each do |h|%>
+                <div class="col-sm-2">
+                    <div class="card" style="width:200px">
+                     <img class="card-img-top" src="http://openweathermap.org/img/w/<%=h[:weather].first[:icon]%>.png" alt="weather">
+                        <div class="card-body">
+                            <p><b>Time: </b><%=Time.at(h[:dt]).to_formatted_s(:time)%></p>
+                            <p><b>Temperature: </b><%= h[:temp].round(1)%>°F </p>
+                            <p><b>Wind: </b><%= h[:wind_speed].round(1)%> MPH </p>
+                    </div>
+                </div>
+            </div>
+                <%end%>
+        </div>
 
 
 <h3> Daily Weather </h3>
@@ -30,32 +61,24 @@
         <div class="row">
             <% @daily.each do |d|%>
             <div class="col-sm-3">
+               <div class="card" style="width:300px">
+                    <img class="card-img-top" src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="weather">
+                    <div class="card-body">
+
                     <p><b>Date: </b><%=Time.at(d[:dt]).to_formatted_s(:long)%></p>
-                    <p>Sunrise: <%= Time.at(d[:sunrise]).to_formatted_s(:time)%> </p>
-                    <p>Sunset: <%= Time.at(d[:sunset]).to_formatted_s(:time)%> </p>
-                    <p>Min Temperature: <%= d[:temp][:min]%>°F  </p>
-                    <p>Max Temperature: <%= d[:temp][:max]%>°F </p>
-                    <p>Wind: <%= d[:wind_speed]%> </p>
-                    <p>Description: <%= d[:weather].first[:description]%> </p>
-                    <img src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
+                    <p><b>Sunrise: </b><%= Time.at(d[:sunrise]).to_formatted_s(:time)%> </p>
+                    <p><b>Sunset:</b> <%= Time.at(d[:sunset]).to_formatted_s(:time)%> </p>
+                    <p><b>Min Temperature: </b><%= d[:temp][:min]%>°F  </p>
+                    <p><b>Max Temperature: </b><%= d[:temp][:max]%>°F </p>
+                    <p><b>Wind: </b><%= d[:wind_speed]%> MPH</p>
+                    <p><b>Description:</b> <%= d[:weather].first[:description]%> </p>
+                    </div>
                 </div>
+            </div>
             <%end%>
         </div>
 
-<h3>Hourly Weather </h3>
 
-      
-        <div class="row">
-                    
-                <% @hourly[0..11].each do |h|%>
-                <div class="col-sm-3">
-                    <p><b>Time: </b><%=Time.at(h[:dt]).to_formatted_s(:time)%></p>
-                    <p>Temperature: <%= h[:temp]%>°F </p>
-                    <p>Wind: <%= h[:wind_speed]%> </p>
-                    <img src="http://openweathermap.org/img/w/<%=h[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
-                </div>
-                <%end%>
-        </div>
     
 
 
@@ -70,9 +93,15 @@
 
             <%@campgrounds.each do |c|%>
             <div class="col-sm-3">
-                <p> <b>Name: </b><%= c[:FacilityName]%></p>
-                <p> Reservable: <%= c[:Reservable]%></p>
-                <p> <a href="https://www.recreation.gov/camping/campgrounds/<%=c[:FacilityID]%>"> View <%= c[:FacilityName]%> </a> </p>
+                 <div class="card" style="width: 17.5rem;">
+                    <div id="card-body">
+                     <h6 class="card-title"><%= c[:FacilityName]%></h6>
+                      
+                        <p> Reservable: <%= c[:Reservable]%></p>
+                        <p> <a href="https://www.recreation.gov/camping/campgrounds/<%=c[:FacilityID]%>"> View <%= c[:FacilityName]%> </a> </p>
+
+                    </div>
+                </div>
             </div>
             <%end%>
 
