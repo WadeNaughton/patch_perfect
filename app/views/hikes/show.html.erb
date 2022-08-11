@@ -112,3 +112,9 @@
 
 
 
+<p>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=10&size=400x300&center=#{@hike.latitude},#{@hike.longitude}&markers=color:blue%7Clabel|#{@hike.latitude},#{@hike.longitude}&key=#{ENV['google_key']}", alt: "Map" %>
+</p>
+
+
+

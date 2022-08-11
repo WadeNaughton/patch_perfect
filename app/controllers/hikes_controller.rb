@@ -16,6 +16,7 @@ class HikesController < ApplicationController
     camps = RecreationFacade.get_campgrounds(@hike.latitude, @hike.longitude)
     @campgrounds = camps[:RECDATA]
     @count = camps[:METADATA][:RESULTS][:CURRENT_COUNT]    
+
   end
 
   def search
