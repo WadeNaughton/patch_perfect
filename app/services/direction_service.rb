@@ -13,7 +13,6 @@ class DirectionService
             faraday.params["destination"]=destination
             
         end
-
         JSON.parse(response.body, symbolize_names: true)
 
     end
