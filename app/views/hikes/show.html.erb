@@ -7,7 +7,9 @@
                 <p><b>Elevation: </b><%= @hike.elevation %> feet | <b>Prominence: </b><%= @hike.prominence %> feet</p>
                 <p><b>Features: </b><%= @hike.features %></p>
                 <p><b>Latitude: </b><%= @hike.latitude %> | <b>Longitude: </b><%= @hike.longitude %></p>
+                <p><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=9&size=400x300&center=#{@hike.latitude},#{@hike.longitude}&markers=color:blue%7Clabel|#{@hike.latitude},#{@hike.longitude}&key=#{ENV['google_key']}", alt: "Map" %></p>
                 <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@hike.latitude},#{@hike.longitude}" %> </p>
+
                 
     <div class="row">
         <div class="col-sm-1">
@@ -112,11 +114,6 @@
 
 </div>
 
-
-
-<p>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=10&size=400x300&center=#{@hike.latitude},#{@hike.longitude}&markers=color:blue%7Clabel|#{@hike.latitude},#{@hike.longitude}&key=#{ENV['google_key']}", alt: "Map" %>
-</p>
 
 
 
