@@ -1040,6 +1040,16 @@
           6,
           null,
           null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -1114,6 +1124,52 @@
           null
         ]
       },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/spec/services/direction_service_spec.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/app/services/direction_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/wadenaughton/side_proj/new_patch/patch_perfect/spec/services/forecast_service_spec.rb": {
         "lines": [
           null,
@@ -1149,6 +1205,24 @@
           6,
           null,
           6,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/spec/services/map_service_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -1233,7 +1307,7 @@
           1,
           null,
           1,
-          null,
+          8,
           null,
           null,
           null
@@ -1441,6 +1515,7 @@
           4,
           null,
           null,
+          null,
           1,
           0,
           0,
@@ -1460,6 +1535,6 @@
         ]
       }
     },
-    "timestamp": 1660076718
+    "timestamp": 1660308717
   }
 }
