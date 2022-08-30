@@ -15,7 +15,7 @@
 
           <h2>Favorited Hikes</h2>
           <% @favorites.each do |fav| %>
-            <p><%= fav.hike.name %></p>
+            <p><%= link_to "#{fav.hike.name}", "/users/#{@user.id}/hikes/#{fav.hike.id}" %></p>
           <% end %>
 
         </div>
