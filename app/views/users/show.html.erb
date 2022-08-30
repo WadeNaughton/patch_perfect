@@ -15,7 +15,7 @@
 
           <h2>Favorited Hikes</h2>
           <% @favorites.each do |fav| %>
-            <p><%= fav.hike.name %></p>
+            <p><%= link_to "#{fav.hike.name}", "/users/#{@user.id}/hikes/#{fav.hike.id}" %></p>
           <% end %>
 
         </div>
@@ -42,9 +42,14 @@
 
     <% @gear.each do |g| %>
       <div class="col-sm-3">
-        <p><%= g.name %></p>
-        <p><%= g.weight %> lbs</p>
-        <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+       <div class="card" style="width: 17.5rem;">
+          <div id="card-body">
+           <h6 class="card-title"><p><%= g.name %></p></h6>
+            
+            <p>Weight: <%= g.weight %> lbs</p>
+            <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+        </div>
+        </div>
         </div>
     <% end %>
   </div>
