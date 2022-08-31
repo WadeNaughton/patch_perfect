@@ -9,5 +9,6 @@ class ForecastFacade
         
         hourly = test
     end
+
   end
   
