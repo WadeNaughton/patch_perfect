@@ -24,6 +24,8 @@ class Hike < ApplicationRecord
     string
   end
 
+
+
    
 
 
