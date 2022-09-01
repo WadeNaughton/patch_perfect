@@ -1,10 +1,10 @@
 <div class="container">
   <div class="col">
-    <div id="name">
+    <div class="title-center">
 
-      <h1>
+      <h2>
         <p><%= @user.first_name %>'s Hikes</p>
-      </h1>
+      </h2>
 
     </div>
   </div>
@@ -26,7 +26,7 @@
           <h2>Completed Hikes</h2>
 
           <% @completes.each do |complete| %>
-             <%= complete.hike.name %>
+            <%= complete.hike.name %>
             <br>
             <%= link_to "View Hike Details", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
             <br>
@@ -36,25 +36,23 @@
       </div>
   </div>
 
-
-  <h1> <%= "My Gear" %> </h1>
-    <div class="row">
-
-      <% @gear.each do |g| %>
-        <div class="col-sm-3">
-        <div class="card" style="width: 17.5rem;">
-            <div id="card-body">
-            <h6 class="card-title"><p><%= g.name %></p></h6>
-              
-              <p>Weight: <%= g.weight %> lbs</p>
-              <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
-          </div>
-          </div>
-          </div>
-      <% end %>
+    <div class="title-center">
+      <h2> <%= @user.first_name %>'s Shed </h2>
     </div>
-  <%= link_to "Add Gear", "/users/#{@user.id}/gear/new" %>
+  <div class="row">
 
-
-
+    <% @gear.each do |g| %>
+      <div class="col-sm-3">
+       <div class="card" style="width: 15.5rem;">
+          <div id="card-body">
+           <h6 class="card-title"><p><%= g.name %></p></h6>
+            
+            <p>Weight: <%= g.weight %> lbs</p>
+            <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+        </div>
+        </div>
+        </div>
+    <% end %>
+  </div>
+<%= link_to "Add Gear to The Shed", "/users/#{@user.id}/gear/new" %>
 </div>

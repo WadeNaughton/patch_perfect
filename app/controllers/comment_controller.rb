@@ -5,6 +5,7 @@ class CommentController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
     @comment = Comment.new(complete_id: @complete.id)
+    binding.pry
   end
 
   def create

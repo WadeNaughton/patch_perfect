@@ -28,9 +28,6 @@
   font-family: Monaco;
 }
 
-#name {
-  text-align: center;
-}
 
 #favorite-hikes {
   text-align:center;
@@ -75,7 +72,16 @@
 }
 
 
-
+.title-center {
+  text-align: center ;
+  color: #F0BB62;
+  background-image: url("/assets/header4.png");
+  background-size: 100%;
+  width: 100%;
+  height:0px;
+  padding-bottom:8.3%;
+  
+}
  
 
  
