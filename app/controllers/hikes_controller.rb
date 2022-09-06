@@ -2,6 +2,7 @@ class HikesController < ApplicationController
 
   def index
     @hikes = Hike.all
+    @hikes_kam = @hikes.order(elevation: :desc).page(params[:page])
     @user = User.find_by(id: session[:user_id])
   end
 
@@ -32,6 +33,6 @@ class HikesController < ApplicationController
 
   private
   def hike_params
-    params.permit(:name, :elevation, :prominence, :state, :location, :range, :features, :latitude, :longitude)
+    params.permit(:name, :elevation, :prominence, :state, :location, :range, :features, :latitude, :longitude, :page)
   end
 end
