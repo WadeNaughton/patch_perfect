@@ -15,15 +15,15 @@
 
     <% @comments.each do |c| %>
      <div class="col-sm-3">
-    <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
-    <p>Entry: <%= c.body%></p>
-      <% if c.image.attached? %>
+      <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
+      <p>Entry: <%= c.body%></p>
+        <% if c.image.attached? %>
 
-        <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, style: "width: 250px; display: block"%> </a>
+          <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, style: "width: 250px; display: block"%> </a>
 
 
-      <% end %>
-    <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
+        <% end %>
+      <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
     </div>
     <% end %>
   </div>
