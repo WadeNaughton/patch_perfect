@@ -1,10 +1,11 @@
 <body>
+<h1> Hikes of The White Mountains </h1>
 
 <% @hikes_kam.each do |hike| %>
   <h2><p>Name: <%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
-  <p>Location: <%= hike.location %></p>
-  <p>State: <%= hike.state %></p>
-  <p>Range: <%= hike.range %></p>
+  <b><p>Location: </b><%= hike.location %></p>
+  <b><p>State: </b><%= hike.state %></p>
+  <b><p>Range: </b><%= hike.range %></p>
 <% end %>
 
 <%= paginate @hikes_kam %>

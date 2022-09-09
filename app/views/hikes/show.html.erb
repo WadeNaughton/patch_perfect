@@ -29,7 +29,7 @@
         </div>
         <div class="row">
 
-        <div class="col-sm-2">
+        <div class="col-sm-6 col-md-4 col-lg-2">
                         <div class="card" style="width:200px">
                         <img class="card-img-top" src="http://openweathermap.org/img/w/<%=@current[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
                             <div class="card-body">
@@ -70,8 +70,8 @@
     
             <div class="row">
                 <% @daily.each do |d|%>
-                <div class="col-sm-3">
-                <div class="card" style="width:300px">
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="card" style="width:290px">
                         <img class="card-img-top" src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="weather">
                         <div class="card-body">
 
@@ -94,16 +94,13 @@
 
 
         <div class="title-center">
-            <h3> Campgrounds</h3>
+            <h3> Campgrounds Within 20 Miles: <%= @count%></h3>
         </div>
-
-        <p> Campgrounds Within 20 Miles: <%= @count%> </p>
-
     
             <div class="row">
 
                 <%@campgrounds.each do |c|%>
-                <div class="col-sm-3">
+                <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="card" style="width: 17.5rem;">
                         <div id="card-body">
                         <h6 class="card-title"><%= c[:FacilityName]%></h6>
