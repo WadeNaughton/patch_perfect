@@ -1,3 +1,5 @@
+<body>
+
 <%@hike_result.each do |hike| %>
 <h2><p>Name: <%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
 <p>Elevation: <%= hike.elevation %> feet</p>
@@ -9,3 +11,4 @@
 
 <% end %>
 
+</body>

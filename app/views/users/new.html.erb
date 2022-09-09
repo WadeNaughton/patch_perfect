@@ -1,3 +1,5 @@
+<body>
+
 <p>
     <%= form_with url: "/register", method: :post, local:true do |form| %>
     <% if @user.errors.any? %>
@@ -34,3 +36,4 @@
 
       <%= form.submit "Submit" %>
     <% end %>
+</body>

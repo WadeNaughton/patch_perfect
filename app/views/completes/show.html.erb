@@ -1,3 +1,5 @@
+ <body>
+
   <div id="user-complete-header">
     <h1><%=  "Trip Report For Hiking Mount #{@hike.name}"%></h1>
   </div>
@@ -6,26 +8,31 @@
  <div class="container">
 
 
-
-    <h1><%= "Journal Entries" %></h1>
+ <div class="title-center">
+    <h2><%= "Journal Entries" %></h2>
+  </div>
     <div class="row">
 
     <% @comments.each do |c| %>
      <div class="col-sm-3">
-    <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
-    <p>Entry: <%= c.body%></p>
-      <% if c.image.attached? %>
-        <%= image_tag c.image, style: "width: 250px; display: block" %>
-      <% end %>
-    <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
+      <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
+      <p>Entry: <%= c.body%></p>
+        <% if c.image.attached? %>
+
+          <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, style: "width: 250px; display: block"%> </a>
+
+
+        <% end %>
+      <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
     </div>
     <% end %>
   </div>
 
     <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
 
-
-    <h1><%=  "Gear Used"%></h1>
+<div class="title-center">
+    <h2><%=  "Gear Used"%></h2>
+  </div>
     <div class="row">
 
     <% @gear_used.each do |gear|%>
@@ -39,8 +46,10 @@
     </div>
     <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
 
-
-      <h1>Total Weight</h1>
+<div class="title-center">
+      <h2>Total Weight</h2>
+    </div>
     <p><%= @total_weight %> lbs</p>
 
 </div>
+</body>

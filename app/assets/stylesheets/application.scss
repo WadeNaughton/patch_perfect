@@ -28,9 +28,6 @@
   font-family: Monaco;
 }
 
-#name {
-  text-align: center;
-}
 
 #favorite-hikes {
   text-align:center;
@@ -52,6 +49,7 @@
   width: 50px;
  }
  #card-body {
+  text-align:center;
   font-size:15px;
   position: relative;
   display: inline-block;
@@ -59,7 +57,6 @@
   padding: 5px;
   
  }
-
 
  .carousel .carousel-item {
   height: 500px;
@@ -74,8 +71,68 @@
 }
 
 
-
+.title-center {
+  text-align: center ;
+  color: #F0BB62;
+  background-image: url("/assets/header5.png");
+  background-size: 100%;
+  width: 104%;
+  height:0px;
+  padding-bottom:8.3%;
+  
+}
  
+body {
+  background-color: #ECE5C7;
+  }
 
- 
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    color: #064635;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: #ECE5C7;
+    border: 1px solid #064635;
+    border-left-width: 0;
+}
 
+.pagination {
+    border-left: 1px solid #064635;
+.first{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.prev {
+    padding : 0;
+    float: none;
+    border: none;
+}
+.page{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.next{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.last{
+    padding : 0;
+    float: none;
+    border: none;
+}
+}
+
+
+a:link {
+  color: #519259;
+}
+
+a:visited {
+  color: #519259;
+  background-color: transparent;
+  text-decoration: none;
+}

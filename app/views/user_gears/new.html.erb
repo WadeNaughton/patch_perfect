@@ -1,3 +1,4 @@
+<body>
 
     <%= form_with url: "/users/#{@user.id}/gear", method: :post, local:true do |form| %>
 
@@ -9,3 +10,4 @@
 
       <%= form.submit "Submit" %>
     <% end %>
+</body>

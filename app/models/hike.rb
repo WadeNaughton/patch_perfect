@@ -1,6 +1,7 @@
 require 'date'
 
 class Hike < ApplicationRecord
+  paginates_per 10
   has_many :favorites
   has_many :completes
 

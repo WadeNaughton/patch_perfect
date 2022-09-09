@@ -1,10 +1,12 @@
+<body>
+
 <div class="container">
   <div class="col">
-    <div id="name">
+    <div class="title-center">
 
-      <h1>
+      <h2>
         <p><%= @user.first_name %>'s Hikes</p>
-      </h1>
+      </h2>
 
     </div>
   </div>
@@ -34,15 +36,16 @@
 
         </div>
       </div>
-  </div>
-</div>
+    </div>
 
-<h1> <%= "My Gear" %> </h1>
+    <div class="title-center">
+      <h2> <%= @user.first_name %>'s Shed </h2>
+    </div>
   <div class="row">
 
     <% @gear.each do |g| %>
-      <div class="col-sm-3">
-       <div class="card" style="width: 17.5rem;">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+       <div class="card">
           <div id="card-body">
            <h6 class="card-title"><p><%= g.name %></p></h6>
             
@@ -53,4 +56,6 @@
         </div>
     <% end %>
   </div>
-<%= link_to "Add Gear", "/users/#{@user.id}/gear/new" %>
+<%= link_to "Add Gear to The Shed", "/users/#{@user.id}/gear/new" %>
+</div>
+</body>
