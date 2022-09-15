@@ -46,6 +46,21 @@
     </div>
     <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
 
+
+
+    <div class="title-center">
+    <h2><%=  "Trip Participants"%></h2>
+  </div>
+    <div class="row">
+        <a href="<%= url_for(user_path(@user)) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
+    <%= @user.first_name%>
+    
+    </div>
+  
+
+
+
+
 <div class="title-center">
       <h2>Total Weight</h2>
     </div>

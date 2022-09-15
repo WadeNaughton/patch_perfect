@@ -1,3 +1,7 @@
+ <% if @user.avatar.attached?%>
+    <a href="<%= url_for(@user.avatar) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
+<% end %>
+
 <body>
 
 <div class="container">

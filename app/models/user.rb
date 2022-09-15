@@ -13,4 +13,7 @@ class User < ApplicationRecord
   validates_presence_of :username, presence: true
 
   has_secure_password
+
+  has_one_attached :avatar
+
 end
