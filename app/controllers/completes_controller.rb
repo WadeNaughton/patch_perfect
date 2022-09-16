@@ -7,6 +7,7 @@ class CompletesController < ApplicationController
     @comments = @complete.comments
     @gear_used = @complete.complete_gears.all
     @total_weight = @complete.total_weight
+    @participants = @complete.participants.all
   end
 
   def create

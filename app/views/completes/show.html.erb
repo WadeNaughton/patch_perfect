@@ -48,15 +48,23 @@
 
 
 
-    <div class="title-center">
+  <div class="title-center">
     <h2><%=  "Trip Participants"%></h2>
   </div>
-    <div class="row">
+
+    <div class="col-sm-3">
         <a href="<%= url_for(user_path(@user)) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
     <%= @user.first_name%>
-    
-    </div>
-  
+   
+
+    <% @participants.each do |p|%>    
+         <a href="<%= url_for(user_path(p.user)) %> "> <%= image_tag p.user.avatar, style: "width: 100px; display: block"%> </a>
+          <p><%= p.user.first_name%></p>
+
+      
+    <%end%>
+ </div>
+  <%= link_to "Add Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/new "%>
 
 
 

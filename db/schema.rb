@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_02_193635) do
+ActiveRecord::Schema.define(version: 2022_09_15_234420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,13 @@ ActiveRecord::Schema.define(version: 2022_08_02_193635) do
     t.float "longitude"
   end
 
+  create_table "participants", force: :cascade do |t|
+    t.bigint "complete_id"
+    t.bigint "user_id"
+    t.index ["complete_id"], name: "index_participants_on_complete_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
+  end
+
   create_table "photos", force: :cascade do |t|
     t.bigint "complete_id"
     t.datetime "created_at", null: false
@@ -109,6 +116,8 @@ ActiveRecord::Schema.define(version: 2022_08_02_193635) do
   add_foreign_key "completes", "users"
   add_foreign_key "favorites", "hikes"
   add_foreign_key "favorites", "users"
+  add_foreign_key "participants", "completes"
+  add_foreign_key "participants", "users"
   add_foreign_key "photos", "completes"
   add_foreign_key "user_gears", "users"
 end
