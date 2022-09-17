@@ -60,7 +60,7 @@ RSpec.describe 'Completed hike show page page' do
 
     select("Tent", :from => "user_gear_id")
 
-    click_button("Add To Trip")
+    click_button("Add From Shed")
 
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
 
@@ -106,13 +106,13 @@ RSpec.describe 'Completed hike show page page' do
 
     select("Tent", :from => "user_gear_id")
 
-    click_button("Add To Trip")
+    click_button("Add From Shed")
 
     click_link("Add Gear Used")
 
     select("Tent2", :from => "user_gear_id")
 
-    click_button("Add To Trip")
+    click_button("Add From Shed")
 
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
 

@@ -65,38 +65,57 @@
     <h2><%=  "Trip Participants"%></h2>
   </div>
 
-    <div class="col-sm-3">
-        <a href="<%= url_for(user_path(@user)) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
-    <%= @user.first_name%>
-   
+<h5> Trip Creator </h5>
+    <div class="row"> 
+     <div class="col-sm-3">
 
-    <% @participants.each do |p|%>    
+      <%if @user.avatar.attached? %>
+
+          <a href="<%= url_for(user_path(@user)) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
+          <%= @user.first_name%>
+      
+    <%end%>
+    </div>
+   </div>
+
+   <h5> Hiking Buddies </h5>
+
+    <div class="row"> 
+
+    <% @participants.each do |p|%>   
+      <div class="col-sm-2">
+ 
     <% if p.user.avatar.attached?%>
          <a href="<%= url_for(user_path(p.user)) %> "> <%= image_tag p.user.avatar, style: "width: 100px; display: block"%> </a>
           <p><%= p.user.first_name%></p>
-          <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+        <% if current_user == @user %>
 
+          <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+        <%end%>
     <% else %>
          <p><%= p.user.first_name%></p>
-         <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+          <% if current_user == @user %>
 
+         <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+        <%end%>
     <% end %>
+    </div>
 
     <%end%>
- </div>
+  </div>
+    
+  <% if current_user == @user %>
 
- <% if current_user == @user %>
-
-  <%= link_to "Add Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/new "%>
-
-
-  <%end %>
+      <%= link_to "Add Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/new "%>
 
 
-<div class="title-center">
-      <h2>Total Weight</h2>
+    <%end %>
+
+
+    <div class="title-center">
+          <h2>Total Weight</h2>
     </div>
-    <p><%= @total_weight %> lbs</p>
+        <p><%= @total_weight %> lbs</p>
 
-</div>
+  </div>
 </body>
