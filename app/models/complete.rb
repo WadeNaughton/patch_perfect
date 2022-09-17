@@ -5,6 +5,7 @@ class Complete < ApplicationRecord
   has_many :comments
   has_many :photos
   has_many :complete_gears
+  has_many :participants
 
   validates_presence_of :hike_id
   validates_presence_of :user_id
@@ -12,4 +13,5 @@ class Complete < ApplicationRecord
   def total_weight
     complete_gears.joins(:user_gear).sum(:weight)
   end
+
 end

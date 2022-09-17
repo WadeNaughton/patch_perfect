@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :completes
   has_many :user_gears
+  has_many :participants
 
   has_many :hikes, through: :favorites
   has_many :hikes, through: :completes

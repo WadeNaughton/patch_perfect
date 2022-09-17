@@ -17,17 +17,4 @@ class Hike < ApplicationRecord
    where("concat_ws(' ' , name, features) ILIKE ?", "%#{search}%")
   end
 
-  def self.coord_to_s(hike)
-    lat = hike.latitude
-    lon = hike.longitude
-
-    string = "#{lat},#{lon}"
-    string
-  end
-
-
-
-   
-
-
 end

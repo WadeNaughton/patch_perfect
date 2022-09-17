@@ -36,16 +36,21 @@ RSpec.describe 'User show page' do
     user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
     hike = Hike.create!(name: 'hike', elevation: 4000, prominence: 200, state: 'NH', location: 'Lincoln', range: 'Lincoln', features: "waterfalls")
     favorite = Favorite.create!(hike_id: hike.id, user_id: user.id)
+  
     visit "/users/#{user.id}"
     expect(page).to have_content(hike.name)
   end
 
   it "has section to add all gear " do
     user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
+    visit ("/login")
+    fill_in('Email', with: 'wade@bob.com')
+    fill_in('Password', with: 'test')
+    click_button('Log in')
     visit "/users/#{user.id}"
-    expect(page).to have_link("Add Gear")
+    expect(page).to have_link("Add Gear to The Shed")
 
-    click_link("Add Gear")
+    click_link("Add Gear to The Shed")
 
     expect(current_path).to eq("/users/#{user.id}/gear/new")
 
@@ -63,6 +68,10 @@ RSpec.describe 'User show page' do
   it "has button to delete a gear item" do
     user = User.create!(first_name: 'wade', last_name: 'wade', username: "wade", email:"wade@bob.com", password: "test", password_confirmation: "test")
     gear = user.user_gears.create!(name: "Tent", weight: 5.0)
+    visit ("/login")
+    fill_in('Email', with: 'wade@bob.com')
+    fill_in('Password', with: 'test')
+    click_button('Log in')
     visit "/users/#{user.id}"
 
     expect(page).to have_content("Tent")

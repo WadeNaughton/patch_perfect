@@ -307,6 +307,24 @@
           null
         ]
       },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/config/initializers/kaminari_config.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/wadenaughton/side_proj/new_patch/patch_perfect/config/initializers/mime_types.rb": {
         "lines": [
           null,
@@ -376,6 +394,11 @@
           1,
           1,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           null
         ]
@@ -383,6 +406,7 @@
       "/Users/wadenaughton/side_proj/new_patch/patch_perfect/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null,
           null
         ]
       },
@@ -391,15 +415,15 @@
           1,
           null,
           1,
-          9,
+          11,
           null,
           null,
           1,
-          126,
+          192,
           null,
           null,
           1,
-          126,
+          136,
           null,
           null,
           1,
@@ -428,6 +452,7 @@
           0,
           null,
           0,
+          null,
           null,
           null,
           null
@@ -690,6 +715,11 @@
           null
         ]
       },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/spec/features/participants/new_spec.rb": {
+        "lines": [
+
+        ]
+      },
       "/Users/wadenaughton/side_proj/new_patch/patch_perfect/spec/features/users/login_form_spec.rb": {
         "lines": [
           1,
@@ -748,6 +778,7 @@
           1,
           1,
           1,
+          null,
           1,
           1,
           null,
@@ -756,11 +787,8 @@
           1,
           1,
           1,
-          null,
           1,
-          null,
           1,
-          null,
           1,
           1,
           null,
@@ -771,7 +799,18 @@
           1,
           1,
           null,
+          1,
           null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -863,6 +902,7 @@
           1,
           null,
           1,
+          null,
           null
         ]
       },
@@ -943,12 +983,14 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
           null,
           1,
           11,
+          null,
           null,
           null
         ]
@@ -1027,6 +1069,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -1038,17 +1081,6 @@
           null,
           1,
           6,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
           null,
           null,
           null
@@ -1110,17 +1142,21 @@
           1,
           1,
           1,
-          null,
-          1,
           1,
           null,
           1,
           1,
+          null,
+          1,
+          1,
           1,
           1,
           1,
           null,
           1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -1213,10 +1249,10 @@
           null,
           null,
           1,
-          8,
-          8,
-          8,
-          8,
+          10,
+          10,
+          10,
+          10,
           null,
           0,
           null,
@@ -1243,7 +1279,7 @@
           1,
           null,
           1,
-          8,
+          10,
           null,
           null,
           null
@@ -1260,10 +1296,24 @@
           10,
           10,
           10,
+          10,
           null,
           null,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/wadenaughton/side_proj/new_patch/patch_perfect/app/models/participant.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           null,
@@ -1280,6 +1330,7 @@
           1,
           1,
           1,
+          null,
           null,
           null,
           1,
@@ -1436,6 +1487,7 @@
           1,
           3,
           3,
+          3,
           null,
           null,
           1,
@@ -1471,6 +1523,6 @@
         ]
       }
     },
-    "timestamp": 1661871795
+    "timestamp": 1663429138
   }
 }

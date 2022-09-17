@@ -39,5 +39,10 @@ Rails.application.routes.draw do
   post '/users/:user_id/hikes/:id/gear', to: 'complete_gears#create'
   delete '/users/:user_id/hikes/:hike_id/gear/:id', to: 'complete_gears#destroy'
 
+  get '/users/:user_id/hikes/:id/participants/new', to: 'participants#new'
+  post '/users/:user_id/hikes/:id/participants', to: 'participants#create'
+  delete '/users/:user_id/hikes/:hike_id/participants/:id', to: 'participants#destroy'
+
+
 
 end
