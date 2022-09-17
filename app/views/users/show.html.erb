@@ -1,6 +1,4 @@
- <% if @user.avatar.attached?%>
-    <a href="<%= url_for(@user.avatar) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
-<% end %>
+
 
 <body>
 
@@ -54,12 +52,23 @@
            <h6 class="card-title"><p><%= g.name %></p></h6>
             
             <p>Weight: <%= g.weight %> lbs</p>
-            <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+
+            <% if current_user == @user %>
+
+              <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+
+            <% end %>
         </div>
         </div>
         </div>
     <% end %>
   </div>
-<%= link_to "Add Gear to The Shed", "/users/#{@user.id}/gear/new" %>
+  
+
+<% if current_user == @user %>
+  <%= link_to "Add Gear to The Shed", "/users/#{@user.id}/gear/new" %>
+<% end %>
 </div>
 </body>
+
+

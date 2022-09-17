@@ -41,6 +41,8 @@ Rails.application.routes.draw do
 
   get '/users/:user_id/hikes/:id/participants/new', to: 'participants#new'
   post '/users/:user_id/hikes/:id/participants', to: 'participants#create'
+  delete '/users/:user_id/hikes/:hike_id/participants/:id', to: 'participants#destroy'
+
 
 
 end

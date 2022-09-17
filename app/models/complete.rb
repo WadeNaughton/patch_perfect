@@ -13,4 +13,5 @@ class Complete < ApplicationRecord
   def total_weight
     complete_gears.joins(:user_gear).sum(:weight)
   end
+
 end

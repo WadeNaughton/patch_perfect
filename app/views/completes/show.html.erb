@@ -23,12 +23,19 @@
 
 
         <% end %>
-      <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
+
+        <% if current_user == @user %>
+
+          <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
+        
+        <% end %>
     </div>
     <% end %>
   </div>
 
-    <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
+    <% if current_user == @user %>
+      <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
+    <%end%>
 
 <div class="title-center">
     <h2><%=  "Gear Used"%></h2>
@@ -39,14 +46,20 @@
     <div class="col-sm-3">
         <p>Name: <%= gear.user_gear.name %></p>
         <p>Weight: <%= gear.user_gear.weight %> lbs</p>
-        <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>
+
+        <% if current_user == @user %>
+          <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>
+        <%end%>
     </div>
 
     <% end %>
     </div>
-    <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
 
+    <% if current_user == @user %>
 
+     <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
+
+    <%end%>
 
   <div class="title-center">
     <h2><%=  "Trip Participants"%></h2>
@@ -58,15 +71,26 @@
    
 
     <% @participants.each do |p|%>    
+    <% if p.user.avatar.attached?%>
          <a href="<%= url_for(user_path(p.user)) %> "> <%= image_tag p.user.avatar, style: "width: 100px; display: block"%> </a>
           <p><%= p.user.first_name%></p>
+          <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
 
-      
+    <% else %>
+         <p><%= p.user.first_name%></p>
+         <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+
+    <% end %>
+
     <%end%>
  </div>
+
+ <% if current_user == @user %>
+
   <%= link_to "Add Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/new "%>
 
 
+  <%end %>
 
 
 <div class="title-center">

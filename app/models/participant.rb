@@ -4,7 +4,6 @@ class Participant < ApplicationRecord
   
     validates_presence_of :complete_id
     validates_presence_of :user_id
-
-
-  end
+   
+end
   
