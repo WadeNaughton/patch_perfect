@@ -69,6 +69,11 @@
   <%= link_to "Add Gear to The Shed", "/users/#{@user.id}/gear/new" %>
 <% end %>
 </div>
+
+<% if current_user == @user %>
+  <%= link_to "Edit My User Information", "/users/#{@user.id}/edit"%>
+
+<% end %>
 </body>
 
 

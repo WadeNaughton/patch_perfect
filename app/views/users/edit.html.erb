@@ -1,0 +1,24 @@
+<body>
+
+<p>
+    <%= form_with url: "/users/#{@user.id}", method: :patch, local:true do |form| %>
+   
+      <%= form.label :first_name%>
+      <p><%= form.text_field :first_name, :value =>  @user.first_name  %></p>
+
+      <%= form.label :last_name %>
+      <p><%= form.text_field :last_name, :value =>  @user.last_name %></p>
+
+      <%= form.label :username %>
+      <p><%= form.text_field :username, :value =>  @user.username  %></p>
+
+      <%= form.label :email %>
+      <p><%= form.text_field :email, :value =>  @user.email %></p>
+
+
+     <h6> <p><%= form.label "Change Profile Picture:" %></p></h6>
+     <p> <%= form.file_field :avatar %></p>
+
+      <%= form.submit "Submit" %>
+    <% end %>
+</body>
