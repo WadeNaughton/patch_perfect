@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit'
   patch '/users/:id', to: 'users#update'
 
+
+
   resources :users, only: [:show]
 
   get '/login', to: 'sessions#new'

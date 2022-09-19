@@ -26,9 +26,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
  end
 
- def change_password
-    @user = User.find(params[:id])
- end
 
  def update
     @user = User.find(params[:id])
@@ -37,7 +34,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-    binding.pry
   end
 
 
@@ -58,9 +54,10 @@ class UsersController < ApplicationController
     end
   end
 
+ 
+
   private
     def user_params
       params.permit(:first_name, :last_name, :username, :email, :password, :password_confirmation, :avatar)
-      # params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation, :avatar)
     end
 end
