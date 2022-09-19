@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
+  get '/users/:id/edit', to: 'users#edit'
+  patch '/users/:id', to: 'users#update'
 
   resources :users, only: [:show]
 

@@ -37,9 +37,9 @@
       <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
     <%end%>
 
-<div class="title-center">
-    <h2><%=  "Gear Used"%></h2>
-  </div>
+    <div class="title-center">
+      <h2><%=  "Gear Used"%></h2>
+    </div>
     <div class="row">
 
     <% @gear_used.each do |gear|%>
@@ -109,7 +109,7 @@
       <%= link_to "Add Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/new "%>
 
 
-    <%end %>
+  <%end %>
 
 
     <div class="title-center">
