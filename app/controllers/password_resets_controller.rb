@@ -2,11 +2,12 @@ class PasswordResetsController < ApplicationController
   def new
   end
 
+
   def create
     user = User.find_by(email: params[:email]) && User.find_by(username: params[:username])
-    binding.pry
     if user.present?
-      user.send_password_reset 
+      test = ApplicationMailer.with(user: user).forgot_password(user)
+      test.deliver_now
       flash[:notice] = 'E-mail sent with password reset instructions.'
       redirect_to "/"
     else
@@ -14,6 +15,9 @@ class PasswordResetsController < ApplicationController
       render :new
     end
   end
+
+
+
 
   def edit
     @user = User.find_by_password_reset_token!(params[:id])
