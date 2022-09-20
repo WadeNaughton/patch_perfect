@@ -50,7 +50,7 @@ end
 
   it 'renders the sender email' do  
     ApplicationMailer.forgot_password(@user).deliver_now
-    expect(ActionMailer::Base.deliveries.first.from).to  eq(["wadenaughton@gmail.com"])
+    expect(ActionMailer::Base.deliveries.first.from).to  eq([ENV['google_username']])
   end
 
 
