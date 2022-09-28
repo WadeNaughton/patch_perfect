@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_15_234420) do
+ActiveRecord::Schema.define(version: 2022_09_20_162537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_234420) do
     t.string "email"
     t.string "username"
     t.string "password_digest"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

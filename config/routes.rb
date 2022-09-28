@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
   # get 'sessions/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   patch '/users/:id', to: 'users#update'
 
 
+  resources :password_resets
 
   resources :users, only: [:show]
 

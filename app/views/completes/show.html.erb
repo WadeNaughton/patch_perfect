@@ -90,13 +90,13 @@
           <p><%= p.user.first_name%></p>
         <% if current_user == @user %>
 
-          <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+          <%= link_to "Remove Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
         <%end%>
     <% else %>
          <p><%= p.user.first_name%></p>
           <% if current_user == @user %>
 
-         <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+         <%= link_to "Remove Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
         <%end%>
     <% end %>
     </div>
