@@ -2,27 +2,31 @@
 
 - https://afternoon-oasis-26145.herokuapp.com/
 
-# What this is (so far)
+# What this is 
 
-- As of now, a practice repo that is designed to be a hiking application that lets a user discover hikes in the White Mountains that are above 4000 feet. A user can favorite a hike or mark the hike as completed. The user can then add journal entries for a completed hike, along with adding the gear that was used. This app will be designed as a sort of journal for hikers that want to grab all the 4000+ peaks in the White Mountains.
+- A site designed to find peaks within the white mountains that are above 4000 feet. Users are able to favorite hikes or mark them as completed. Completed hikes have the ability to have journal entries, photos, and gear used on the hike displayed. A user can then add any friends that participated on the hike to the trip report. This is designed to be a digital journal, which I believe will be helpful for hikers to keep track of notes/photos, while also enjoying the social aspect of being added to other hikes.
 
 
-# Features so far
+# Features
 
 - create user account
-- discover all hikes above 4000 feet
+- discover all peaks above 4000 feet
 - favorite a hike
 - mark a hike as completed
-- add journal entries to a completed hike
+- add journal entries and photos to a completed hike
 - add gear used for the completed hike
-- total weight for a trip
-- upload a photo for a journal entry
+- calculate your total weight for a trip
+- add others users to your trip
+- directions to each hike
+- find national forest campgrounds within 20 miles of the hike
+- get directions to each campground
+- links to make reservations to the campgrounds
+- current, hourly, and daily weather for each peak
+- upload profile picutre 
 
 
 # Features to come (no time table)
 
-- FE design
-- add coordinates to each hike to open up google maps to get directions
-- share a trip report with friends
-- more data to add to the hike itself
-- add food to the trip report. (track calorie intake)
+- allow users that have been added to a trip to upload photos and journal entries
+- add section for any costs and assign that to a user
+- show pictures from a completed hike on the hike show page
