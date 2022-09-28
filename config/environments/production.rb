@@ -94,7 +94,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 host = 'afternoon-oasis-26145.herokuapp.com'
-config.action_mailer.default_url_options = { :host => 'afternoon-oasis-26145.herokuapp.com', protocol: 'https' }
+config.action_mailer.default_url_options = { :host => 'afternoon-oasis-26145.herokuapp.com', protocol: 'http' }
 
 # SMTP settings for gmail
 config.action_mailer.smtp_settings = {
