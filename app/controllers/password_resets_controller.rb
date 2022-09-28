@@ -3,19 +3,6 @@ class PasswordResetsController < ApplicationController
   end
 
 
-  # def create
-  #   user = User.find_by(email: params[:email]) && User.find_by(username: params[:username])
-  #   if user.present?
-  #     test = ApplicationMailer.with(user: user).forgot_password(user)
-  #     test.deliver_now
-  #     flash[:notice] = 'E-mail sent with password reset instructions.'
-  #     redirect_to "/"
-  #   else
-  #     flash[:notice] = 'invalid email or username'
-  #     render :new
-  #   end
-  # end
-
     def create
     user = User.find_by(email: params[:email]) && User.find_by(username: params[:username])
     if user.present?

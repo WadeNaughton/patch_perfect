@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'wadenaughton@gmail.com'
+  default from: 'patchperfecthiking@gmail.com'
   layout 'mailer'
 
   def forgot_password(user)
