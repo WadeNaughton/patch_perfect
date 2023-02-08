@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'afternoon-oasis-26145.herokuapp.com', protocol: 'https' }
+  config.action_mailer.default_url_options = { :host => 'patch-perfect2.fly.dev/', protocol: 'https' }
 
 # SMTP settings for gmail
 config.action_mailer.smtp_settings = {
