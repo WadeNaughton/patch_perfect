@@ -7,7 +7,7 @@
     <div class="title-center">
 
       <h2>
-        <p><%= @user.first_name %>'s Hikes</p>
+        <p><%= @user.first_name %>'s Trips</p>
       </h2>
 
     </div>
@@ -17,7 +17,7 @@
       <div class="col ">
         <div id="favorite-hikes">
 
-          <h2>Favorited Hikes</h2>
+          <h2>Favorited Peaks</h2>
           <% @favorites.each do |fav| %>
             <p><%= link_to "#{fav.hike.name}", "/users/#{@user.id}/hikes/#{fav.hike.id}" %></p>
           <% end %>
@@ -27,12 +27,12 @@
 
       <div class="col">
         <div id="completed-hikes">
-          <h2>Completed Hikes</h2>
+          <h2>Completed Peaks</h2>
 
           <% @completes.each do |complete| %>
-            <%= complete.hike.name %>
+            <%= link_to "#{complete.hike.name}", "/users/#{@user.id}/hikes/#{complete.hike.id}" %>
             <br>
-            <%= link_to "View Hike Details", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
+            <%= link_to "View Trip Report", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
             <br>
           <% end %>
 
@@ -70,8 +70,11 @@
 <% end %>
 </div>
 
-<% if current_user == @user %>
-  <%= link_to "Edit My User Information", "/users/#{@user.id}/edit"%>
+ <h2>Trips I've Been Added To</h2>
+<% @user.participants.each do |participant|%>
+  
+  <p> Hike: <%= link_to "#{participant.complete.hike.name}", "/users/#{participant.complete.user_id}/hikes/#{participant.complete.hike_id}/complete" %></p>
+  <p> Leader: <%= link_to "#{participant.complete.user.first_name}", "/users/#{participant.complete.user_id}" %></p>
 
 <% end %>
 </body>

@@ -39,14 +39,14 @@ RSpec.describe 'hike index page' do
     expect(page).to have_link(@hike.name)
 
     expect(page).to have_content(@hike.location)
-    expect(page).to have_content(@hike.state)
+    expect(page).to have_content(@hike.features)
     expect(page).to have_content(@hike.range)
 
 
     expect(page).to have_link(@hike2.name)
 
     expect(page).to have_content(@hike2.location)
-    expect(page).to have_content(@hike2.state)
+    expect(page).to have_content(@hike2.features)
     expect(page).to have_content(@hike2.range)
 
   end
