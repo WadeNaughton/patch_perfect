@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @favorites = @user.favorites
     @completes = @user.completes
     @gear = @user.user_gears.all
+    
   end
 
   def new

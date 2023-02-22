@@ -126,6 +126,11 @@ body {
 }
 }
 
+.pagination a:hover {
+    background-color: #064635;
+    color: #ECE5C7;
+}
+
 
 a:link {
   color: #519259;
@@ -135,4 +140,24 @@ a:visited {
   color: #519259;
   background-color: transparent;
   text-decoration: none;
+}
+
+.btn {
+  color: #F0BB62;
+  background-color: #064635;
+  border: none;
+}
+
+.btn:hover {
+  color: #F0BB62;
+  background-color: #064635;
+  border: none;
+}
+
+.dropdown-menu {
+  background-color: #064635;
+}
+
+.dropdown {
+  color: #F0BB62;
 }

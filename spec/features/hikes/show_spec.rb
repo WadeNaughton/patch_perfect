@@ -26,10 +26,13 @@ RSpec.describe 'hike index page' do
     expect(page).to have_content(@hike.elevation)
     expect(page).to have_content(@hike.prominence)
     expect(page).to have_content(@hike.features)
+    
+    expect(page).to have_button("Unfavorite")
+    click_button("Unfavorite")
+    visit "/users/#{@user.id}/hikes/#{@hike.id}"
 
     expect(page).to have_button("Favorite")
     expect(page).to have_button("Completed")
-
   end
 
   it "creates a completed hike" do

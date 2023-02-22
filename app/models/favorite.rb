@@ -4,4 +4,8 @@ class Favorite < ApplicationRecord
 
   validates_presence_of :hike_id
   validates_presence_of :user_id
+
+
+
 end
+

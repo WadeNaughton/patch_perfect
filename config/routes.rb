@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   post '/users/:user_id/hikes/:id', to: 'favorites#create'
+  delete '/users/:user_id/hikes/:id', to: 'favorites#destroy'
 
   get '/users/:id/gear/new', to:  'user_gears#new'
   post '/users/:id/gear', to: 'user_gears#create'

@@ -14,8 +14,11 @@
                     
         <div class="row">
             <div class="col-sm-1">
-
-                <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
+                <%if @favorite.present? == true %>
+                    <%= button_to "Unfavorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :delete %>
+                <%elsif @favorite.present? == false %>
+                    <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
+                <%end%>
             </div>
             <div class="col">
                 <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %>

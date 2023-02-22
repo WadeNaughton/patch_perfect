@@ -5,17 +5,46 @@
     <p id='nav-blurb'> Discover The White Mountains</p>
     
       <div class="nav justify-content-end ">
-        <%= link_to "Home", "/", :class => "btn" %>
 
         <% if logged_in? %>
-          <%= link_to "Profile", "/users/#{@current_user.id}", :class => "nav-link" %>
-          <%= link_to "Discover Hikes", "/users/#{@current_user.id}/discover", :class => "nav-link" %>
 
-          <%= link_to "Logout", logout_path, method: :delete, :class => "nav-link" %>
+        <%= form_tag(search_path, :method=> "get") do %>
+            <%= search_field_tag :search, params[:search], placeholder: "Search Name/Feature" %>
+            <%= button_tag "Find Peak" %>
+          <% end %>
+          
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Home", "/", :class => "nav-link" %>
 
+              <%= link_to "Profile", "/users/#{@current_user.id}", :class => "nav-link" %>
+
+              <%= link_to "Edit", "/users/#{@current_user.id}/edit", :class => "nav-link"%>
+
+              <%= link_to "Discover Peaks", "/users/#{@current_user.id}/discover", :class => "nav-link" %>
+
+              <%= link_to "Logout", logout_path, method: :delete, :class => "nav-link" %>
+
+            </div>
+          </div>
+          
         <% else %>
-          <%= link_to "Create User", "/register", method: :get, :class => "nav-link" %>
-          <%= link_to "Login", "/login", :class => "nav-link" %>
+
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Home", "/", :class => "btn" %>
+
+              <%= link_to "Create User", "/register", method: :get, :class => "nav-link" %>
+              <%= link_to "Login", "/login", :class => "nav-link" %>
+
+            </div>
+          </div>
         <% end %>
       </div>
   </div>
