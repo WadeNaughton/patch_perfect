@@ -45,7 +45,7 @@
     <% @gear_used.each do |gear|%>
     <div class="col-sm-3">
         <p>Name: <%= gear.user_gear.name %></p>
-        <p>Weight: <%= gear.user_gear.weight %> lbs</p>
+        <p>Weight: <%= gear.user_gear.pounds %> lbs <%= gear.user_gear.ounces %> oz
 
         <% if current_user == @user %>
           <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>

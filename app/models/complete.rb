@@ -11,12 +11,12 @@ class Complete < ApplicationRecord
   validates_presence_of :user_id
 
   def total_weight
-    complete_gears.joins(:user_gear).sum(:weight)
+    pounds = complete_gears.joins(:user_gear).sum(:pounds)
+    ounces = complete_gears.joins(:user_gear).sum(:ounces)
+    converted_ounces = ounces * 0.0625
+    total = pounds + converted_ounces
+    total
+    
   end
-
-  #sum pounds
-  #sum ounces
-  #multiply ounces by .0625
-  #add pounds and multiplied ounces to total
 
 end

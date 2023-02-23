@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_20_162537) do
+ActiveRecord::Schema.define(version: 2023_02_23_171457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,8 +95,9 @@ ActiveRecord::Schema.define(version: 2022_09_20_162537) do
 
   create_table "user_gears", force: :cascade do |t|
     t.bigint "user_id"
-    t.float "weight"
+    t.float "pounds"
     t.string "name"
+    t.integer "ounces"
     t.index ["user_id"], name: "index_user_gears_on_user_id"
   end
 
