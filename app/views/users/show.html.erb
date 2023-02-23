@@ -51,7 +51,14 @@
           <div id="card-body">
            <h6 class="card-title"><p><%= g.name %></p></h6>
             
-            <p>Weight: <%= g.weight %> lbs</p>
+
+            <% if g.pounds.blank?%>
+              <p>Weight: <%= g.ounces %> oz</p>
+            <% elsif g.ounces.blank?%>
+              <p>Weight: <%= g.pounds %> lbs</p>
+            <%else%>
+              <p>Weight: <%= g.pounds %> lbs <%= g.ounces %> oz</p>
+            <%end%>
 
             <% if current_user == @user %>
 

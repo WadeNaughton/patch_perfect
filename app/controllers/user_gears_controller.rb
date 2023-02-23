@@ -22,7 +22,7 @@ end
 
 private
 def user_gear_params
-   params.permit(:name, :weight, :user_id)
+   params.permit(:name, :pounds, :ounces, :user_id)
 end
 
 end
