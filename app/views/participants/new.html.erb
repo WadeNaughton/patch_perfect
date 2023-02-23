@@ -4,7 +4,7 @@
 <h1> <%= "Select Gear Used" %> </h1>
 
  <%= form_with url: "/users/#{@user.id}/hikes/#{@complete.hike.id}/participants", method: :post, local:true do |form| %>
-   <%= form.select :participant_id, @users.map { |u| [u.first_name, u.id]}  %>
+   <%= form.select :participant_id, @participants.map { |u| [u.first_name, u.id]}  %>
    <%= form.submit "Add Participant"  %>
  <% end %>
 

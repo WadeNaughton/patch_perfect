@@ -73,8 +73,6 @@
 
           <a href="<%= url_for(user_path(@user)) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
           <%= @user.first_name%>
-      <% else %>
-          <%= @user.first_name%>
       
     <%end%>
     </div>
