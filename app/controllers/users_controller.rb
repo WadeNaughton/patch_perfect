@@ -16,9 +16,14 @@ class UsersController < ApplicationController
   def create
    @user = User.new(user_params)
    
-   if @user.save
+   if @user.save && @user.avatar.attached?
      log_in @user
      redirect_to user_path(@user.id)
+   elsif @user.save && !@user.avatar.attached?
+     log_in @user
+      @user.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'test.jpg')), filename: 'test.png', content_type: 'image/png')
+      redirect_to user_path(@user.id)
+
    else
      render :new
    end
