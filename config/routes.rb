@@ -40,6 +40,11 @@ Rails.application.routes.draw do
   post '/users/:user_id/hikes/:id/comment', to: 'comment#create'
   delete '/users/:user_id/hikes/:hike_id/comment/:id', to: 'comment#destroy'
 
+  get '/users/:user_id/hikes/:id/hike_comment', to: 'hike_comments#show'
+  get '/users/:user_id/hikes/:id/hike_comment/new', to: 'hike_comments#new'
+  post '/users/:user_id/hikes/:id/hike_comment', to: 'hike_comments#create'
+  delete '/users/:user_id/hikes/:hike_id/hike_comment/:id', to: 'hike_comments#destroy'
+
 
   get '/users/:user_id/hikes/:id/gear', to: 'complete_gears#index'
   get '/users/:user_id/hikes/:id/gear/new', to: 'complete_gears#new'

@@ -77,13 +77,19 @@
 <% end %>
 </div>
 
- <h2>Trips I've Been Added To</h2>
-<% @user.participants.each do |participant|%>
-  
-  <p> Hike: <%= link_to "#{participant.complete.hike.name}", "/users/#{participant.complete.user_id}/hikes/#{participant.complete.hike_id}/complete" %></p>
-  <p> Leader: <%= link_to "#{participant.complete.user.first_name}", "/users/#{participant.complete.user_id}" %></p>
+ <div class="title-center">
+    <h2>Trips I've Been Added To</h2>
+ </div>
 
-<% end %>
+
+
+    <% @user.participants.each do |participant|%>
+      
+      <p> Hike: <%= link_to "#{participant.complete.hike.name}", "/users/#{participant.complete.user_id}/hikes/#{participant.complete.hike_id}/complete" %></p>
+      <p> Leader: <%= link_to "#{participant.complete.user.first_name}", "/users/#{participant.complete.user_id}" %></p>
+
+    <% end %>
+
 </body>
 
 

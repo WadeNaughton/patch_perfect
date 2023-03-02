@@ -8,27 +8,33 @@
                     <p><b>Elevation: </b><%= @hike.elevation %> feet | <b>Prominence: </b><%= @hike.prominence %> feet</p>
                     <p><b>Features: </b><%= @hike.features %></p>
                     <p><b>Latitude: </b><%= @hike.latitude %> | <b>Longitude: </b><%= @hike.longitude %></p>
-                    <p><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=9&size=400x300&center=#{@hike.latitude},#{@hike.longitude}&markers=color:blue%7Clabel|#{@hike.latitude},#{@hike.longitude}&key=#{ENV['google_key']}", alt: "Map" %></p>
                     <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@hike.latitude},#{@hike.longitude}" %> </p>
 
                     
         <div class="row">
             <div class="col-sm-1">
                 <%if @favorite.present? == true %>
-                    <%= button_to "Unfavorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :delete %>
+                    <p><%= button_to "Unfavorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :delete %></p>
                 <%elsif @favorite.present? == false %>
-                    <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %>
+                   <p> <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %></p>
                 <%end%>
-            </div>
-            <div class="col">
-                <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %>
+            
+               <p> <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %></p>
 
+            
+
+            
+              <p>  <%= button_to "add comment", "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment/new", method: :get %> </p>
+              <p>  <%= button_to "view comments", "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment", method: :get %></p>
             </div>
+
+            
         </div>   
 
         <div class="title-center">
 
-        <h3> Current Weather Conditions </h3>
+         <h3> Current Weather Conditions </h3>
+
         </div>
         <div class="row">
 
