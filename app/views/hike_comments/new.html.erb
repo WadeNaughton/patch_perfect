@@ -1,0 +1,14 @@
+<body>
+
+
+<br>
+    <%= form_with url: "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment", method: :post, local:true do |form| %>
+
+      <h6><p><%= form.label "Add Entry:" %></p></h6>
+     <h6><p> <%= form.text_area :body, rows: 2, wrap: "hard" %></p>
+     <h6> <p><%= form.label "Add Picture:" %></p></h6>
+     <p> <%= form.file_field :image %></p>
+
+      <p><%= form.submit "Submit" %></p>
+    <% end %>
+</body>

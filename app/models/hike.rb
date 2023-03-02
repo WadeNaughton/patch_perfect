@@ -4,6 +4,7 @@ class Hike < ApplicationRecord
   paginates_per 10
   has_many :favorites
   has_many :completes
+  has_many :hike_comments
 
   validates_presence_of :name
   validates_presence_of :elevation

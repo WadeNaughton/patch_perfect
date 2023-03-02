@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_23_171457) do
+ActiveRecord::Schema.define(version: 2023_02_23_214929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 2023_02_23_171457) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "hike_comments", force: :cascade do |t|
+    t.bigint "hike_id"
+    t.text "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["hike_id"], name: "index_hike_comments_on_hike_id"
+  end
+
   create_table "hikes", force: :cascade do |t|
     t.string "name"
     t.integer "elevation"
@@ -119,6 +127,7 @@ ActiveRecord::Schema.define(version: 2023_02_23_171457) do
   add_foreign_key "completes", "users"
   add_foreign_key "favorites", "hikes"
   add_foreign_key "favorites", "users"
+  add_foreign_key "hike_comments", "hikes"
   add_foreign_key "participants", "completes"
   add_foreign_key "participants", "users"
   add_foreign_key "photos", "completes"
