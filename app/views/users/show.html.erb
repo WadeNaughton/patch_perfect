@@ -86,7 +86,7 @@
 
       <% @user.participants.each do |participant|%>
         
-        <p> Hike: <%= link_to "#{participant.complete.hike.name}", "/users/#{participant.complete.user_id}/hikes/#{participant.complete.hike_id}/complete" %></p>
+        <p> Trip: <%= link_to "#{participant.complete.hike.name}", "/users/#{participant.complete.user_id}/hikes/#{participant.complete.hike_id}/complete" %></p>
 
       <% end %>
 </div>

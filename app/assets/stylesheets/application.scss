@@ -18,6 +18,35 @@
   margin-bottom: 10px;
 }
 
+
+body {
+  display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+  flex: 1;    
+}
+
+.footer-link {
+  font-size: 100%;
+  text-align: center;
+  
+}
+
+.footer-text {
+  background-color: #064635;
+  color: #F0BB62;
+  font-size: 100%;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+
+  
+}
+
+
 #nav-blurb {
   position: relative;
   float: right;
