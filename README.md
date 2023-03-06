@@ -15,9 +15,10 @@
 - favorite a hike
 - mark a hike as completed
 - add journal entries and photos to a completed hike
+- add comments and pictures to hikes for other users to see
 - add gear used for the completed hike
 - calculate your total weight for a trip
-- add others users to your trip
+- add other users to your trip
 - directions to each hike
 - find national forest campgrounds within 20 miles of the hike
 - get directions to each campground
@@ -30,4 +31,4 @@
 
 - allow users that have been added to a trip to upload photos and journal entries
 - add section for any costs and assign that to a user
-- show pictures from a completed hike on the hike show page
+
