@@ -33,9 +33,9 @@
     <% end %>
   </div>
 
-    <% if current_user == @user %>
+    
       <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
-    <%end%>
+    
 
     <div class="title-center">
       <h2><%=  "Gear Used"%></h2>
@@ -118,4 +118,45 @@
         <p><%= @total_weight %> lbs</p>
 
   </div>
+ 
+
+  <div class="title-center">
+    <h2><%=  "Costs"%></h2>
+  </div>
+
+  <div class="row">
+    <% @costs.each do |c|%>
+    <div class="col-sm-3">
+
+    <p> User: <%= c.complete.user.first_name%></p>
+      <p>Cost: <%= c.price %></p>
+      
+      <p>Item: <%= c.item %></p>
+     
+   </div>
+    <%end%>
+  </div>  
+
+  <div class = "row">
+    <% @participants.each do |p|%>
+     <% p.guest_costs.each do |gg|%>
+      <div class="col-sm-3">
+      <p> User: <%= gg.participant.user.first_name%> </p>
+      <p> Price: $<%= gg.price.round(2)%> </p>
+      <p> Item: <%= gg.item%> </p>
+    </div>
+      <%end%>
+    <%end%>
+  </div>
+     <p><b> Total Cost: $</b><%= @total_cost%> </p>
+     <p><b> Cost Per Person: $</b><%= @split_cost.round(2)%> </p>
+  <% if current_user == @user%>
+  <%= link_to "Add A Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/cost/new"%>
+  <%else%>
+  <%= link_to "Add Guest Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/guest_cost/new"%>
+  <%end%>
+  
 </body>
+
+
+
