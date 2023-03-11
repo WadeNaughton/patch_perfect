@@ -117,46 +117,130 @@
     </div>
         <p><%= @total_weight %> lbs</p>
 
-  </div>
- 
+
 
   <div class="title-center">
-    <h2><%=  "Costs"%></h2>
+    <h2><%=  "Shared Costs"%></h2>
   </div>
 
-  <div class="row">
-    <% @costs.each do |c|%>
-    <div class="col-sm-3">
 
-    <p> User: <%= c.complete.user.first_name%></p>
-      <p>Cost: <%= c.price %></p>
-      
-      <p>Item: <%= c.item %></p>
-     
-   </div>
-    <%end%>
-  </div>  
+<p><%= @user.first_name%></p>
 
-  <div class = "row">
-    <% @participants.each do |p|%>
-     <% p.guest_costs.each do |gg|%>
-      <div class="col-sm-3">
-      <p> User: <%= gg.participant.user.first_name%> </p>
-      <p> Price: $<%= gg.price.round(2)%> </p>
-      <p> Item: <%= gg.item%> </p>
+<p>Total Costs: <%= @host_cost%></p>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  View Costs
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class= "row">
+    <div class="col">
+    <div id="guest-item">
+        <h2>Item</h2>
+        <% @complete.costs.each do |gg|%>
+            <p><%= gg.item %> </p>
+        
+        <% end %>
+        </div>
     </div>
-      <%end%>
-    <%end%>
+
+    <div class="col">
+        <div id="guest-cost">
+            <h2>Cost</h2>
+            <% @complete.costs.each do |gg|%>
+                <p>$<%= gg.price%></p>
+            <% end %>
+        </div>
+    </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
+</div>
+
+
+
+
+
+
+
+
+ <% @participants.each do |p|%>
+  <p><%= "#{p.user.first_name}" %></p>
+  <p> Total Costs: <%= p.guest_costs.sum(:price)%></p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-<%=p.id%>">
+  View Costs
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong-<%=p.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><%=p.user.first_name%> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class= "row">
+    <div class="col">
+    <div id="guest-item">
+        <h2>Item</h2>
+        <% p.guest_costs.each do |gg|%>
+            <p><%= gg.item %> </p>
+        
+        <% end %>
+        </div>
+    </div>
+
+    <div class="col">
+        <div id="guest-cost">
+            <h2>Cost</h2>
+            <% p.guest_costs.each do |gg|%>
+                <p>$<%= gg.price%></p>
+            <% end %>
+        </div>
+    </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
+
+    <% if current_user == @user%>
+    <p><%= link_to "Add A Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/cost/new"%></p>
+  <%else%>
+    <p><%= link_to "Add Guest Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/guest_cost/new"%></p>
+  <%end%>
+
      <p><b> Total Cost: $</b><%= @total_cost%> </p>
      <p><b> Cost Per Person: $</b><%= @split_cost.round(2)%> </p>
-  <% if current_user == @user%>
-  <%= link_to "Add A Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/cost/new"%>
-  <%else%>
-  <%= link_to "Add Guest Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/guest_cost/new"%>
-  <%end%>
-  
+  </div>
+ 
 </body>
+
+
+
 
 
 

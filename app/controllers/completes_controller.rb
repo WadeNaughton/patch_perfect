@@ -7,11 +7,12 @@ class CompletesController < ApplicationController
     @comments = @complete.comments
     @gear_used = @complete.complete_gears.all
     @total_weight = @complete.total_weight
-    @participants = @complete.participants.all
+    @participants = @complete.participants
     @participant = Participant.find_by(user_id: current_user.id, complete_id: @complete.id)
-    @costs = @complete.costs.all
+    @host_cost = @complete.costs.sum(:price)
     @total_cost = @complete.total_cost + @complete.total_guest_cost
     @split_cost = @total_cost / (@participants.count + 1)
+
   end
 
   def create

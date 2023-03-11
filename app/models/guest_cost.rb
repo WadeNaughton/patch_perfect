@@ -7,4 +7,9 @@ class GuestCost < ApplicationRecord
     validates :participant_id, presence: true
 
 
+          # @guest_costs = GuestCost.where(participant_id: @participant.id, complete_id: @complete.id)
+
+   
+
+
 end

@@ -57,9 +57,11 @@ Rails.application.routes.draw do
 
 
   get '/users/:user_id/hikes/:id/cost/new', to: 'costs#new'
+  get '/users/:user_id/hikes/:id/cost', to: 'costs#show'
   post '/users/:user_id/hikes/:id/cost', to: 'costs#create'
 
   get '/users/:user_id/hikes/:id/participant/:participant_id/guest_cost/new', to: 'guest_costs#new'
+  get '/users/:user_id/hikes/:id/participant/:participant_id/guest_costs', to: 'guest_costs#show'
   post '/users/:user_id/hikes/:id/participant/:participant_id/guest_cost', to: 'guest_costs#create'
 
 
