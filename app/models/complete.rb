@@ -6,6 +6,7 @@ class Complete < ApplicationRecord
   has_many :photos
   has_many :complete_gears
   has_many :participants
+  has_many :costs
 
   validates_presence_of :hike_id
   validates_presence_of :user_id
@@ -18,5 +19,15 @@ class Complete < ApplicationRecord
     total
     
   end
+
+  def total_cost
+    costs.sum(:price)
+  end
+
+
+  def total_guest_cost
+    participants.joins(:guest_costs).sum(:price)
+  end
+  
 
 end

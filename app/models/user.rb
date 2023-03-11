@@ -3,9 +3,13 @@ class User < ApplicationRecord
   has_many :completes
   has_many :user_gears
   has_many :participants
+  # has_many :comments
+  has_many :costs
 
   has_many :hikes, through: :favorites
   has_many :hikes, through: :completes
+  # has_many :comments, through: :completes
+  # has_many :costs, through: :completes
 
   validates_presence_of :password_digest, presence: true
   validates_presence_of :first_name, presence: true

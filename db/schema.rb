@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_23_214929) do
+ActiveRecord::Schema.define(version: 2023_03_09_181526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,11 +60,27 @@ ActiveRecord::Schema.define(version: 2023_02_23_214929) do
     t.index ["user_id"], name: "index_completes_on_user_id"
   end
 
+  create_table "costs", force: :cascade do |t|
+    t.bigint "complete_id"
+    t.float "price"
+    t.string "item"
+    t.bigint "user_id"
+    t.index ["complete_id"], name: "index_costs_on_complete_id"
+    t.index ["user_id"], name: "index_costs_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "hike_id"
     t.index ["hike_id"], name: "index_favorites_on_hike_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "guest_costs", force: :cascade do |t|
+    t.bigint "participant_id"
+    t.float "price"
+    t.string "item"
+    t.index ["participant_id"], name: "index_guest_costs_on_participant_id"
   end
 
   create_table "hike_comments", force: :cascade do |t|
@@ -125,8 +141,11 @@ ActiveRecord::Schema.define(version: 2023_02_23_214929) do
   add_foreign_key "complete_gears", "user_gears"
   add_foreign_key "completes", "hikes"
   add_foreign_key "completes", "users"
+  add_foreign_key "costs", "completes"
+  add_foreign_key "costs", "users"
   add_foreign_key "favorites", "hikes"
   add_foreign_key "favorites", "users"
+  add_foreign_key "guest_costs", "participants"
   add_foreign_key "hike_comments", "hikes"
   add_foreign_key "participants", "completes"
   add_foreign_key "participants", "users"
