@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get '/users/:id/edit', to: 'users#edit'
   patch '/users/:id', to: 'users#update'
+  
 
 
   resources :password_resets
