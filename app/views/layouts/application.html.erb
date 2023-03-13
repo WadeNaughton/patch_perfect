@@ -13,14 +13,10 @@
   <body>
   <div class="container">
 
-
-
-        <% flash.each do |type, msg| %>
-        <div>
-        <%= msg %>
-        </div>
-        <% end %>
+    <%= render "layouts/flash" %>
+   
         <%= yield %>
+        
   </div>
 
   </body>

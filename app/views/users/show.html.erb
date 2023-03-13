@@ -1,95 +1,116 @@
+<div class = "container text-center">
+    <div id="user-trips">
+        <div class="row">
+            <div class="col">
+                
 
+                    <h2>
+                        <p><%= @user.first_name %>'s Trips</p>
+                    </h2>
 
-<body>
+                    <div class="row">
+                        <div class="col ">
+                        <h2>Favorited Peaks</h2>
+                            <div id="favorite-hikes">
 
-<div class="container">
-  
-    <div class="title-center">
+                            
 
-      <h2>
-        <p><%= @user.first_name %>'s Trips</p>
-      </h2>
+                            <% if @favorites.blank?%>
+                                <%= link_to "Add A Favorite", "/users/#{@user.id}/discover"%>
+                            <% else %>
 
-    </div>
-  
+                                
+                                <% @favorites.each do |fav| %>
+                                    <p><%= link_to "#{fav.hike.name}", "/users/#{@user.id}/hikes/#{fav.hike.id}" %></p>
+                                <% end %>
+                            <% end %>
 
-    <div class="row">
-      <div class="col ">
-        <div id="favorite-hikes">
+                            </div>
+                        </div>
 
-          <h2>Favorited Peaks</h2>
-          <% @favorites.each do |fav| %>
-            <p><%= link_to "#{fav.hike.name}", "/users/#{@user.id}/hikes/#{fav.hike.id}" %></p>
-          <% end %>
+                        <div class="col">
+                        <h2>Completed Peaks</h2>
+                            <div id="completed-hikes">
+                                
 
+                                <% @completes.each do |complete| %>
+                                    <b>Peak:</b>  <%= link_to "#{complete.hike.name}", "/users/#{@user.id}/hikes/#{complete.hike.id}" %>
+                                    <br>
+                                    <%= link_to "View Trip Report", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
+                                    <br>
+                                <% end %>
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </div>
-      </div>
-
-      <div class="col">
-        <div id="completed-hikes">
-          <h2>Completed Peaks</h2>
-
-          <% @completes.each do |complete| %>
-             Peak:  <%= link_to "#{complete.hike.name}", "/users/#{@user.id}/hikes/#{complete.hike.id}" %>
-             <br>
-            <%= link_to "View Trip Report", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
-            <br>
-          <% end %>
-
-        </div>
-      </div>
     </div>
+</div>
+   
 
-    <div class="title-center">
-      <h2> <%= @user.first_name %>'s Shed </h2>
-    </div>
+<div class="container text-center">
+    
+        <div class="row">
+            <div class= "col">
+                <div id="user-gear">
+                <h2> <%= @user.first_name %>'s Shed </h2>
+                    <div class ="row justify-content-between">
+                        <% @gear.each do |g| %>
 
-  <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div id="gear-display">
+                                    <div class="card-title">
+                                        <p><b><%= g.name %></b></p>
+                                        <% if g.pounds.blank?%>
+                                            <b><p>Weight: </b><%= g.ounces %> oz</p>
+                                        <% elsif g.ounces.blank?%>
+                                            <b><p>Weight: </b><%= g.pounds %> lbs</p>
+                                        <%else%>
+                                           <b><p>Weight: </b><%= g.pounds %> lbs <%= g.ounces %> oz</p>
+                                        <%end%>
 
-    <% @gear.each do |g| %>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-       <div class="card">
-          <div id="card-body">
-           <h6 class="card-title"><p><%= g.name %></p></h6>
+                                        <% if current_user == @user %>
+
+                                            <p><%= link_to "Remove", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
+
+                                        <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                    <% end %>
+                    </div>
+                
+                <% if current_user == @user %>
+                    <%= link_to "Add Gear to The Shed", "/users/#{@user.id}/gear/new" %>
+                <% end %>
+                </div>
+            </div>
+
+            <div class= "col">
+                <div id="user-gear">
+
+                 <h2>Trips I've Been Added To</h2>
+            
             
 
-            <% if g.pounds.blank?%>
-              <p>Weight: <%= g.ounces %> oz</p>
-            <% elsif g.ounces.blank?%>
-              <p>Weight: <%= g.pounds %> lbs</p>
-            <%else%>
-              <p>Weight: <%= g.pounds %> lbs <%= g.ounces %> oz</p>
-            <%end%>
-
-            <% if current_user == @user %>
-
-              <p><%= link_to "Delete Item", "/users/#{@user.id}/gear/#{g.id}", method: :delete %></p>
-
-            <% end %>
+                
+                    <div class ="row">
+                    <% @user.participants.each do |participant|%>
+                    
+                    <div class= "col-sm-12 col-md-6 col-lg-6">
+                      <div id="gear-display">
+                        <p> Trip: <%= link_to "#{participant.complete.hike.name}", "/users/#{participant.complete.user_id}/hikes/#{participant.complete.hike_id}/complete" %></p>
+                        </div>
+                    </div>
+                    
+                    <% end %>
+                </div>
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
-    <% end %>
-  </div>
-  
-
-  <% if current_user == @user %>
-    <%= link_to "Add Gear to The Shed", "/users/#{@user.id}/gear/new" %>
-  <% end %>
-
-
-  <div class="title-center">
-      <h2>Trips I've Been Added To</h2>
-  </div>
-
-
-
-      <% @user.participants.each do |participant|%>
-        
-        <p> Trip: <%= link_to "#{participant.complete.hike.name}", "/users/#{participant.complete.user_id}/hikes/#{participant.complete.hike_id}/complete" %></p>
-
-      <% end %>
+    </div>
 </div>
-</body>
+
 
 

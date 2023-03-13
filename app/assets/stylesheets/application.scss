@@ -60,11 +60,13 @@ body {
 
 
 #favorite-hikes {
-  text-align:center;
-}
+  text-align: left;
+  padding-left: 210px;
+ }
 
 #completed-hikes {
-  text-align:center;
+  text-align: left;
+  padding-left: 190px;
  }
 
  #user-complete-header {
@@ -85,8 +87,11 @@ body {
   display: inline-block;
   height: auto;
   padding: 5px;
-  
+  background-color: #F0BB62;
+  border: 3px solid #064635;
+  border-radius: 10px;
  }
+
 
  .carousel .carousel-item {
   height: 500px;
@@ -202,4 +207,41 @@ a:visited {
   text-align:center;
   float: left;
  }
+
+ #user-trips {
+  border: 12px solid #064635;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #F0BB62;
+
+  }
+  #user-gear {
+    border: 12px solid #064635;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #F0BB62;
+  
+    }
+
+    #gear-display {
+      text-align:center;
+      font-size:15px;
+      position: relative;
+      display: inline-block;
+      height: auto;
+      padding: 5px;
+      background-color: #F0BB62;
+      border: 3px solid #064635;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding-top: 15px;
+      width: 100%;
+
+      
+     }
+    
 
