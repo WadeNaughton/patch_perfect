@@ -10,6 +10,7 @@ class Complete < ApplicationRecord
 
   validates_presence_of :hike_id
   validates_presence_of :user_id
+  validates_presence_of :title, :allow_blank => true
 
   def total_weight
     pounds = complete_gears.joins(:user_gear).sum(:pounds)

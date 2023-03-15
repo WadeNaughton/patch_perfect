@@ -3,7 +3,12 @@
     <div class="row">
 
         <div class ="col">
-            Create your own TITLE
+
+        <%if @complete.title.blank?%>
+            <%= link_to "Add a Title", "/users/#{@user.id}/hikes/#{@hike.id}/complete/edit", method: :get%>
+        <%else%>
+            <h1> <%= @complete.title%> </h1>
+        <%end%>
         </div>
     </div>
 </div>      
@@ -250,9 +255,13 @@
                             <div class="row">
                                 <div class="col">
                                     <% if current_user == @user%>
-                                            <p><%= link_to "Add A Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/cost/new"%></p>
+                                            <p><%= link_to "Add Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/cost/new"%></p>
                                         <%else%>
-                                            <p><%= link_to "Add Guest Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/guest_cost/new"%></p>
+                                                <% @participants.each do |p|%>
+                                                    <% if current_user == p.user%>
+                                                        <p><%= link_to "Add Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{p.id}/guest_cost/new"%>
+                                                    <%end%>
+                                                <%end%>
                                         <%end%>
                                     
                                             <p><b> Total Cost: $</b><%= @total_cost%> </p>

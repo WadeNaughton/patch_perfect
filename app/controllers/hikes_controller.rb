@@ -21,6 +21,23 @@ class HikesController < ApplicationController
 
   end
 
+
+  def test 
+
+
+    @hike = Hike.find(params[:id])
+    @user = User.find_by(id: session[:user_id])
+    @favorite = Favorite.find_by(user_id: @user.id, hike_id: @hike.id)
+    forecast = ForecastFacade.get_forecast(@hike.latitude, @hike.longitude)
+    @current = forecast[:current]
+    @hourly =forecast[:hourly]
+    @daily = forecast[:daily]
+    camps = RecreationFacade.get_campgrounds(@hike.latitude, @hike.longitude)
+    @campgrounds = camps[:RECDATA]
+    @count = camps[:METADATA][:RESULTS][:CURRENT_COUNT]   
+
+  end
+
   def search
     search = params[:search]
     @user = User.find_by(id: session[:user_id])
