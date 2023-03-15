@@ -1,0 +1,11 @@
+<body>
+
+<p>
+    <%= form_with url: "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :patch, local:true do |form| %>
+   
+      <%= form.label :title%>
+      <p><%= form.text_field :title%></p>
+
+      <%= form.submit "Submit" %>
+    <% end %>
+</body>

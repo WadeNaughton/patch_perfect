@@ -26,4 +26,30 @@ class CompletesController < ApplicationController
     end
   end
 
+  def edit
+    @hike = Hike.find(params[:id])
+    @user = User.find_by(id: params[:user_id])
+    @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
+    
+  end
+
+  def update
+    @hike = Hike.find(params[:id])
+    @user = User.find_by(id: params[:user_id])
+    @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
+    if @complete.update(complete_params)
+      redirect_to "/users/#{@user.id}/hikes/#{@hike.id}/complete"
+    else
+      render :edit
+    end
+  end
+
+
+
+  private
+
+  def complete_params
+    params.permit(:hike_id, :user_id, :title)
+  end
+
 end

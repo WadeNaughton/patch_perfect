@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/users/:id/discover', to: 'hikes#index'
   get '/users/:user_id/hikes/:id', to: 'hikes#show'
   get '/search', to: 'hikes#search'
+  get '/users/:user_id/hikes/:id/test', to: 'hikes#test'
 
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
@@ -32,8 +33,9 @@ Rails.application.routes.draw do
 
 
   post '/users/:user_id/hikes/:id/complete', to: 'completes#create'
-  get '/users/:user_id/hikes/:id/complete/edit', to: 'completes#edit'
+  
   get '/users/:user_id/hikes/:id/complete', to: 'completes#show'
+  get '/users/:user_id/hikes/:id/complete/edit', to: 'completes#edit'
   patch '/users/:user_id/hikes/:id/complete', to: 'completes#update'
 
   get '/users/:user_id/hikes/:id/comments', to: 'comment#show'
