@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container text-center">
 
     <div class="row">
 
@@ -14,8 +14,9 @@
     <div class="row">
         <div class ="col-lg-8">
            <div id="user-comments">
-            
-                Journal Entries
+              <div class="title">
+               <h3> Journal Entries</h3>
+              </div>
                 <div class ="row justify-content-between">
                     <% @comments.each do |c| %>
                         <div class="col">
@@ -45,7 +46,9 @@
 
             <div class ="col-lg-4">
                 <div id="user-comments">
-                    <h5> Trip Creator </h5>
+                     <div class="title">
+                      <h5> Trip Creator</h5>
+                     </div>
                         <div class="row"> 
                             <div class="col">
                                 <%if @user.avatar.attached? %>
@@ -57,7 +60,9 @@
                             </div>
                         </div>
 
-                            <h5> Hiking Buddies </h5>
+                            <div class="title">
+                             <h5> Hiking Buddies</h5>
+                            </div>
 
                         <div class="row"> 
 
@@ -98,7 +103,9 @@
 
         <div class ="col-lg-4">
             <div id="user-comments">
-             Gear Used
+             <div class="title">
+               <h3> Gear </h3>
+              </div>
                 <div class ="row justify-content-between">
                     <% @gear_used.each do |gear|%>
                         <div class="col">
@@ -130,7 +137,9 @@
         <div class ="col-lg-4">
             <div id="user-comments">
 
-                Shared Costs
+                <div class="title">
+                <h3> Shared Costs</h3>
+               </div>
                   <div class ="row justify-content-between">
                         <div class="col">
                             <p><%= @user.first_name%></p>
@@ -260,7 +269,9 @@
   
         <div class ="col-lg-4">
             <div id="user-comments">
-                 Weather
+                 <div class="title">
+                  <h3> Weather</h3>
+                </div>
                      <div class ="row justify-content-between">
                         <div class="col">
 
