@@ -1,246 +1,285 @@
- <body>
+<div class="container text-center">
 
-  <div id="user-complete-header">
-    <h1><%=  "Trip Report For Hiking Mount #{@hike.name}"%></h1>
-  </div>
-
-
- <div class="container">
-
-
- <div class="title-center">
-    <h2><%= "Journal Entries" %></h2>
-  </div>
     <div class="row">
 
-    <% @comments.each do |c| %>
-     <div class="col-sm-3">
-      <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
-      <p>Entry: <%= c.body%></p>
-        <% if c.image.attached? %>
-
-          <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, style: "width: 250px; display: block"%> </a>
-
-
-        <% end %>
-
-        <% if current_user == @user %>
-
-          <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete  %> </p>
-        
-        <% end %>
+        <div class ="col">
+            Create your own TITLE
+        </div>
     </div>
-    <% end %>
-  </div>
+</div>      
 
-    
-      <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
-    
 
-    <div class="title-center">
-      <h2><%=  "Gear Used"%></h2>
+<div class="container">
+
+    <div class="row">
+        <div class ="col-lg-8">
+           <div id="user-comments">
+              <div class="title">
+               <h3> Journal Entries</h3>
+              </div>
+                <div class ="row justify-content-between">
+                    <% @comments.each do |c| %>
+                        <div class="col">
+                            <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
+                            <p>Entry: <%= c.body%></p>
+                            <% if c.image.attached? %>
+
+                                <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, style: "width: 75px; display: block"%> </a>
+
+
+                                <% end %>
+
+                                <% if current_user == @user %>
+                                    <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete, class: "btn btn-primary"  %> </p>
+                                  
+                                <% end %>
+                            </div>
+
+                    <% end %>
+                </div>
+                             <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
+
+            </div>
+
+        </div>
+
+
+            <div class ="col-lg-4">
+                <div id="user-comments">
+                     <div class="title">
+                      <h5> Trip Creator</h5>
+                     </div>
+                        <div class="row"> 
+                            <div class="col">
+                                <%if @user.avatar.attached? %>
+
+                                    <a href="<%= url_for(user_path(@user)) %> "> <%= image_tag @user.avatar, style: "width: 50px; display: block"%> </a>
+                                <%= @user.first_name%>
+                        
+                                <%end%>
+                            </div>
+                        </div>
+
+                            <div class="title">
+                             <h5> Hiking Buddies</h5>
+                            </div>
+
+                        <div class="row"> 
+
+                            <% @participants.each do |p|%>   
+                                <div class="col-sm-2">
+                        
+                                    
+                                        <a href="<%= url_for(user_path(p.user)) %> "> <%= image_tag p.user.avatar, style: "width: 50px; display: block"%> </a>
+                                        <p><%= p.user.first_name%></p>
+                                    
+                                        <% if current_user == @user %>
+
+                                             <%= link_to "Remove",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
+                                        <%end%>
+                                    
+                                </div>
+                                
+                            <%end%>
+                            
+                        </div>
+                        <% if current_user == @user %>
+
+                            <%= link_to "Add Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/new "%>
+
+
+                        <%end %>
+
+                </div>
+            </div>             
     </div>
+ </div> 
+
+
+
+<div class="container">
+
     <div class="row">
 
-    <% @gear_used.each do |gear|%>
-    <div class="col-sm-3">
-        <p>Name: <%= gear.user_gear.name %></p>
-        <p>Weight: <%= gear.user_gear.pounds %> lbs <%= gear.user_gear.ounces %> oz
+        <div class ="col-lg-4">
+            <div id="user-comments">
+             <div class="title">
+               <h3> Gear </h3>
+              </div>
+                <div class ="row justify-content-between">
+                    <% @gear_used.each do |gear|%>
+                        <div class="col">
+                          <p>Name: <%= gear.user_gear.name %></p>
+                          <p>Weight: <%= gear.user_gear.pounds %> lbs <%= gear.user_gear.ounces %> oz
 
-        <% if current_user == @user %>
-          <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete %> </p>
-        <%end%>
-    </div>
+                            <% if current_user == @user %>
+                            <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete, class: "btn btn-primary" %> </p>
+                            <%end%>
+                        </div>
 
-    <% end %>
-    </div>
+                    <% end %>
+                </div>
+                 <% if current_user == @user %>
 
-    <% if current_user == @user %>
+                  <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
 
-     <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
+                 <%end%>
+                   <h2>Total Weight</h2>
+                   <p><%= @total_weight %> lbs</p>
 
-    <%end%>
-
-  <div class="title-center">
-    <h2><%=  "Trip Participants"%></h2>
-  </div>
-
-<h5> Trip Creator </h5>
-    <div class="row"> 
-     <div class="col-sm-3">
-
-      <%if @user.avatar.attached? %>
-
-          <a href="<%= url_for(user_path(@user)) %> "> <%= image_tag @user.avatar, style: "width: 100px; display: block"%> </a>
-          <%= @user.first_name%>
-      
-    <%end%>
-    </div>
-   </div>
-
-   <h5> Hiking Buddies </h5>
-
-    <div class="row"> 
-
-    <% @participants.each do |p|%>   
-      <div class="col-sm-2">
- 
-    <% if p.user.avatar.attached?%>
-         <a href="<%= url_for(user_path(p.user)) %> "> <%= image_tag p.user.avatar, style: "width: 100px; display: block"%> </a>
-          <p><%= p.user.first_name%></p>
-        <% if current_user == @user %>
-
-          <%= link_to "Remove Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
-        <%end%>
-    <% else %>
-         <p><%= p.user.first_name%></p>
-          <% if current_user == @user %>
-
-         <%= link_to "Remove Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/#{p.id} ", method: :delete%>
-        <%end%>
-    <% end %>
-    </div>
-
-    <%end%>
-  </div>
-    
-  <% if current_user == @user %>
-
-      <%= link_to "Add Participant",  "/users/#{@user.id}/hikes/#{@hike.id}/participants/new "%>
-
-
-  <%end %>
-
-
-    <div class="title-center">
-          <h2>Total Weight</h2>
-    </div>
-        <p><%= @total_weight %> lbs</p>
+            </div>
+        </div>
 
 
 
-  <div class="title-center">
-    <h2><%=  "Shared Costs"%></h2>
-  </div>
 
 
-<p><%= @user.first_name%></p>
+        <div class ="col-lg-4">
+            <div id="user-comments">
 
-<p>Total Costs: <%= @host_cost%></p>
+                <div class="title">
+                <h3> Shared Costs</h3>
+               </div>
+                  <div class ="row justify-content-between">
+                        <div class="col">
+                            <p><%= @user.first_name%></p>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  View Costs
-</button>
+                            <p>Total Costs: <%= @host_cost%></p>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <div class= "row">
-    <div class="col">
-    <div id="guest-item">
-        <h2>Item</h2>
-        <% @complete.costs.each do |gg|%>
-            <p><%= gg.item %> </p>
-        
-        <% end %>
+                                                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                View Costs
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle"><%= @user.first_name%></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <div class= "row">
+                                    <div class="col">
+                                    <div id="guest-item">
+                                        <h2>Item</h2>
+                                        <% @complete.costs.each do |gg|%>
+                                            <p><%= gg.item %> </p>
+                                        
+                                        <% end %>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div id="guest-cost">
+                                            <h2>Cost</h2>
+                                            <% @complete.costs.each do |gg|%>
+                                                <p>$<%= gg.price%></p>
+                                            <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+
+                   </div>
+
+                   <div class="row">
+                        
+                             <% @participants.each do |p|%>
+                            <div class="col-lg-6">
+                                <p><%= "#{p.user.first_name}" %></p>
+                                <p> Total Costs: <%= p.guest_costs.sum(:price)%></p>
+                                                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-<%=p.id%>">
+                                    View Costs
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalLong-<%=p.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle"><%=p.user.first_name%> </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <div class= "row">
+                                        <div class="col">
+                                        <div id="guest-item">
+                                            <h2>Item</h2>
+                                            <% p.guest_costs.each do |gg|%>
+                                                <p><%= gg.item %> </p>
+                                            
+                                            <% end %>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div id="guest-cost">
+                                                <h2>Cost</h2>
+                                                <% p.guest_costs.each do |gg|%>
+                                                    <p>$<%= gg.price%></p>
+                                                <% end %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                            <%end%>
+
+
+            </div>  
+                            <div class="row">
+                                <div class="col">
+                                    <% if current_user == @user%>
+                                            <p><%= link_to "Add A Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/cost/new"%></p>
+                                        <%else%>
+                                            <p><%= link_to "Add Guest Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/guest_cost/new"%></p>
+                                        <%end%>
+                                    
+                                            <p><b> Total Cost: $</b><%= @total_cost%> </p>
+                                            <p><b> Cost Per Person: $</b><%= @split_cost.round(2)%> </p>
+                                </div>
+                            </div>
+
+                        </div>             
+        </div>
+
+
+
+
+  
+        <div class ="col-lg-4">
+            <div id="user-comments">
+                 <div class="title">
+                  <h3> Weather</h3>
+                </div>
+                     <div class ="row justify-content-between">
+                        <div class="col">
+
+                            WEATHER STUFF
+
+                        </div>
+                    </div>
+            </div>
         </div>
     </div>
-
-    <div class="col">
-        <div id="guest-cost">
-            <h2>Cost</h2>
-            <% @complete.costs.each do |gg|%>
-                <p>$<%= gg.price%></p>
-            <% end %>
-        </div>
-    </div>
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
- <% @participants.each do |p|%>
-  <p><%= "#{p.user.first_name}" %></p>
-  <p> Total Costs: <%= p.guest_costs.sum(:price)%></p>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-<%=p.id%>">
-  View Costs
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong-<%=p.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><%=p.user.first_name%> </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <div class= "row">
-    <div class="col">
-    <div id="guest-item">
-        <h2>Item</h2>
-        <% p.guest_costs.each do |gg|%>
-            <p><%= gg.item %> </p>
-        
-        <% end %>
-        </div>
-    </div>
-
-    <div class="col">
-        <div id="guest-cost">
-            <h2>Cost</h2>
-            <% p.guest_costs.each do |gg|%>
-                <p>$<%= gg.price%></p>
-            <% end %>
-        </div>
-    </div>
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<%end%>
-
-    <% if current_user == @user%>
-    <p><%= link_to "Add A Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/cost/new"%></p>
-  <%else%>
-    <p><%= link_to "Add Guest Cost" , "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/guest_cost/new"%></p>
-  <%end%>
-
-     <p><b> Total Cost: $</b><%= @total_cost%> </p>
-     <p><b> Cost Per Person: $</b><%= @split_cost.round(2)%> </p>
-  </div>
- 
-</body>
-
-
-
-
-
-
+</div> 
