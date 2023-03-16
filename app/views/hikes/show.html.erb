@@ -1,136 +1,164 @@
-<body>
+<div class="container text-center">
+
+    <div class="row">   
+        <div class="col">
+            <h1><%= @hike.name %></h1>
+        </div>       
+    </div>
+</div>
 
 
+<div class="container text-center">
+    <div id="user-comments">
+        <div class="row">
 
-    <div class="container">
-                <h1><%= @hike.name %></h1>
+            <div class="col">
+                
+
                     <p><b>Location: </b><%= @hike.location %> | <b>State: </b><%= @hike.state %> | <b>Range: </b><%= @hike.range %></p>
-                    
-                    
                     <p><b>Elevation: </b><%= @hike.elevation %> feet | <b>Prominence: </b><%= @hike.prominence %> feet</p>
                     <p><b>Features: </b><%= @hike.features %></p>
                     <p><b>Latitude: </b><%= @hike.latitude %> | <b>Longitude: </b><%= @hike.longitude %></p>
                     <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@hike.latitude},#{@hike.longitude}" %> </p>
+                
+            </div>
+        </div>
 
-                    
         <div class="row">
-            <div class="col-sm-1">
-                <%if @favorite.present? == true %>
-                    <p><%= button_to "Unfavorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :delete %></p>
-                <%elsif @favorite.present? == false %>
-                   <p> <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post %></p>
-                <%end%>
-            
-               <p> <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post %></p>
 
-            
+            <div class="col-lg-3">
+                    <%if @favorite.present? == true %>
+                        <%= button_to "Unfavorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :delete, class: "btn btn-primary" %>
+                    <%elsif @favorite.present? == false %>
+                    <%= button_to "Favorite", "/users/#{@user.id}/hikes/#{@hike.id}", method: :post, class: "btn btn-primary" %>
+                    <%end%>
 
-            
-              <p>  <%= button_to "add comment", "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment/new", method: :get %> </p>
-              <p>  <%= button_to "view comments", "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment", method: :get %></p>
             </div>
 
-            
-        </div>   
+            <div class="col-lg-3">
 
-        <div class="title-center">
+                <%= button_to "Completed", "/users/#{@user.id}/hikes/#{@hike.id}/complete", method: :post, class: "btn btn-primary" %>
+            </div>
 
-         <h3> Current Weather Conditions </h3>
+            <div class="col-lg-3">
+
+                <%= button_to "add comment", "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment/new", method: :get, class: "btn btn-primary" %>
+            </div>
+
+            <div class="col-lg-3">
+
+                <%= button_to "view comments", "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment", method: :get, class: "btn btn-primary" %>
+            </div>
+
+
 
         </div>
-        <div class="row">
+    </div>
+</div>
 
-        <div class="col-sm-6 col-md-4 col-lg-2">
-                        <div class="card" style="width:200px">
+<div class="container text-center">
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div id="user-comments">
+                <h3> Current Weather </h3>
+                
+                    
                         <img class="card-img-top" src="http://openweathermap.org/img/w/<%=@current[:weather].first[:icon]%>.png" alt="Girl in a jacket" width="50" height="50">
-                            <div class="card-body">
+                            
                                 <p><b>Description: </b><%= @current[:weather].first[:description] %> </p>
                                 <p><b>Temperature:</b> <%= @current[:temp] %>°F</p>
                                 <p><b>Wind: </b><%= @current[:wind_speed] %> MPH</p>
 
-                        </div>
-                    </div>
-                </div>
+                            
+                   
+               
             </div>
+        </div> 
 
-        <div class="title-center">
-        <h3>Hourly Weather </h3>
-        </div>
 
-        
-            <div class="row">
-                        
-                    <% @hourly[0..11].each do |h|%>
-                    <div class="col-sm-2">
-                        <div class="card" style="width:200px">
-                        <img class="card-img-top" src="http://openweathermap.org/img/w/<%=h[:weather].first[:icon]%>.png" alt="weather">
-                            <div class="card-body">
-                                <p><b>Time: </b><%=Time.at(h[:dt]).to_formatted_s(:time)%></p>
-                                <p><b>Temperature: </b><%= h[:temp].round(1)%>°F </p>
-                                <p><b>Wind: </b><%= h[:wind_speed].round(1)%> MPH </p>
-                        </div>
-                    </div>
-                </div>
-                    <%end%>
+        <div class="col-lg-8">
+
+            <div id="user-comments">
+                <h3> 12 Hour Forecast </h3>
+                    <div class="row">
+                        <% @hourly[0..11].each do |h|%>
+                            <div class="col-lg-2">
+
+                                    <img class="card-img-top" src="http://openweathermap.org/img/w/<%=h[:weather].first[:icon]%>.png" alt="weather">
+                                       
+                                            <p><b>Time: </b><%=Time.at(h[:dt]).to_formatted_s(:time)%></p>
+                                            <p><b>Temp: </b><%= h[:temp].round(1)%>°F </p>
+                                            <p><b>Wind: </b><%= h[:wind_speed].round(1)%> MPH </p>
+                                        
+                            </div>
+                        <%end%>
+                    </div>           
             </div>
-
-        <div class="title-center">
-            <h3> Daily Weather </h3>
-        </div>
-
-    
-            <div class="row">
-                <% @daily.each do |d|%>
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card" style="width:290px">
-                        <img class="card-img-top" src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="weather">
-                        <div class="card-body">
-
-                        <p><b>Date: </b><%=Time.at(d[:dt]).to_formatted_s(:long)%></p>
-                        <p><b>Sunrise: </b><%= Time.at(d[:sunrise]).to_formatted_s(:time)%> </p>
-                        <p><b>Sunset:</b> <%= Time.at(d[:sunset]).to_formatted_s(:time)%> </p>
-                        <p><b>Min Temperature: </b><%= d[:temp][:min]%>°F  </p>
-                        <p><b>Max Temperature: </b><%= d[:temp][:max]%>°F </p>
-                        <p><b>Wind: </b><%= d[:wind_speed]%> MPH</p>
-                        <p><b>Description:</b> <%= d[:weather].first[:description]%> </p>
-                        </div>
-                    </div>
-                </div>
-                <%end%>
-            </div>
-
-
-        
-
-
-
-        <div class="title-center">
-            <h3> Campgrounds Within 20 Miles: <%= @count%></h3>
-        </div>
-    
-            <div class="row">
-
-                <%@campgrounds.each do |c|%>
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="card" style="width: 17.5rem;">
-                        <div id="card-body">
-                        <h6 class="card-title"><%= c[:FacilityName]%></h6>
-                        
-                            <p> Reservable: <%= c[:Reservable]%></p>
-                            <p> <a href="https://www.recreation.gov/camping/campgrounds/<%=c[:FacilityID]%>"> View <%= c[:FacilityName]%> </a> </p>
-                            <p> <a href="https://www.google.com/maps/dir/?api=1&destination=<%= c[:FacilityName]%>"> View Directions </a> </p>
-
-                        </div>
-                    </div>
-                </div>
-                <%end%>
-
-            </div>
-
-
+        </div>    
     </div>
-</body>
+</div>
 
+<div class="container text-center">
+
+    <div class="row">
+        <div class= "col-lg-12">
+            <div id="user-comments">
+            <h3> Daily Forecast </h3>
+            
+                <div class ="row justify-content-between">
+
+                    <% @daily.each do |d|%>
+                        <div class="col-lg-3">
+                           
+                                <img class="card-img-top" src="http://openweathermap.org/img/w/<%=d[:weather].first[:icon]%>.png" alt="weather">
+                      
+
+                                <p><%=Time.at(d[:dt]).to_formatted_s(:long)%></p>
+                                <p><b>Sunrise: </b><%= Time.at(d[:sunrise]).to_formatted_s(:time)%> </p>
+                                <p><b>Sunset:</b> <%= Time.at(d[:sunset]).to_formatted_s(:time)%> </p>
+                                <p><b>Min Temperature: </b><%= d[:temp][:min]%>°F  </p>
+                                <p><b>Max Temperature: </b><%= d[:temp][:max]%>°F </p>
+                                <p><b>Wind: </b><%= d[:wind_speed]%> MPH</p>
+                                <p><b>Description:</b> <%= d[:weather].first[:description]%> </p>
+                                
+                            
+                        </div>
+                        <%end%>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center">
+
+    <div class="row">
+        <div class= "col-lg-12">
+            <div id="user-comments">
+            <h3> Campgrounds Within 20 Miles: <%= @count%></h3>
+            
+                <div class ="row justify-content-between">
+
+                    <%@campgrounds.each do |c|%>
+                        <div class="col-lg-3">
+                            <div id="gear-display">
+
+                                <p><%= c[:FacilityName]%></h6></p>
+                            
+                                <p> Reservable: <%= c[:Reservable]%></p>
+                                <p> <a href="https://www.recreation.gov/camping/campgrounds/<%=c[:FacilityID]%>"> View <%= c[:FacilityName]%> </a> </p>
+                                <p> <a href="https://www.google.com/maps/dir/?api=1&destination=<%= c[:FacilityName]%>"> View Directions </a> </p>
+                            </div>
+                        </div>
+                    <%end%>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
