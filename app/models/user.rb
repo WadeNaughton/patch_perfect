@@ -3,8 +3,9 @@ class User < ApplicationRecord
   has_many :completes
   has_many :user_gears
   has_many :participants
-  # has_many :comments
+  has_many :hike_comments
   has_many :costs
+ 
 
   has_many :hikes, through: :favorites
   has_many :hikes, through: :completes
