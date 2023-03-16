@@ -34,6 +34,6 @@ class HikeCommentsController < ApplicationController
   
     private
     def hike_comment_params
-       params.permit(:body,:hike_id, :image)
+       params.permit(:body,:hike_id, :user_id, :image)
     end
   end

@@ -12,7 +12,6 @@ class CompletesController < ApplicationController
     @host_cost = @complete.costs.sum(:price)
     @total_cost = @complete.total_cost + @complete.total_guest_cost
     @split_cost = @total_cost / (@participants.count + 1)
-
   end
   
 
@@ -21,8 +20,9 @@ class CompletesController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     complete = Complete.find_or_create_by(hike_id: @hike.id, user_id: @user.id)
     if @hike.save
-      # render "hikes/show"
       redirect_to "/users/#{@user.id}"
+
+
     end
   end
 

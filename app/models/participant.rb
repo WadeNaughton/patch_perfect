@@ -1,6 +1,9 @@
 class Participant < ApplicationRecord
     belongs_to :user
     belongs_to :complete
+    
+
+
 
     has_many :guest_costs, dependent: :destroy
   

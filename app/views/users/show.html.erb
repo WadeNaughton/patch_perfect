@@ -15,7 +15,7 @@
 
                             
 
-                            <% if @favorites.blank?%>
+                            <% if @favorites.blank? && current_user == @user %>
                                 <%= link_to "Add A Favorite", "/users/#{@user.id}/discover"%>
                             <% else %>
 

@@ -9,7 +9,10 @@
 
 
               <% end %>
+
+              <% if current_user == c.user%>
               <%= button_to "Delete Comment", "/users/#{@user.id}/hikes/#{@hike.id}/hike_comment/#{c.id}", method: :delete%>
+              <% end %>
               </div>
       <% end %>
 </div>

@@ -1,6 +1,7 @@
 class HikeComment < ApplicationRecord
 
     belongs_to :hike
+    belongs_to :user
 
     validates :body, presence: true
   
