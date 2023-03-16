@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/users/:id/discover', to: 'hikes#index'
   get '/users/:user_id/hikes/:id', to: 'hikes#show'
   get '/search', to: 'hikes#search'
-  get '/users/:user_id/hikes/:id/test', to: 'hikes#test'
+  
 
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
