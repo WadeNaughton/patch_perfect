@@ -1,13 +1,17 @@
+
+
+
 <div class="container text-center">
 
     <div class="row">
 
         <div class ="col">
-
-        <%if @complete.title.blank?%>
-            <h1><%= link_to "Add a Title", "/users/#{@user.id}/hikes/#{@hike.id}/complete/edit", method: :get%></h1>
-        <%else%>
-            <h1> <%= @complete.title%> </h1>
+        <% if current_user == @user %>
+            <%if @complete.title.blank?%>
+                <h1><%= link_to "Add a Title", "/users/#{@user.id}/hikes/#{@hike.id}/complete/edit", method: :get%> </h1>
+            <%else%>
+                <h1> <%= @complete.title%> </h1>
+            <%end%>
         <%end%>
         </div>
     </div>
@@ -21,42 +25,49 @@
            <div id="user-comments">
               <div class="title">
                <h3> Journal Entries</h3>
-              </div>
-                <div class ="row justify-content-between">
-                    <% @comments.each do |c| %>
-                        <div class="col">
-                            <p>Entry Date: <%= c.created_at.strftime("%m-%d-%Y") %></p>
-                            <p>Entry: <%= c.body%></p>
-                            <% if c.image.attached? %>
+              </div>                                   
+                    <div id="carousel-test" class="carousel slide" data-ride="carousel">
+                        
+                            <div class="carousel-inner">
+                                <%@comments.each_with_index do |c,i|%>
+                                    <% if c.image.attached? %>
+                                        <div class="carousel-item <%= "active " if i==0 %>">
+                                            
+                                           <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, class: "d-block w-100" %></a>
+                                            <div class="carousel-caption d-none d-md-block">
+                                                
+                                                <p><%=c.body%></p>
+                                            </div>
+                                        </div>
+                                        
 
-                                <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, style: "width: 75px; display: block"%> </a>
 
-
-                                <% end %>
-
-                                <% if current_user == @user %>
-                                    <p> <%= button_to "Delete Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/#{c.id}", method: :delete, class: "btn btn-primary"  %> </p>
-                                  
-                                <% end %>
+                                    <%end%>
+                                <%end%>
+                                
                             </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col">
 
-                    <% end %>
-                </div>
-                    <% if current_user == @user%>
-                        <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
-                    <%else%>
-                        <%@participants.each do |p|%>
-                            <%if current_user == p.user%>
-                                 <%= link_to "Add Journal Entry", "/users/#{@user.id}/hikes/#{@hike.id}/comment/new" %>
+                            <% if current_user == @user%>
+                                <%= button_to "Add Entry","/users/#{@user.id}/hikes/#{@hike.id}/comment/new", method: :get, class: "btn btn-primary"%>
+                            <%else%>
+                                <%@participants.each do |p|%>
+                                    <%if current_user == p.user%>
+                                        <%= button_to "Add Entry", "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/participant_comment/new", method: :get, class: "btn btn-primary" %>
+
+                                    <%end%>
+                                <%end%>
+                        
                             <%end%>
-                        <%end%>
-                
-                    <%end%>
-            </div>
-
+                        </div>
+                        <div class="col">
+                         <%=  button_to "View all entries", "/users/#{@user.id}/hikes/#{@hike.id}/comments", method: :get, class: "btn btn-primary" %>
+                        </div>
+                    </div>
+                </div>
         </div>
-
-
             <div class ="col-lg-4">
                 <div id="user-comments">
                      <div class="title">
@@ -102,18 +113,13 @@
 
 
                         <%end %>
-
                 </div>
             </div>             
     </div>
  </div> 
 
-
-
 <div class="container">
-
     <div class="row">
-
         <div class ="col-lg-4">
             <div id="user-comments">
              <div class="title">
@@ -129,7 +135,6 @@
                             <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete, class: "btn btn-primary" %> </p>
                             <%end%>
                         </div>
-
                     <% end %>
                 </div>
                  <% if current_user == @user %>
@@ -139,13 +144,8 @@
                  <%end%>
                    <h2>Total Weight</h2>
                    <p><%= @total_weight %> lbs</p>
-
             </div>
         </div>
-
-
-
-
 
         <div class ="col-lg-4">
             <div id="user-comments">
@@ -301,3 +301,5 @@
     </div>
 </div> 
 
+
+    

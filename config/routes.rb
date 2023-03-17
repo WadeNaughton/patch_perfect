@@ -38,7 +38,9 @@ Rails.application.routes.draw do
   get '/users/:user_id/hikes/:id/complete/edit', to: 'completes#edit'
   patch '/users/:user_id/hikes/:id/complete', to: 'completes#update'
 
-  get '/users/:user_id/hikes/:id/comments', to: 'comment#show'
+
+  get '/users/:user_id/hikes/:id/comments', to: 'comment#index'
+  # get '/users/:user_id/hikes/:id/comments', to: 'comment#show'
   get '/users/:user_id/hikes/:id/comment/new', to: 'comment#new'
   post '/users/:user_id/hikes/:id/comment', to: 'comment#create'
   delete '/users/:user_id/hikes/:hike_id/comment/:id', to: 'comment#destroy'
@@ -66,6 +68,12 @@ Rails.application.routes.draw do
   get '/users/:user_id/hikes/:id/participant/:participant_id/guest_cost/new', to: 'guest_costs#new'
   get '/users/:user_id/hikes/:id/participant/:participant_id/guest_costs', to: 'guest_costs#show'
   post '/users/:user_id/hikes/:id/participant/:participant_id/guest_cost', to: 'guest_costs#create'
+
+
+  get '/users/:user_id/hikes/:id/participant/:participant_id/participant_comment', to: 'participant_comments#show'
+  get '/users/:user_id/hikes/:id/participant/:participant_id/participant_comment/new', to: 'participant_comments#new'
+  post '/users/:user_id/hikes/:id/participant/:participant_id/participant_comments', to: 'participant_comments#create'
+
 
 
 

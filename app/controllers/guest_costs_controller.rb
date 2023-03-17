@@ -9,20 +9,23 @@ class GuestCostsController < ApplicationController
     end
 
     def new
-        @user = User.find(params[:id])
-        @complete = Complete.find_by(user_id: @user.id)
+        @hike = Hike.find(params[:id])
+        @user = User.find_by(id: params[:user_id])
+        @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
         @participant = Participant.find_by(user_id: current_user.id, complete_id: @complete.id)
-
         @guest_cost = GuestCost.new
     end
     
     def create
-        @user = User.find(params[:id])
-        @complete = Complete.find_by(user_id: @user.id)
+        @hike = Hike.find(params[:id])
+        @user = User.find_by(id: params[:user_id])
+        @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
         @participant = Participant.find_by(user_id: current_user.id, complete_id: @complete.id)
         @guest_cost = GuestCost.create(guest_cost_params)
+
+
         if @guest_cost.save
-            redirect_to "/users/#{current_user.id}"
+            redirect_to "/users/#{@user.id}/hikes/#{@hike.id}/complete"
         else
           render 'new'
         end

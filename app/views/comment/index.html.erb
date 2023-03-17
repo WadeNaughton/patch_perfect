@@ -1,0 +1,34 @@
+<div class ="container">
+
+    <div class ="row">
+
+        <div class ="col">
+
+
+            <%@participants.each do |p|%>
+                    <%p.participant_comments.each do |pc|%>
+                        <b><p>Hiker: </b><%= pc.participant.user.first_name%></p>
+                        <b><p>Entry: </b><%= pc.body%></p>
+                        <%if pc.image.attached?%>
+                            <a href="<%= url_for(pc.image) %> "> <%= image_tag pc.image, style: "width: 75px; display: block"%> </a>
+                        <%end%>
+                    <%end%>
+            <%end%>
+
+            <%@comments.each do |c|%>
+                <b>Hiker: </b><%= c.complete.user.first_name %>
+                <p><b>Entry: </b><%= c.body%></p>
+                <%if c.image.attached?%>
+                    <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, style: "width: 75px; display: block"%> </a>
+                <%end%>
+            <%end%>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
