@@ -6,6 +6,7 @@ class Participant < ApplicationRecord
 
 
     has_many :guest_costs, dependent: :destroy
+    has_many :participant_comments, dependent: :destroy
   
     validates_presence_of :complete_id
     validates_presence_of :user_id

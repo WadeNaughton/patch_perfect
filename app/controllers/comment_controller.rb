@@ -1,5 +1,14 @@
 class CommentController < ApplicationController
 
+
+  def index
+    @hike = Hike.find(params[:id])
+    @user = User.find_by(id: params[:user_id])
+    @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
+    @participants = @complete.participants
+    @comments = @complete.comments.all
+  end
+
   def new
     @hike = Hike.find(params[:id])
     @user = User.find_by(id: params[:user_id])

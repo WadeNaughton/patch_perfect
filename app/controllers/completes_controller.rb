@@ -13,6 +13,7 @@ class CompletesController < ApplicationController
     @total_cost = @complete.total_cost + @complete.total_guest_cost
     @split_cost = @total_cost / (@participants.count + 1)
   end
+
   
 
   def create

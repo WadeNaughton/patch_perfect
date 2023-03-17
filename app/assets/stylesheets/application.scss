@@ -93,17 +93,26 @@ body {
  }
 
 
- .carousel .carousel-item {
+
+.carousel .carousel-item {
   height: 500px;
+  width: auto;
+  object-fit: cover;
 }
 
-.carousel-item img {
-    position: absolute;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    min-height: 500px;
+#carousel-test .carousel-inner .carousel-item {
+  // height: 200px;
+  // object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  overflow: hidden;
+  height:50vh;
+  // height: auto;
 }
+
+
+
+
 
 
 .title-center {
@@ -259,6 +268,8 @@ a:visited {
       color: #064635;
     
     }
+
+   
 
 
     

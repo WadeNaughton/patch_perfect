@@ -1,6 +1,6 @@
 <body>
 
-    <%= form_with url: "/users/#{@user.id}/hikes/#{@complete.id}/participant/#{@participant.id}/guest_cost", method: :post, local:true do |form| %>
+    <%= form_with url: "/users/#{@user.id}/hikes/#{@hike.id}/participant/#{@participant.id}/guest_cost", method: :post, local:true do |form| %>
 
       <%= form.label :item %>
       <%= form.text_field :item, placeholder: "Item" %>
