@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :participants
   has_many :hike_comments
   has_many :costs
+  has_many :user_gears
+  has_many :complete_gears, through: :user_gears
  
 
   has_many :hikes, through: :favorites

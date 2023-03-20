@@ -6,6 +6,7 @@ class CompletesController < ApplicationController
     @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
     @comments = @complete.comments
     @gear_used = @complete.complete_gears.all
+    @grouped_gear_used = @complete.grouped_gear
     @total_weight = @complete.total_weight
     @participants = @complete.participants
     # @participant = Participant.find_by(user_id: current_user.id, complete_id: @complete.id)

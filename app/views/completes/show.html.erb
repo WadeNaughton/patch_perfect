@@ -126,23 +126,100 @@
              <div class="title">
                <h3> Gear </h3>
               </div>
-                <div class ="row justify-content-between">
-                    <% @gear_used.each do |gear|%>
+                <div class ="row">
+                    <div class="col">
+                   <%@grouped_gear_used.each do |gg|%>
+                    
+                        <p> <b>Hiker: </b><%=gg.first[1]%></p>
+                        
+                        <p><b> Item Count: </b><%=gg.last.count%></p>
+                    <div class ="row">
                         <div class="col">
-                          <p>Name: <%= gear.user_gear.name %></p>
-                          <p>Weight: <%= gear.user_gear.pounds %> lbs <%= gear.user_gear.ounces %> oz
+                      
+                           
+                                                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-<%=gg.first%>">
+                                    View Items
+                                    </button>
+                            
+                           
+                            <div class="col-lg-6">
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalLong-<%=gg.first%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle"><%=gg.first[1]%> </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <div class= "row">
 
-                            <% if current_user == @user %>
-                            <p> <%= button_to "Delete Item", "/users/#{@user.id}/hikes/#{@hike.id}/gear/#{gear.id}", method: :delete, class: "btn btn-primary" %> </p>
-                            <%end%>
-                        </div>
-                    <% end %>
+                                            <div class="col-lg-4">
+                                                <div id="guest-cost">
+                                                    <h2>Item</h2>
+                                                     <%gg.last.each do |ggl|%>
+                                                        <div class="col">
+                                                            <%=ggl.user_gear.name%>
+                                                        </div>
+                                                    <%end%>
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div id="guest-cost">
+                                                    <h2>LBS</h2>
+                                                    <%gg.last.each do |ggl|%>
+                                                        <div clas="col">
+                                                            <%=ggl.user_gear.pounds%>
+                                                        </div>
+                                                    <%end%>
+                                                </div>
+                                            </div>
+
+                                            <div class ="col-lg-4">
+                                                <div id="guest-cost">
+                                                    <h2>OZ</h2>
+                                                    <%gg.last.each do |ggl|%>
+                                                        <div class="col">
+                                                            <%=ggl.user_gear.ounces%>
+                                                        </div>
+                                                    <%end%>
+                                                </div>
+                                            </div>
+                                            
+                                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>  
+                       
+                    </div>
+                    <%end%>
+
+                    </div>
                 </div>
-                 <% if current_user == @user %>
 
-                  <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
+                <%if current_user == @user %>
+                    <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
+                <%end%>
 
-                 <%end%>
+                <% @participants.each do |p|%>
+                    <% if current_user == p.user%>
+                         <%= link_to "Add Gear Used", "/users/#{@user.id}/hikes/#{@hike.id}/gear/new" %>
+
+                    <%end%>
+                <%end%>
+
+                 
                    <h2>Total Weight</h2>
                    <p><%= @total_weight %> lbs</p>
             </div>
@@ -288,12 +365,15 @@
         <div class ="col-lg-4">
             <div id="user-comments">
                  <div class="title">
-                  <h3> Weather</h3>
+                  <h3> Hike Information</h3>
                 </div>
                      <div class ="row justify-content-between">
                         <div class="col">
 
-                            WEATHER STUFF
+                            <p>Peak: <%=@hike.name%></p>
+                            <p>Location: <%=@hike.location%></p>
+                            <p>Elevation: <%=@hike.elevation%></p>
+                            <p>Prominence: <%=@hike.prominence%></p>
 
                         </div>
                     </div>
