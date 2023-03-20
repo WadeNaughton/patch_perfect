@@ -8,7 +8,7 @@ class CompletesController < ApplicationController
     @gear_used = @complete.complete_gears.all
     @total_weight = @complete.total_weight
     @participants = @complete.participants
-    @participant = Participant.find_by(user_id: current_user.id, complete_id: @complete.id)
+    # @participant = Participant.find_by(user_id: current_user.id, complete_id: @complete.id)
     @host_cost = @complete.costs.sum(:price)
     @total_cost = @complete.total_cost + @complete.total_guest_cost
     @split_cost = @total_cost / (@participants.count + 1)

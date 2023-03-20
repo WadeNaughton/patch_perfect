@@ -9,10 +9,10 @@ class Cost < ApplicationRecord
     validates_presence_of :user_id
 
 
-    def split_cost(cost, participants)
+    # def split_cost(cost, participants)
         
-        split_cost = cost / participants.count
-        return split_cost
-    end
+    #     split_cost = cost / participants.count
+    #     return split_cost
+    # end
 
 end

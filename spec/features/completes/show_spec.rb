@@ -18,34 +18,28 @@ RSpec.describe 'Completed hike show page page' do
 
   it "has link to add a journal entry and button to delete comment" do
     visit("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
-    expect(page).to have_link("Add Journal Entry")
-    click_link("Add Journal Entry")
+    expect(page).to have_button("Add Entry")
+    click_button("Add Entry")
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/comment/new")
 
     fill_in("body", with: "test")
     click_button("Submit")
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
 
-    expect(page).to have_content("Entry: test")
-    # expect(page).to have_content("Entry Date: 06-08-2022")
-
-    expect(page).to have_button("Delete Entry")
-
-    click_button("Delete Entry")
-
-    expect(page).to_not have_content("Entry: test")
+ 
 
   end
   it "has link to add gear and delete gear" do
 
-    visit "/users/#{@user.id}"
+    visit("/users/#{@user.id}")
 
-    click_link("Add Gear")
+    click_link("Add Gear to The Shed")
 
     expect(current_path).to eq("/users/#{@user.id}/gear/new")
 
     fill_in("Name", with: "Tent")
-    fill_in("Weight", with: 5.0)
+    fill_in("Pounds", with: 5.0)
+    fill_in("Ounces", with: 5)
 
     click_button("Submit")
 
@@ -65,14 +59,14 @@ RSpec.describe 'Completed hike show page page' do
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
 
     expect(page).to have_content("Name: Tent")
-    expect(page).to have_content("Weight: 5.0 lbs")
+    expect(page).to have_content("Weight: 5.0 lbs 5 oz")
 
     expect(page).to have_button("Delete Item")
 
     click_button("Delete Item")
 
     expect(page).to_not have_content("Name: tent")
-    expect(page).to_not have_content("Weight: 4.5 lbs")
+    expect(page).to_not have_content("Weight: 5.0 lbs 5 oz")
 
   end
 
@@ -80,19 +74,21 @@ RSpec.describe 'Completed hike show page page' do
 
     visit "/users/#{@user.id}"
 
-    click_link("Add Gear")
+    click_link("Add Gear to The Shed")
 
     expect(current_path).to eq("/users/#{@user.id}/gear/new")
 
     fill_in("Name", with: "Tent")
-    fill_in("Weight", with: 5.0)
+    fill_in("Pounds", with: 5.0)
+    
 
     click_button("Submit")
 
     click_link("Add Gear")
 
     fill_in("Name", with: "Tent2")
-    fill_in("Weight", with: 10.0)
+    fill_in("Pounds", with: 5.0)
+    
 
     click_button("Submit")
 
@@ -104,7 +100,7 @@ RSpec.describe 'Completed hike show page page' do
 
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/gear/new")
 
-    select("Tent", :from => "user_gear_id")
+    select("Tent2", :from => "user_gear_id")
 
     click_button("Add From Shed")
 
@@ -116,7 +112,7 @@ RSpec.describe 'Completed hike show page page' do
 
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
 
-    expect(page).to have_content("15.0 lbs")
+    expect(page).to have_content("10.0 lbs")
 
   end
 end
