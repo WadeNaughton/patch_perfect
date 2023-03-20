@@ -3,13 +3,21 @@
 <%= link_to "Back", "/users/#{@user.id}/hikes/#{@complete.hike.id}/complete" %>
 <h1> <%= "Select Gear Used" %> </h1>
 
- <%= form_with url: "/users/#{@user.id}/hikes/#{@complete.hike.id}/gear", method: :post, local:true do |form| %>
-   <%= form.select :user_gear_id, @user.user_gears.map { |g| [g.name, g.id]}  %>
-   <%= form.submit "Add From Shed"  %>
- <% end %>
+<% if current_user == @user%>
+  <%= form_with url: "/users/#{@user.id}/hikes/#{@complete.hike.id}/gear", method: :post, local:true do |form| %>
+    <%= form.select :user_gear_id, @user.user_gears.map { |g| [g.name, g.id]}  %>
+    <%= form.submit "Add From Shed"  %>
+  <% end %>
 
  <%= link_to "Add Gear to Your Shed", "/users/#{@user.id}/gear/new" %>
+<%elsif current_user == @participant.user%>
+ <%= form_with url: "/users/#{@user.id}/hikes/#{@complete.hike.id}/gear", method: :post, local:true do |form| %>
+    <%= form.select :user_gear_id, @participant.user.user_gears.map { |g| [g.name, g.id]}  %>
+    <%= form.submit "Add From Shed"  %>
+  <% end %>
 
+ <%= link_to "Add Gear to Your Shed", "/users/#{@participant.user.id}/gear/new" %>
+<%end%>
 </body>
 
  

@@ -35,4 +35,11 @@ class Complete < ApplicationRecord
   end
   
 
+
+  def grouped_gear
+    complete_gears.group_by do |gear|
+      [gear.user_gear.user.id, gear.user_gear.user.first_name]
+    end
+  end
+
 end
