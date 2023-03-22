@@ -139,8 +139,17 @@
     <div class="row">
         <div class= "col-lg-12">
             <div id="user-comments">
-            <h3> Campgrounds Within 20 Miles: <%= @count%></h3>
-            
+       
+
+
+        <%= form_tag(hike_path_url, :method=> "get") do %>
+            <%= search_field_tag :radius, params[:radius], placeholder: "Enter A Radius" %>
+            <%= button_tag "Find Campgrounds", class: "btn btn-primary" %>
+        <% end %>
+
+          
+            <h3> Campgrounds Within <%=params[:radius]%> Miles: <%= @count%></h3>
+                
                 <div class ="row justify-content-between">
 
                     <%@campgrounds.each do |c|%>
