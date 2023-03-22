@@ -6,12 +6,12 @@ class RecreationService
       end
     end
   
-    def self.get_campgrounds(lat,lon)
+    def self.get_campgrounds(lat,lon,radius)
   
       response = connection.get do |faraday|
         faraday.params['latitude'] = lat
         faraday.params['longitude'] = lon
-        faraday.params['radius'] = 20
+        faraday.params['radius'] = radius
         faraday.params['activity'] = 9
         faraday.params['query'] = 'Campground'
       end
