@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   # resources :hikes, only: [:show]
-  get '/users/:id/discover', to: 'hikes#index'
+  get '/users/:id/discover', to: 'hikes#index', :as => :hikes_path
   get '/users/:user_id/hikes/:id', to: 'hikes#show', :as => :hike_path
   get '/search', to: 'hikes#search'
   
