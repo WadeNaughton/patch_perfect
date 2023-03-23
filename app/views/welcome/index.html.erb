@@ -1,12 +1,12 @@
-
+<div class ="container text-center">
 
   <% if logged_in? %>
-    <h1><p><%= "Welcome, #{@current_user.first_name}" %></p></h1>
+    <h1><p><%= "Lets Get Hiking, #{@current_user.first_name}" %></p></h1>
   <% else %>
     <h1><%= "Please Login/Create an Account to Continue" %></h1>
   <% end %>
 
-<div class ="container text-center">
+
   <div class="row">
       <div class="col-lg-12">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -74,8 +74,32 @@
          </div>
       </div>
 
+    
+
+
+   
+      <div class="col">
+        <div id="user-comments">
+          <h2> Login </h2>
+
+          <%= button_to "Login", "/login", method: :get,class: "btn btn-primary"%>
+         </div>
+      </div>
+
     </div>
+
     <%end%>
+
+    <div class="row">
+      <div class="col">
+        <div id="user-comments">
+       <h2> FAQ's </h2>
+        <%= button_to "View FAQ's", "/questions", method: :get,class: "btn btn-primary"%>
+       </div>
+      </div>
+
+
+    </div>
 </div>
 
 

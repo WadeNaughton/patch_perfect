@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
 
+  get '/questions', to: 'faqs#index'
+
   # resources :hikes, only: [:show]
   get '/users/:id/discover', to: 'hikes#index', :as => :hikes_path
   get '/users/:user_id/hikes/:id', to: 'hikes#show', :as => :hike_path

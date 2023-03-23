@@ -370,7 +370,7 @@
                      <div class ="row justify-content-between">
                         <div class="col">
 
-                            <p><b>Peak: </b><%=@hike.name%></p>
+                            <p><b>Peak: </b><%=link_to "#{@hike.name}", "/users/#{@user.id}/hikes/#{@hike.id}"%></p>
                             <p><b>Location: </b><%=@hike.location%></p>
                             <p><b>Elevation: </b><%=@hike.elevation%></p>
                             <p><b>Prominence: </b><%=@hike.prominence%></p>

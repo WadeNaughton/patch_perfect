@@ -31,6 +31,11 @@
                         <div class="col">
                         <h2>Completed Peaks</h2>
                             <div id="completed-hikes">
+
+                            <% if @completes.blank? && current_user == @user %>
+                                <%= link_to "Complete A Hike", "/users/#{@user.id}/discover"%>
+                            <% else %>
+
                                 
 
                                 <% @completes.each do |complete| %>
@@ -39,6 +44,7 @@
                                     <%= link_to "View Trip Report", "/users/#{@user.id}/hikes/#{complete.hike.id}/complete" %>
                                     <br>
                                 <% end %>
+                            <% end %>
 
                             </div>
                         </div>
