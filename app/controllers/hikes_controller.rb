@@ -1,9 +1,23 @@
 class HikesController < ApplicationController
 
+
+
   def index
     @hikes = Hike.all
-    @hikes_kam = @hikes.order(elevation: :desc).page(params[:page])
     @user = User.find_by(id: session[:user_id])
+    if params[:prominence].present?
+      @hikes = Hike.all.prominence.page(params[:page])
+    elsif params[:elevation].present?
+      @hikes = Hike.all.elevation.page(params[:page])
+    elsif params[:location].present?
+      @hikes= Hike.all.location.page(params[:page])
+    elsif params[:hike_name].present?
+      @hikes = Hike.all.hike_name.page(params[:page])
+    elsif params[:range].present?
+      @hikes = Hike.all.range.page(params[:page])  
+    else
+      @hikes = Hike.all.page(params[:page])
+    end
   end
 
   def show
@@ -37,6 +51,7 @@ class HikesController < ApplicationController
     if !@hike_result.exists?
       flash.now.alert = "Hike not found"
     end
+
 
   end
 

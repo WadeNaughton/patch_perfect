@@ -1,6 +1,13 @@
 require 'date'
 
 class Hike < ApplicationRecord
+  scope :prominence , -> { order(prominence: :desc) }
+  scope :elevation , -> { order(elevation: :desc) }
+  scope :hike_name , -> { order(name: :asc) }
+  scope :location , -> { order(location: :asc) }
+  scope :range , -> { order(range: :asc) }
+  
+  
   paginates_per 10
   has_many :favorites
   has_many :completes
