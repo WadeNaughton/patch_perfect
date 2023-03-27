@@ -7,7 +7,7 @@ end
 
 def create
   @user = User.find(params[:id])
-  @gear = @user.user_gears.create(user_gear_params)
+  @gear = @user.user_gears.new(user_gear_params)
   if @gear.save
     redirect_to "/users/#{@user.id}"
   end

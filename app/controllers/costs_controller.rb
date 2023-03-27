@@ -25,7 +25,7 @@ class CostsController < ApplicationController
         @complete = Complete.find_by(hike_id: @hike.id, user_id: @user.id)
         @participants = @complete.participants.all
         
-        @cost = @complete.costs.create(cost_params)
+        @cost = @complete.costs.new(cost_params)
         if @cost.save
             redirect_to "/users/#{current_user.id}/hikes/#{@hike.id}/complete"
         end
