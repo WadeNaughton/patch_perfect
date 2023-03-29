@@ -16,7 +16,7 @@ class HikeCommentsController < ApplicationController
     def create
       @hike = Hike.find(params[:id])
       @user = User.find_by(id: params[:user_id])
-      @comment = @hike.hike_comments.create(hike_comment_params)
+      @comment = @hike.hike_comments.new(hike_comment_params)
       if @comment.save
         redirect_to "/users/#{@user.id}/hikes/#{@hike.id}"
       end

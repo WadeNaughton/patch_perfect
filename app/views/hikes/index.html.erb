@@ -1,24 +1,18 @@
 <body>
 <h1> Peaks of The White Mountains </h1>
 
-<%= form_tag(hikes_path_url, :method => :get) do %>
-  <%= check_box_tag :prominence %>
-  <%= label_tag(:prominence, "Prominence") %>
-
-  <%= check_box_tag :elevation %>
-  <%= label_tag(:elevation, "Elevation") %>
-
-  <%= check_box_tag :hike_name %>
-  <%= label_tag(:hike_name, "Name") %>
-
-  <%= check_box_tag :location %>
-  <%= label_tag(:location, "Location") %>
-
-  <%= check_box_tag :range %>
-  <%= label_tag(:range, "Range") %>
-
-  <%= submit_tag 'Filter' %>
-<% end %>
+<div class ="container">
+<div class="row">
+Sort By:
+  <div class="col">
+<%= link_to "Name", "/users/#{@user.id}/discover?name=1"%>
+<%= link_to "Prominence", "/users/#{@user.id}/discover?prominence=1"%>
+<%= link_to "Elevation", "/users/#{@user.id}/discover?elevation=1"%>
+<%= link_to "Location", "/users/#{@user.id}/discover?location=1"%>
+<%= link_to "Range", "/users/#{@user.id}/discover?range=1"%>
+  </div>
+</div>
+</div>
 
 <% @hikes.each do |hike| %>
   <h2><p><%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
