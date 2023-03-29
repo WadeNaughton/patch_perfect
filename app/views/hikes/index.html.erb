@@ -1,12 +1,18 @@
 <body>
 <h1> Peaks of The White Mountains </h1>
 
+<div class ="container">
+<div class="row">
+Sort By:
+  <div class="col">
 <%= link_to "Name", "/users/#{@user.id}/discover?name=1"%>
 <%= link_to "Prominence", "/users/#{@user.id}/discover?prominence=1"%>
 <%= link_to "Elevation", "/users/#{@user.id}/discover?elevation=1"%>
 <%= link_to "Location", "/users/#{@user.id}/discover?location=1"%>
 <%= link_to "Range", "/users/#{@user.id}/discover?range=1"%>
-
+  </div>
+</div>
+</div>
 
 <% @hikes.each do |hike| %>
   <h2><p><%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
