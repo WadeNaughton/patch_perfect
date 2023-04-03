@@ -1,6 +1,6 @@
 class HikeService
     def self.connection
-      url = "https://patch-perfect-db.fly.dev"
+      url = "https://patch-perfect-datasource.fly.dev"
       Faraday.new(url: url) 
     end
   

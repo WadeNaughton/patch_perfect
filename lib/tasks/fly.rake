@@ -35,13 +35,3 @@ namespace :fly do
     sh 'swapon /swapfile'
   end
 end
-
-namespace :csv_load do
-  task :all do
-    sh require 'csv'
-    CSV.foreach('db/data/hike.csv', :headers => true) do |row|
-      Hike.create!(row.to_hash)
-    end
-  end
-end
-  
