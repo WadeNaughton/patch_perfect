@@ -21,8 +21,10 @@ class Hike < ApplicationRecord
   validates_presence_of :range
   validates_presence_of :features
 
-  def self.find_hike(search)
-   where("concat_ws(' ' , name, features) ILIKE ?", "%#{search}%")
-  end
+  # def self.find_hike(search)
+  #  where("concat_ws(' ' , name, features) ILIKE ?", "%#{search}%")
+  # end
+
+  
 
 end

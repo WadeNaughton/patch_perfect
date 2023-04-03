@@ -7,15 +7,16 @@
 <%= link_to "Location", "/search?&search=#{params[:search]}&location=1"%>
 <%= link_to "Range", "/search?&search=#{params[:search]}&range=1"%>
 
+<%unless @hike_result.blank?%>
+    <%@hike_result.each do |hike| %>
+    <h2><p><%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
+    <b><p>Location:</b> <%= hike.location %></p>
+    <b><p>Range: </b><%= hike.range %></p>
+    <b><p>Features:</b> <%= hike.features %></p>
 
-<%@hike_result.each do |hike| %>
-<h2><p><%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
-<b><p>Location:</b> <%= hike.location %></p>
-<b><p>Range: </b><%= hike.range %></p>
-<b><p>Features:</b> <%= hike.features %></p>
+    <% end %>
+<%end%>
 
-<% end %>
-
-<%= paginate @hike_result %>
+<%= paginate @hike_result%>
 
 </body>
