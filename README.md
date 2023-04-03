@@ -1,5 +1,5 @@
 # Fly.io Link
-- https://patch-perfect2.fly.dev/
+- https://patch-perfect.fly.dev/
 
 
 # Link to database repo
