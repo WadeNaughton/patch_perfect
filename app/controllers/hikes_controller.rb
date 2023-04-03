@@ -5,7 +5,7 @@ class HikesController < ApplicationController
     @user = User.find_by(id: session[:user_id])
 
     @hikes = Kaminari.paginate_array(hikez).page(params[:page]).per(10)
-
+      #break the sorting out into model methods and call them here
     if params[:prominence].present?
       @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:prominence]}).page(params[:page]).per(10)
     elsif params[:elevation].present?
@@ -22,7 +22,12 @@ class HikesController < ApplicationController
 
   def show
 
-    @hike = HikeFacade.get_hike(params[:id])
+      if Hike.where(id: params[:id]).empty?
+        @hike = HikeFacade.get_hike(params[:id])
+        @hike.save
+      else
+        @hike = Hike.find(params[:id])
+      end
     @user = User.find_by(id: session[:user_id])
     @favorite = Favorite.find_by(user_id: @user.id, hike_id: @hike.id)
     forecast = ForecastFacade.get_forecast(@hike.latitude, @hike.longitude)
