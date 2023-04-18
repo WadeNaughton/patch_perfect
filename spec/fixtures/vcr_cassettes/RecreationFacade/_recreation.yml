@@ -76,7 +76,7 @@ http_interactions:
       Server:
       - CloudFront
       Date:
-      - Wed, 29 Mar 2023 22:06:37 GMT
+      - Tue, 18 Apr 2023 20:04:29 GMT
       Access-Control-Allow-Origin:
       - "*"
       Strict-Transport-Security:
@@ -86,13 +86,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 0459f0f7053eeb224fd9fe0f5db5970a.cloudfront.net (CloudFront)
+      - 1.1 c3af1bb2028605770032345c7c19b7aa.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - w_SgkV4Gx-ZG78WILaMn4KExhfutpRDgjPm0pWW0v7ysu7ip3iDXvA==
+      - 6sSkyZrtx139zs-PzaMqJdOIXdGnLRRvhPGmTrRtXhUmeO8MLYBlfA==
     body:
       encoding: ASCII-8BIT
       string: '{"METADATA":{"RESULTS":{"CURRENT_COUNT":5,"TOTAL_COUNT":5},"SEARCH_PARAMETERS":{"LIMIT":1000,"OFFSET":0,"QUERY":"Campground"}},"RECDATA":[{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nLocated
@@ -138,53 +138,23 @@ http_interactions:
         Conway, New Hampshire: Take Highway 302 to Glen. Turn right onto State Route
         16 north and follow for about 22 miles. Turn left onto Dolly Copp Road and
         travel 0.5 miles to the campground.","FacilityEmail":"","FacilityID":"232173","FacilityLatitude":44.3327778,"FacilityLongitude":-71.2194444,"FacilityMapURL":"","FacilityName":"DOLLY  COPP","FacilityPhone":"603-466-2713","FacilityReservationURL":"","FacilityTypeDescription":"Campground","FacilityUseFeeDescription":"","GEOJSON":{"COORDINATES":[-71.2194444,44.3327778],"TYPE":"Point"},"Keywords":"DOLC,WHITE
-        MOUNTAIN NF -FS","LINK":[],"LastUpdatedDate":"2023-03-29","LegacyFacilityID":"70441","MEDIA":[{"Credits":"","Description":"Rangers
-        Pool a short walk from the campground","EmbedCode":"","EntityID":"232173","EntityMediaID":"10be437c-3557-4eee-947e-eb9f196ec4d1","EntityType":"Facility","Height":393,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/08/18/53/9af3581f-ee86-4694-8873-38a4be811e7f_450.jpg","Width":450},{"Credits":"","Description":"","EmbedCode":"","EntityID":"232173","EntityMediaID":"6a281685-e53f-4508-9cc6-302c18006789","EntityType":"Facility","Height":338,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/09/12/52/a7a357df-0e6f-42f6-8ed7-9cbc5db5f8eb_450.jpg","Width":450},{"Credits":"","Description":"Dolly
-        Copp VIS Building; constructed by the Civilian Conservation Corps in 1934","EmbedCode":"","EntityID":"232173","EntityMediaID":"7b69abb0-8bf6-4069-96df-04e78a6b47e3","EntityType":"Facility","Height":338,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/09/12/38/422b88ce-9b2e-42b2-81d6-ab0c88a2478b_450.jpg","Width":450},{"Credits":"","Description":"Interpretation
+        MOUNTAIN NF -FS","LINK":[],"LastUpdatedDate":"2023-04-18","LegacyFacilityID":"70441","MEDIA":[{"Credits":"","Description":"Interpretation
         at the Copp Homestead site","EmbedCode":"","EntityID":"232173","EntityMediaID":"00dfedd5-de94-438e-810f-16ed55da5831","EntityType":"Facility","Height":1067,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"Homestead
-        site marker","URL":"https://cdn.recreation.gov/public/2018/08/09/12/37/15a2bb89-c5b5-4903-a55d-b80dbeaf289c_1600.jpg","Width":1600},{"Credits":"","Description":"Dolly
-        Copp Gatehouse","EmbedCode":"","EntityID":"232173","EntityMediaID":"4b3027d5-19e8-4422-b1dc-5d5965a3f980","EntityType":"Facility","Height":886,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"Dolly
-        Copp Gatehouse","URL":"https://cdn.recreation.gov/public/2018/08/09/12/30/cb3cd6ce-d847-4adb-8714-fabf91429c67_1600.jpg","Width":1600},{"Credits":"","Description":"Looking
+        site marker","URL":"https://cdn.recreation.gov/public/2018/08/09/12/37/15a2bb89-c5b5-4903-a55d-b80dbeaf289c_1600.jpg","Width":1600},{"Credits":"","Description":"Looking
         at Mount Madison from Hayes Field","EmbedCode":"","EntityID":"232173","EntityMediaID":"fc335171-a0d6-4d94-9571-a5098512cc02","EntityType":"Facility","Height":1044,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"Hayes
-        Field","URL":"https://cdn.recreation.gov/public/2018/08/09/12/49/7bef8dcd-6f48-4c1c-aafd-b9b7d3ae76ca_1600.jpg","Width":1600},{"Credits":"","Description":"Looking
+        Field","URL":"https://cdn.recreation.gov/public/2018/08/09/12/49/7bef8dcd-6f48-4c1c-aafd-b9b7d3ae76ca_1600.jpg","Width":1600},{"Credits":"","Description":"","EmbedCode":"","EntityID":"232173","EntityMediaID":"6a281685-e53f-4508-9cc6-302c18006789","EntityType":"Facility","Height":338,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/09/12/52/a7a357df-0e6f-42f6-8ed7-9cbc5db5f8eb_450.jpg","Width":450},{"Credits":"","Description":"Looking
         at Dolly''s Imp face from Hayes Field","EmbedCode":"","EntityID":"232173","EntityMediaID":"e93bb4be-6e5f-4ad9-a6d5-7832e2ec72e1","EntityType":"Facility","Height":963,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"Hayes
-        Field","URL":"https://cdn.recreation.gov/public/2018/08/07/19/28/5bb758ad-7c5e-4800-8a0e-39d6c7c9f66e_1600.jpg","Width":1600},{"Credits":"","Description":"Looking
-        at Dolly''s Imp Face from Hayes Field","EmbedCode":"","EntityID":"232173","EntityMediaID":"bbf798f6-f2bb-4e6d-9bb7-2b5d1bde986a","EntityType":"Facility","Height":588,"IsGallery":true,"IsPreview":true,"IsPrimary":true,"MediaType":"Image","Subtitle":"","Title":"Dolly''s
-        Imp Face","URL":"https://cdn.recreation.gov/public/2018/08/09/12/52/a107b72a-8cd1-4224-aeb5-cb7a7ac34026_1600.jpg","Width":1600},{"Credits":"","Description":"Campsites
+        Field","URL":"https://cdn.recreation.gov/public/2018/08/07/19/28/5bb758ad-7c5e-4800-8a0e-39d6c7c9f66e_1600.jpg","Width":1600},{"Credits":"","Description":"Campsites
         on Birch Lane","EmbedCode":"","EntityID":"232173","EntityMediaID":"3b16f6d6-bed5-4d4e-8fd6-a7d5f34d25bf","EntityType":"Facility","Height":910,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"Birch
-        Lane","URL":"https://cdn.recreation.gov/public/2018/08/09/12/35/30c8eaa2-c792-438f-900c-1c2668d56d8d_1600.jpg","Width":1600},{"Credits":"","Description":"Copp
+        Lane","URL":"https://cdn.recreation.gov/public/2018/08/09/12/35/30c8eaa2-c792-438f-900c-1c2668d56d8d_1600.jpg","Width":1600},{"Credits":"","Description":"Looking
+        at Dolly''s Imp Face from Hayes Field","EmbedCode":"","EntityID":"232173","EntityMediaID":"bbf798f6-f2bb-4e6d-9bb7-2b5d1bde986a","EntityType":"Facility","Height":588,"IsGallery":true,"IsPreview":true,"IsPrimary":true,"MediaType":"Image","Subtitle":"","Title":"Dolly''s
+        Imp Face","URL":"https://cdn.recreation.gov/public/2018/08/09/12/52/a107b72a-8cd1-4224-aeb5-cb7a7ac34026_1600.jpg","Width":1600},{"Credits":"","Description":"Copp
         Homestead site","EmbedCode":"","EntityID":"232173","EntityMediaID":"4b8c1507-2112-4b80-8a5b-18a0d610c71a","EntityType":"Facility","Height":338,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"Copp
-        Homestead site","URL":"https://cdn.recreation.gov/public/2018/08/09/12/32/0f0f2c36-7a77-44c9-b036-24989b49f444_450.jpg","Width":450}],"ORGANIZATION":[],"OrgFacilityID":"AN370441","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nLocated
-        along the Peabody River in the heart of the White Mountains, the Dolly Copp
-        Picnic Pavilion is a wonderful location for a family reunion, wedding reception,
-        or any large group gathering.<h2>Recreation</h2>\nThe Peabody River is a popular
-        fishing destination and can be accessed from the Dolly Copp Picnic Pavilion.  A
-        large field directly in front of the Pavilion offers room for games and socializing.   The
-        Dolly Copp Campground, with over 170 campsites, is located conveniently across
-        the river from the Picnic Area.<h2>Facilities</h2>\nOriginally constructed
-        in 1936 by the Civilian Conservation Corps (CCC), the pavilion was reconstructed
-        in 1996 using some of the original timbers and new timbers harvested from
-        trees planted by the same 1936 CCC crew. The pavilion has eight accessible
-        picnic tables, a large stone fireplace and a flag stone floor. Two charcoal
-        grills are available next to the pavilion.  The Dolly Copp Picnic Area has
-        a dumpster, running water, and a flush toilet.<h2>Natural Features</h2>\nThe
-        Dolly Copp Picnic Pavilion, located in the Dolly Copp Picnic Area, sits along
-        the pristine waters of the Peabody River.    Surrounded by forested land,
-        visitors will enjoy exploring along the outskirts of the Picnic Area.\n<h2>Nearby
-        Attractions</h2>\nThe Dolly Copp Picnic Area is about five miles south of
-        the town of Gorham and 13 miles north of Jackson, New Hampshire.  Attractions
-        between the two towns include Wildcat Ski Area, the Mount Washington Auto
-        Road, and the Appalachian Mountain Club''s Pinkham Notch Visitor Center.  White
-        Mountain National Forest visitors can explore the Great Gulf Wilderness, hike
-        to Tuckerman Ravine and Mount Washington, visit Glen Ellis Falls Scenic Area,
-        or stop by the Androscoggin Ranger District Visitor Center by driving a only
-        a few miles from the Picnic Area.","FacilityDirections":"The Dolly Copp Picnic
-        Area is located on NH Route 16 about 5 miles south of Gorham, New Hampshire,
-        and 13 miles north of Jackson, New Hampshire.","FacilityEmail":"","FacilityID":"234758","FacilityLatitude":44.3244444,"FacilityLongitude":-71.2172222,"FacilityMapURL":"","FacilityName":"DOLLY
-        COPP PICNIC PAVILION","FacilityPhone":"603-466-2713","FacilityReservationURL":"","FacilityTypeDescription":"Campground","FacilityUseFeeDescription":"","GEOJSON":{"COORDINATES":[-71.2172222,44.3244444],"TYPE":"Point"},"Keywords":"","LINK":[],"LastUpdatedDate":"2023-03-29","LegacyFacilityID":"110535","MEDIA":[{"Credits":"","Description":"","EmbedCode":"","EntityID":"234758","EntityMediaID":"2581606","EntityType":"Facility","Height":360,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"DOLLY
-        COPP PICNIC PAVILION","URL":"https://cdn.recreation.gov/public/images/74300.jpg","Width":540},{"Credits":"","Description":"","EmbedCode":"","EntityID":"234758","EntityMediaID":"2581574","EntityType":"Facility","Height":360,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"DOLLY
-        COPP PICNIC PAVILION","URL":"https://cdn.recreation.gov/public/images/74128.jpg","Width":540},{"Credits":"","Description":"","EmbedCode":"","EntityID":"234758","EntityMediaID":"2581577","EntityType":"Facility","Height":360,"IsGallery":true,"IsPreview":true,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"DOLLY
-        COPP PICNIC PAVILION","URL":"https://cdn.recreation.gov/public/images/74141.jpg","Width":540}],"ORGANIZATION":[],"OrgFacilityID":"AN410535","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nSugarloaf
+        Homestead site","URL":"https://cdn.recreation.gov/public/2018/08/09/12/32/0f0f2c36-7a77-44c9-b036-24989b49f444_450.jpg","Width":450},{"Credits":"","Description":"Dolly
+        Copp VIS Building; constructed by the Civilian Conservation Corps in 1934","EmbedCode":"","EntityID":"232173","EntityMediaID":"7b69abb0-8bf6-4069-96df-04e78a6b47e3","EntityType":"Facility","Height":338,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/09/12/38/422b88ce-9b2e-42b2-81d6-ab0c88a2478b_450.jpg","Width":450},{"Credits":"","Description":"Dolly
+        Copp Gatehouse","EmbedCode":"","EntityID":"232173","EntityMediaID":"4b3027d5-19e8-4422-b1dc-5d5965a3f980","EntityType":"Facility","Height":886,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"Dolly
+        Copp Gatehouse","URL":"https://cdn.recreation.gov/public/2018/08/09/12/30/cb3cd6ce-d847-4adb-8714-fabf91429c67_1600.jpg","Width":1600},{"Credits":"","Description":"Rangers
+        Pool a short walk from the campground","EmbedCode":"","EntityID":"232173","EntityMediaID":"10be437c-3557-4eee-947e-eb9f196ec4d1","EntityType":"Facility","Height":393,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/08/18/53/9af3581f-ee86-4694-8873-38a4be811e7f_450.jpg","Width":450}],"ORGANIZATION":[],"OrgFacilityID":"AN370441","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nSugarloaf
         1 is a quiet, remote getaway in the northwoods of New Hampshire. Located near
         the western base of Mount Washington and 3 miles east of the small town of
         Twin Mountain, the campground is minutes away from hiking, mountain biking,
@@ -219,44 +189,37 @@ http_interactions:
         resort, look for Zealand Road on your left. Turn left on Zealand Road and
         go 0.5 miles south to the campground.","FacilityEmail":"","FacilityID":"232177","FacilityLatitude":44.2602778,"FacilityLongitude":-71.5047222,"FacilityMapURL":"","FacilityName":"SUGARLOAF
         1 CAMPGROUND","FacilityPhone":"603-536-6100","FacilityReservationURL":"","FacilityTypeDescription":"Campground","FacilityUseFeeDescription":"","GEOJSON":{"COORDINATES":[-71.5047222,44.2602778],"TYPE":"Point"},"Keywords":"SUGC,WHITE
-        MOUNTAIN NF -FS","LINK":[],"LastUpdatedDate":"2023-03-29","LegacyFacilityID":"70445","MEDIA":[{"Credits":"","Description":"","EmbedCode":"","EntityID":"232177","EntityMediaID":"65f4c10c-852b-4f5b-82dd-60e0699a176f","EntityType":"Facility","Height":943,"IsGallery":true,"IsPreview":false,"IsPrimary":true,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/07/17/49/99eb3477-7086-48b3-b97e-38efc6622cf4_1600.jpg","Width":1600}],"ORGANIZATION":[],"OrgFacilityID":"AN370445","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nSugarloaf
-        2 is a scenic, remote campground in the northwoods of New Hampshire. Located
-        near the western base of Mount Washington and 3 miles east of the small town
-        Twin Mountain, the campground is minutes away from hiking, mountain biking,
-        scenic driving, fishing and sightseeing opportunities.\n<br/><br/>\nThe White
-        Mountains boast pristine forests, clear mountain streams and rivers and the
-        tallest peaks in the Northeast. The forest encompasses nearly 800,000 acres
-        in New Hampshire and western Maine, and is one of the most popular in the
-        country.<h2>Recreation</h2>\nHiking is one of the biggest draws to the campground.
-        Trails begin around the facility itself, as well as in the surrounding area.
-        The 6,288-ft. Mount Washington, New England''s highest peak, is just minutes
-        away. \n<br/><br/>\nAccess to the wild Ammonoosuc River is easy for campers
-        wishing to fish for brook trout or wade in its cool waters during warmer summer
-        months.\n<br/><br/>\nThe campground is in close proximity to Bretton Woods
-        ski resort and the upscale Mount Washington Hotel.\n<br/><br/>\n<a href=\"http://www.fs.fed.us/r9/forests/white_mountain/recreation/\"
-        rel=\"nofollow\">Learn more</a> about recreation in the national forest.<h2>Facilities</h2>\nThe
-        campground is in a rustic setting. Campsites are well spaced around a large
-        loop, and some sit atop a ridge. Some also have a view of the nearby mountains.\n<br/><br/>\nAccessible
-        restrooms and a hand pump for water are provided. There is no dump station,
-        and the nearest showers are 10 miles away.<h2>Natural Features</h2>\nThe facility
-        sits near the banks of the cold, cascading Ammonoosuc River. Thick hardwood
-        and pine forests fill the landscape.\n  \nWhite Mountain National Forest is
-        home to many species of northern wildlife, including moose, white-tailed deer
-        and black bear. Almost 200 species of birds, including the rare Bicknell''s
-        Thrush, live within its boundaries.\n<h2>Nearby Attractions</h2>\nThe small
-        town of Twin Mountain has a general store, gas station and restaurants.\n<br/><br/>\nNumerous
-        hiking trails, mountain biking trails and rock climbing routes are within
-        a short drive of the campground, including the well-known Appalachian Trail.
-        \n<br/><br/>\nThe Cog Railway provides a once-in-a-lifetime experience for
-        visitors to ascend the western side of Mount Washington by train.","FacilityDirections":"From
-        Twin Mountain, New Hampshire: Take State Highway 302 east for 3 miles. Turn
-        right on Zealand Road and go 0.5 miles south to the campground.\n<br/><br/>\nFrom
-        North Conway, New Hampshire: Travel on State Highway 302 north for approximately
-        33.5 miles. After passing the Mount Washington Hotel and Bretton Woods ski
-        resort, look for Zealand Road on your left. Turn left on Zealand Road and
-        go 0.5 miles south to the campground.","FacilityEmail":"","FacilityID":"232140","FacilityLatitude":44.2580556,"FacilityLongitude":-71.5044444,"FacilityMapURL":"","FacilityName":"SUGARLOAF
-        2 CAMPGROUND","FacilityPhone":"603-536-6100","FacilityReservationURL":"","FacilityTypeDescription":"Campground","FacilityUseFeeDescription":"","GEOJSON":{"COORDINATES":[-71.5044444,44.2580556],"TYPE":"Point"},"Keywords":"SUGA-2
-        WHITE MOUNTAIN,SG2C","LINK":[],"LastUpdatedDate":"2023-03-29","LegacyFacilityID":"70394","MEDIA":[{"Credits":"","Description":"","EmbedCode":"","EntityID":"232140","EntityMediaID":"f9d3827d-dac9-4f90-8413-f5e11657b98c","EntityType":"Facility","Height":338,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/07/16/23/eb36b709-7c53-4c35-b3bd-e53a67bb528b_450.jpg","Width":450},{"Credits":"","Description":"","EmbedCode":"","EntityID":"232140","EntityMediaID":"53911a17-39ab-4177-92d8-50353e65d42f","EntityType":"Facility","Height":336,"IsGallery":true,"IsPreview":false,"IsPrimary":true,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/07/16/24/46039fed-09c2-46e8-b7d7-9ea441f51cc4_450.jpg","Width":450}],"ORGANIZATION":[],"OrgFacilityID":"AN370394","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nLocated
+        MOUNTAIN NF -FS","LINK":[],"LastUpdatedDate":"2023-04-18","LegacyFacilityID":"70445","MEDIA":[{"Credits":"","Description":"","EmbedCode":"","EntityID":"232177","EntityMediaID":"65f4c10c-852b-4f5b-82dd-60e0699a176f","EntityType":"Facility","Height":943,"IsGallery":true,"IsPreview":false,"IsPrimary":true,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/07/17/49/99eb3477-7086-48b3-b97e-38efc6622cf4_1600.jpg","Width":1600}],"ORGANIZATION":[],"OrgFacilityID":"AN370445","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nLocated
+        along the Peabody River in the heart of the White Mountains, the Dolly Copp
+        Picnic Pavilion is a wonderful location for a family reunion, wedding reception,
+        or any large group gathering.<h2>Recreation</h2>\nThe Peabody River is a popular
+        fishing destination and can be accessed from the Dolly Copp Picnic Pavilion.  A
+        large field directly in front of the Pavilion offers room for games and socializing.   The
+        Dolly Copp Campground, with over 170 campsites, is located conveniently across
+        the river from the Picnic Area.<h2>Facilities</h2>\nOriginally constructed
+        in 1936 by the Civilian Conservation Corps (CCC), the pavilion was reconstructed
+        in 1996 using some of the original timbers and new timbers harvested from
+        trees planted by the same 1936 CCC crew. The pavilion has eight accessible
+        picnic tables, a large stone fireplace and a flag stone floor. Two charcoal
+        grills are available next to the pavilion.  The Dolly Copp Picnic Area has
+        a dumpster, running water, and a flush toilet.<h2>Natural Features</h2>\nThe
+        Dolly Copp Picnic Pavilion, located in the Dolly Copp Picnic Area, sits along
+        the pristine waters of the Peabody River.    Surrounded by forested land,
+        visitors will enjoy exploring along the outskirts of the Picnic Area.\n<h2>Nearby
+        Attractions</h2>\nThe Dolly Copp Picnic Area is about five miles south of
+        the town of Gorham and 13 miles north of Jackson, New Hampshire.  Attractions
+        between the two towns include Wildcat Ski Area, the Mount Washington Auto
+        Road, and the Appalachian Mountain Club''s Pinkham Notch Visitor Center.  White
+        Mountain National Forest visitors can explore the Great Gulf Wilderness, hike
+        to Tuckerman Ravine and Mount Washington, visit Glen Ellis Falls Scenic Area,
+        or stop by the Androscoggin Ranger District Visitor Center by driving a only
+        a few miles from the Picnic Area.","FacilityDirections":"The Dolly Copp Picnic
+        Area is located on NH Route 16 about 5 miles south of Gorham, New Hampshire,
+        and 13 miles north of Jackson, New Hampshire.","FacilityEmail":"","FacilityID":"234758","FacilityLatitude":44.3244444,"FacilityLongitude":-71.2172222,"FacilityMapURL":"","FacilityName":"DOLLY
+        COPP PICNIC PAVILION","FacilityPhone":"603-466-2713","FacilityReservationURL":"","FacilityTypeDescription":"Campground","FacilityUseFeeDescription":"","GEOJSON":{"COORDINATES":[-71.2172222,44.3244444],"TYPE":"Point"},"Keywords":"","LINK":[],"LastUpdatedDate":"2023-04-18","LegacyFacilityID":"110535","MEDIA":[{"Credits":"","Description":"","EmbedCode":"","EntityID":"234758","EntityMediaID":"2581606","EntityType":"Facility","Height":360,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"DOLLY
+        COPP PICNIC PAVILION","URL":"https://cdn.recreation.gov/public/images/74300.jpg","Width":540},{"Credits":"","Description":"","EmbedCode":"","EntityID":"234758","EntityMediaID":"2581577","EntityType":"Facility","Height":360,"IsGallery":true,"IsPreview":true,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"DOLLY
+        COPP PICNIC PAVILION","URL":"https://cdn.recreation.gov/public/images/74141.jpg","Width":540},{"Credits":"","Description":"","EmbedCode":"","EntityID":"234758","EntityMediaID":"2581574","EntityType":"Facility","Height":360,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"DOLLY
+        COPP PICNIC PAVILION","URL":"https://cdn.recreation.gov/public/images/74128.jpg","Width":540}],"ORGANIZATION":[],"OrgFacilityID":"AN410535","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nLocated
         6 miles south of Gorham, New Hampshire, at the base of New England''s tallest
         peak, the historic Barnes Field Campground provides a scenic and private space
         for organizations, families and others to gather. \n<br/><br/>\nThe campground
@@ -312,8 +275,45 @@ http_interactions:
         Turn left onto Dolly Copp Road and travel approximately 1 mile to the campground.
         Follow signs.","FacilityEmail":"","FacilityID":"232394","FacilityLatitude":44.3388889,"FacilityLongitude":-71.2186111,"FacilityMapURL":"","FacilityName":"BARNES
         FIELD CAMPGROUND","FacilityPhone":"603-466-2713","FacilityReservationURL":"","FacilityTypeDescription":"Campground","FacilityUseFeeDescription":"","GEOJSON":{"COORDINATES":[-71.2186111,44.3388889],"TYPE":"Point"},"Keywords":"BARN,WHITE
-        MOUNTAIN NF -FS","LINK":[],"LastUpdatedDate":"2023-03-29","LegacyFacilityID":"70802","MEDIA":[],"ORGANIZATION":[],"OrgFacilityID":"AN370802","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]}]}
+        MOUNTAIN NF -FS","LINK":[],"LastUpdatedDate":"2023-04-18","LegacyFacilityID":"70802","MEDIA":[],"ORGANIZATION":[],"OrgFacilityID":"AN370802","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]},{"ACTIVITY":[],"CAMPSITE":[],"EVENT":[],"Enabled":true,"FACILITYADDRESS":[],"FacilityAdaAccess":"N","FacilityDescription":"<h2>Overview</h2>\nSugarloaf
+        2 is a scenic, remote campground in the northwoods of New Hampshire. Located
+        near the western base of Mount Washington and 3 miles east of the small town
+        Twin Mountain, the campground is minutes away from hiking, mountain biking,
+        scenic driving, fishing and sightseeing opportunities.\n<br/><br/>\nThe White
+        Mountains boast pristine forests, clear mountain streams and rivers and the
+        tallest peaks in the Northeast. The forest encompasses nearly 800,000 acres
+        in New Hampshire and western Maine, and is one of the most popular in the
+        country.<h2>Recreation</h2>\nHiking is one of the biggest draws to the campground.
+        Trails begin around the facility itself, as well as in the surrounding area.
+        The 6,288-ft. Mount Washington, New England''s highest peak, is just minutes
+        away. \n<br/><br/>\nAccess to the wild Ammonoosuc River is easy for campers
+        wishing to fish for brook trout or wade in its cool waters during warmer summer
+        months.\n<br/><br/>\nThe campground is in close proximity to Bretton Woods
+        ski resort and the upscale Mount Washington Hotel.\n<br/><br/>\n<a href=\"http://www.fs.fed.us/r9/forests/white_mountain/recreation/\"
+        rel=\"nofollow\">Learn more</a> about recreation in the national forest.<h2>Facilities</h2>\nThe
+        campground is in a rustic setting. Campsites are well spaced around a large
+        loop, and some sit atop a ridge. Some also have a view of the nearby mountains.\n<br/><br/>\nAccessible
+        restrooms and a hand pump for water are provided. There is no dump station,
+        and the nearest showers are 10 miles away.<h2>Natural Features</h2>\nThe facility
+        sits near the banks of the cold, cascading Ammonoosuc River. Thick hardwood
+        and pine forests fill the landscape.\n  \nWhite Mountain National Forest is
+        home to many species of northern wildlife, including moose, white-tailed deer
+        and black bear. Almost 200 species of birds, including the rare Bicknell''s
+        Thrush, live within its boundaries.\n<h2>Nearby Attractions</h2>\nThe small
+        town of Twin Mountain has a general store, gas station and restaurants.\n<br/><br/>\nNumerous
+        hiking trails, mountain biking trails and rock climbing routes are within
+        a short drive of the campground, including the well-known Appalachian Trail.
+        \n<br/><br/>\nThe Cog Railway provides a once-in-a-lifetime experience for
+        visitors to ascend the western side of Mount Washington by train.","FacilityDirections":"From
+        Twin Mountain, New Hampshire: Take State Highway 302 east for 3 miles. Turn
+        right on Zealand Road and go 0.5 miles south to the campground.\n<br/><br/>\nFrom
+        North Conway, New Hampshire: Travel on State Highway 302 north for approximately
+        33.5 miles. After passing the Mount Washington Hotel and Bretton Woods ski
+        resort, look for Zealand Road on your left. Turn left on Zealand Road and
+        go 0.5 miles south to the campground.","FacilityEmail":"","FacilityID":"232140","FacilityLatitude":44.2580556,"FacilityLongitude":-71.5044444,"FacilityMapURL":"","FacilityName":"SUGARLOAF
+        2 CAMPGROUND","FacilityPhone":"603-536-6100","FacilityReservationURL":"","FacilityTypeDescription":"Campground","FacilityUseFeeDescription":"","GEOJSON":{"COORDINATES":[-71.5044444,44.2580556],"TYPE":"Point"},"Keywords":"SUGA-2
+        WHITE MOUNTAIN,SG2C","LINK":[],"LastUpdatedDate":"2023-04-18","LegacyFacilityID":"70394","MEDIA":[{"Credits":"","Description":"","EmbedCode":"","EntityID":"232140","EntityMediaID":"f9d3827d-dac9-4f90-8413-f5e11657b98c","EntityType":"Facility","Height":338,"IsGallery":true,"IsPreview":false,"IsPrimary":false,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/07/16/23/eb36b709-7c53-4c35-b3bd-e53a67bb528b_450.jpg","Width":450},{"Credits":"","Description":"","EmbedCode":"","EntityID":"232140","EntityMediaID":"53911a17-39ab-4177-92d8-50353e65d42f","EntityType":"Facility","Height":336,"IsGallery":true,"IsPreview":false,"IsPrimary":true,"MediaType":"Image","Subtitle":"","Title":"","URL":"https://cdn.recreation.gov/public/2018/08/07/16/24/46039fed-09c2-46e8-b7d7-9ea441f51cc4_450.jpg","Width":450}],"ORGANIZATION":[],"OrgFacilityID":"AN370394","PERMITENTRANCE":[],"ParentOrgID":"131","ParentRecAreaID":"1087","RECAREA":[],"Reservable":true,"StayLimit":"","TOUR":[]}]}
 
 '
-  recorded_at: Wed, 29 Mar 2023 22:06:37 GMT
+  recorded_at: Tue, 18 Apr 2023 20:04:29 GMT
 recorded_with: VCR 6.1.0

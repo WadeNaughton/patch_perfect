@@ -13,6 +13,5 @@ class Hike
         @longitude = data[:longitude]
         @features = data[:features]
         @state = data[:state]
-        binding.pry
     end
 end
