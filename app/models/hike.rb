@@ -26,5 +26,6 @@ class Hike < ApplicationRecord
   # end
 
   
+  
 
 end

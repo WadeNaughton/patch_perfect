@@ -57,13 +57,15 @@ RSpec.describe 'Completed hike show page page' do
     click_button("Add From Shed")
 
     expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
-
-    expect(page).to have_content("Name: Tent")
-    expect(page).to have_content("Weight: 5.0 lbs 5 oz")
-
-    expect(page).to have_button("Delete Item")
-
-    click_button("Delete Item")
+    expect(page).to have_button("View Items")
+    click_button("View Items")
+    expect(page).to have_content("Tent")
+    expect(page).to have_content("5.0")
+    visit "/users/#{@user.id}"
+    expect(page).to have_link("Remove")
+    click_link("Remove")
+    visit ("/users/#{@user.id}/hikes/#{@hike2.id}/complete")
+    expect(page).to_not have_button("View Items")
 
     expect(page).to_not have_content("Name: tent")
     expect(page).to_not have_content("Weight: 5.0 lbs 5 oz")

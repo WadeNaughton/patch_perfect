@@ -7,9 +7,11 @@ class HikesController < ApplicationController
     @hikes = Kaminari.paginate_array(hikez).page(params[:page]).per(10)
       #break the sorting out into model methods and call them here
     if params[:prominence].present?
-      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:prominence]}).page(params[:page]).per(10)
+      # @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:prominence]}).page(params[:page]).per(10)
+      @hikes = Kaminari.paginate_array(HikeFacade.get_ordered_hike_prominence).page(params[:page]).per(10)
     elsif params[:elevation].present?
-      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:elevation]}).page(params[:page]).per(10)
+      # @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:elevation]}).page(params[:page]).per(10)
+      @hikes = Kaminari.paginate_array(HikeFacade.get_ordered_hike_elevation).page(params[:page]).per(10)
     elsif params[:location].present?
       @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:location]}).page(params[:page]).per(10)
     elsif params[:name].present?

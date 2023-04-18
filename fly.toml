@@ -1,6 +1,6 @@
-# fly.toml file generated for patch-perfect2 on 2023-01-10T16:39:46-05:00
+# fly.toml file generated for patch-perfect on 2023-04-03T15:32:19-04:00
 
-app = "patch-perfect2"
+app = "patch-perfect"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -17,7 +17,6 @@ processes = []
   PORT = "8080"
 
 [experimental]
-  allowed_public_ports = []
   auto_rollback = true
 
 [[services]]

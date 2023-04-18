@@ -20,34 +20,29 @@ RSpec.describe 'hike index page' do
 
 
     visit "/users/#{@user.id}/discover"
-    expect(page).to have_link("hike")
-    click_link("hike")
-    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike.id}")
+    expect(page).to have_link("Washington")
+    click_link("Washington")
+    expect(current_path).to eq("/users/#{@user.id}/hikes/1")
 
     visit "/users/#{@user.id}/discover"
-
-    expect(page).to have_link("new hike")
-    click_link("new hike")
-    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}")
+    expect(page).to have_link("Adams")
+    click_link("Adams")
+    expect(current_path).to eq("/users/#{@user.id}/hikes/2")
   end
 
   it "has each hikes details" do
 
 
     visit "/users/#{@user.id}/discover"
+    
+    expect(page).to have_link("Washington")
 
-    expect(page).to have_link(@hike.name)
-
-    expect(page).to have_content(@hike.location)
-    expect(page).to have_content(@hike.features)
-    expect(page).to have_content(@hike.range)
+    expect(page).to have_content("Location: Pinkham's Grant")
+    expect(page).to have_content("Features: Waterfalls, Cascades, Brooks, Lakes of the Clouds Hut + Lakes, 360 Degree Views, Peak Bagging")
+    expect(page).to have_content("Range: Presidential Range")
 
 
-    expect(page).to have_link(@hike2.name)
 
-    expect(page).to have_content(@hike2.location)
-    expect(page).to have_content(@hike2.features)
-    expect(page).to have_content(@hike2.range)
 
   end
 end
