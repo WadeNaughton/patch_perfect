@@ -5,9 +5,9 @@
 # Link to database repo
 https://github.com/WadeNaughton/patch_perfect_db
 
-# What this is 
+# What is this?
 
-- A site designed to find peaks within the white mountains that are above 4000 feet. Users are able to favorite hikes or mark them as completed. Completed hikes have the ability to have journal entries, photos, and gear used on the hike displayed. A user can then add any friends that participated on the hike to the trip report. This is designed to be a digital journal, which I believe will be helpful for hikers to keep track of notes/photos, while also enjoying the social aspect of being added to other hikes.
+- A hiking site centered around finding and recording peaks within the White Mountains that are above 4000 feet in elevation. Users have the ability to search or browse the peak, and then mark a peak as either completed or favorited. A completed hike allows the user to build a digital journal entry of sorts to keep track of any pictures/notes from the trip. Users can also add others to the trip report, which adds a level of collaboration if desired. Each peak page allows the user to obtain directions, current weather, hourly weather, forecast for the week, as well as find campgrounds within a radius of their choosing. 
 
 
 # Features
@@ -27,10 +27,13 @@ https://github.com/WadeNaughton/patch_perfect_db
 - links to make reservations to the campgrounds
 - current, hourly, and daily weather for each peak
 - upload profile picutre 
+- users that have been added to a trip can upload their photos to the trip report
+- add costs associated with the trip and have that cost be evenly split
 
 
-# Features to come (no time table)
+# Features to come
 
-- allow users that have been added to a trip to upload photos and journal entries
-- add section for any costs and assign that to a user
+
+- enhanced logic for splitting costs
+- enhanced design
 
