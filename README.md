@@ -7,7 +7,11 @@ https://github.com/WadeNaughton/patch_perfect_db
 
 # What is this?
 
-- A hiking site centered around finding and recording peaks within the White Mountains that are above 4000 feet in elevation. Users have the ability to search or browse the peak, and then mark a peak as either completed or favorited. A completed hike allows the user to build a digital journal entry of sorts to keep track of any pictures/notes from the trip. Users can also add others to the trip report, which adds a level of collaboration if desired. Each peak page allows the user to obtain directions, current weather, hourly weather, forecast for the week, as well as find campgrounds within a radius of their choosing. 
+- A hiking site centered around finding and recording peaks within the White Mountains that are above 4000 feet in elevation. Users have the ability to search or browse the peak, and then mark a peak as either completed or favorited. A peak marked as completed allows the user to build a digital journal entry of sorts to keep track of any pictures/notes from the trip. Users can also add others to the trip report, which adds a level of collaboration if desired. Each peak page allows the user to obtain directions, current weather, hourly weather, forecast for the week, as well as find campgrounds within a radius of their choosing. 
+
+# Why make this? 
+
+- I found myself spending many hours sifting through old backpacking pictures and trying to remember what I was doing or how I was feeling in those moments. I realized it became hard to pin point those feelings when so much time had passed. I took this feeling and decided to make a digital journal for myself, in order to better keep track of my pictures and notes. After talking to friends it became clear that making these journal entries coloborative would be fun for our whole group. Now, whenever I make my way up to the White Mountains, we can add our pictures and notes as soon as we regain service. 
 
 
 # Features
@@ -36,4 +40,6 @@ https://github.com/WadeNaughton/patch_perfect_db
 
 - enhanced logic for splitting costs
 - enhanced design
+- imporoved schema design
+- expand to peaks in Virginia/West Virginia/DMV area
 
