@@ -10,22 +10,22 @@
 
 
 
- <div class="row">
-                    <%unless @hike_result.blank?%>
-                        <%@hike_result.each do |hike| %>
+    <div class="row">
+        <%unless @hike_result.blank?%>
+            <%@hike_result.each do |hike| %>
 
-                         <div class="col-lg-4">
-        
-                            <div id="hike-show">
-                                <h2><p><%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
-                                <b><p>Location:</b> <%= hike.location %></p>
-                                <b><p>Range: </b><%= hike.range %></p>
-                                <b><p>Features:</b> <%= hike.features %></p>
-                        </div>
-                        </div>
-                                <% end %>
-                            <%end%>
-</div>
+            <div class="col-lg-4">
+
+                <div id="hike-show">
+                    <h2><p><%=link_to "#{hike.name}", "/users/#{@user.id}/hikes/#{hike.id}", method: :get %></p></h2>
+                    <b><p>Location:</b> <%= hike.location %></p>
+                    <b><p>Range: </b><%= hike.range %></p>
+                    <b><p>Features:</b> <%= hike.features %></p>
+                </div>
+            </div>
+                    <% end %>
+                <%end%>
+    </div>
 <%= paginate @hike_result%>
 
 </body>
