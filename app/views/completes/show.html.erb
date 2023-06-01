@@ -31,17 +31,16 @@
                             <div class="carousel-inner">
                                 <%@comments.each_with_index do |c,i|%>
                                     <% if c.image.attached? %>
+                                        <div id="crsl-test">
                                         <div class="carousel-item <%= "active " if i==0 %>">
                                             
                                            <a href="<%= url_for(c.image) %> "> <%= image_tag c.image, class: "d-block w-100" %></a>
+                                        </div>
                                             <div class="carousel-caption d-none d-md-block">
                                                 
                                                 <p><%=c.body%></p>
                                             </div>
                                         </div>
-                                        
-
-
                                     <%end%>
                                 <%end%>
                                 

@@ -1,4 +1,5 @@
 <div class ="container">
+ <%= link_to "Back", "/users/#{@user.id}/hikes/#{@complete.hike.id}/complete" %>
 
     
 
@@ -7,7 +8,7 @@
             <%p.participant_comments.each do |pc|%>
                 <%if pc.image.attached?%>
                     <div id="image-test">
-                        <div class="card" style="width: 11rem;">
+                        <div class="card">
                             <img class="card-img" href="<%= url_for(pc.image) %> "> <%= image_tag pc.image%>
                                 <div id="comment-test">
                                     <div class="card-body">
@@ -27,7 +28,7 @@
 
             <%if c.image.attached?%>
                 <div id="image-test">
-                    <div class="card" style="width: 11rem;">
+                    <div class="card">
                         <img class="card-img" href="<%= url_for(c.image) %> "> <%= image_tag c.image%>
                         <div id="comment-test">
                             <div class="card-body">
