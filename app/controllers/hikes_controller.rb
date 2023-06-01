@@ -61,20 +61,6 @@ class HikesController < ApplicationController
     end
    
 
-    # if params[:prominence].present?
-    #   @hike_result = @hike_result.all.prominence.page(params[:page])
-    # elsif params[:elevation].present?
-    #   @hike_result = @hike_result.all.elevation.page(params[:page])
-    # elsif params[:location].present?
-    #   @hike_result= @hike_result.all.location.page(params[:page])
-    # elsif params[:name].present?
-    #   @hike_result = @hike_result.all.hike_name.page(params[:page])
-    # elsif params[:range].present?
-    #   @hike_result = @hike_result.all.range.page(params[:page])  
-    # else
-    #   @hike_result = @hike_result.all.page(params[:page])
-    # end
-
 
   end
 
