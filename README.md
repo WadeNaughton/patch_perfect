@@ -44,6 +44,102 @@ https://github.com/WadeNaughton/patch_perfect_db
 - expand to peaks in Virginia/West Virginia/DMV area
 
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## <div align="center">API endpoints</div>
+
+<details close="close">
+  <summary>Hikes endpoint</summary>
+
+  ```
+  https://patch-perfect-datasource.fly.dev/api/v1/hikes
+  ```
+  ```
+  data": [
+        {
+            "id": "1",
+            "type": "hike",
+            "attributes": {
+                "id": 1,
+                "name": "Washington",
+                "elevation": 6288,
+                "prominence": 6138,
+                "state": "NH",
+                "location": "Pinkham's Grant",
+                "range": "Presidential Range",
+                "features": "Waterfalls, Cascades, Brooks, Lakes of the Clouds Hut + Lakes, 360 Degree Views, Peak Bagging",
+                "latitude": 44.270278,
+                "longitude": -71.303611
+            }
+        },
+ ```
+  
+  </details>
+
+<details close="close">
+  <summary>Single Hike Endpoint</summary>
+  
+  ```
+  https://patch-perfect-datasource.fly.dev/api/v1/hikes/3
+  ```
+  
+  ```
+  {
+    "data": {
+        "id": "3",
+        "type": "hike",
+        "attributes": {
+            "id": 3,
+            "name": "Jefferson",
+            "elevation": 5712,
+            "prominence": 742,
+            "state": "NH",
+            "location": "Thompson and Meserves Purchase",
+            "range": "Presidential Range",
+            "features": "Cascades, Rock Scrambles, Alpine Zone, 360 Degree Views, Peak Bagging",
+            "latitude": 44.304167,
+            "longitude": -71.316944
+        }
+    }
+}
+```
+   </details>
+
+<details close="close">
+  <summary>Search Endpoint</summary>
+  
+ ``` 
+ https://patch-perfect-datasource.fly.dev/api/v1/search?search=adams
+```
+  
+ ```
+  {
+    "data": [
+        {
+            "id": "2",
+            "type": "hike",
+            "attributes": {
+                "id": 2,
+                "name": "Adams",
+                "elevation": 5774,
+                "prominence": 804,
+                "state": "NH",
+                "location": " Thompson and Meserves Purchase",
+                "range": "Presidential Range",
+                "features": "Rock Scrambles, Mossy Falls, Madison Spring Hut, Ice Caves, 360 degree views on a clear day, Alpine Zone, Star Lake, Peak Bagging",
+                "latitude": 44.320556,
+                "longitude": -71.291389
+            }
+        }
+    ]
+}
+```
+  
+  </details>
+  
+  ## <div align="center">Overview</div>
+
+
 #### Framework:
 <p>
   <img src="https://img.shields.io/badge/Ruby%20On%20Rails-b81818.svg?&style=flat&logo=rubyonrails&logoColor=white" />
