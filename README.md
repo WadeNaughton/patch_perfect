@@ -43,35 +43,5 @@ https://github.com/WadeNaughton/patch_perfect_db
 - imporoved schema design
 - expand to peaks in Virginia/West Virginia/DMV area
 
-## **Local Setup**
 
-- Git clone this repository 
-
-```
-git clone git@github.com:WadeNaughton/patch_perfect.git
-```
-
-- CD into the newly cloned repo
-
-```
-CD patch_perfect
-```
-
-- Bundle the gems 
-
-```
-bundle install
-```
-
-- Migrate the database
-
-```
-rake db:{drop,create,migrate,seed}
-```
-
-- Run locally
-
-```
-rails s
-```
 
