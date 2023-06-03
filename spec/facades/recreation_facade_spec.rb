@@ -9,4 +9,6 @@ RSpec.describe RecreationFacade do
         expect(campgrounds).to be_a Hash
         expect(campgrounds[:RECDATA]).to be_a Array
     end
+
+    
  end

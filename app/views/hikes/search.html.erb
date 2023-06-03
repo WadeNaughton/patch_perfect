@@ -1,15 +1,5 @@
 <body>
 
-
-<%= link_to "Name", "/search?&search=#{params[:search]}&name=1"%>
-<%= link_to "Prominence", "/search?&search=#{params[:search]}&prominence=1"%>
-<%= link_to "Elevation", "/search?&search=#{params[:search]}&elevation=1"%>
-<%= link_to "Location", "/search?&search=#{params[:search]}&location=1"%>
-<%= link_to "Range", "/search?&search=#{params[:search]}&range=1"%>
-
-
-
-
     <div class="row">
         <%unless @hike_result.blank?%>
             <%@hike_result.each do |hike| %>
@@ -26,6 +16,6 @@
                     <% end %>
                 <%end%>
     </div>
-<%= paginate @hike_result%>
+<%= paginate @hike_result, :window => 6 %>
 
 </body>

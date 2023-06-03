@@ -4,20 +4,17 @@ class HikesController < ApplicationController
     hikez = HikeFacade.get_hikes
     @user = User.find_by(id: session[:user_id])
 
-    @hikes = Kaminari.paginate_array(hikez).page(params[:page]).per(10)
-      #break the sorting out into model methods and call them here
+    @hikes = Kaminari.paginate_array(hikez).page(params[:page])
     if params[:prominence].present?
-      # @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:prominence]}).page(params[:page]).per(10)
-      @hikes = Kaminari.paginate_array(HikeFacade.get_ordered_hike_prominence).page(params[:page]).per(10)
+      @hikes = Kaminari.paginate_array(HikeFacade.get_ordered_hike_prominence).page(params[:page])
     elsif params[:elevation].present?
-      # @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:elevation]}).page(params[:page]).per(10)
-      @hikes = Kaminari.paginate_array(HikeFacade.get_ordered_hike_elevation).page(params[:page]).per(10)
+      @hikes = Kaminari.paginate_array(HikeFacade.get_ordered_hike_elevation).page(params[:page])
     elsif params[:location].present?
-      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:location]}).page(params[:page]).per(10)
+      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:location]}).page(params[:page])
     elsif params[:name].present?
-      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:name]}).page(params[:page]).per(10)
+      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:name]}).page(params[:page])
     elsif params[:range].present?
-      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:range]}).page(params[:page]).per(10)
+      @hikes = Kaminari.paginate_array(hikez.sort_by{|e| e[:range]}).page(params[:page])
    
     end
   end
@@ -57,7 +54,7 @@ class HikesController < ApplicationController
       flash.now.alert = "Hike not found"
     else 
       hikez = HikeFacade.find_hike(search)
-      @hike_result = Kaminari.paginate_array(hikez).page(params[:page]).per(10)
+      @hike_result = Kaminari.paginate_array(hikez).page(params[:page])
     end
    
 

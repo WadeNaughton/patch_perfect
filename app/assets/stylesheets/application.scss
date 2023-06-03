@@ -41,11 +41,8 @@ body {
   font-size: 100%;
   text-align: center;
   height: 50px;
-  padding-top: 10px;
-
-  
+  padding-top: 10px; 
 }
-
 
 #nav-blurb {
   position: relative;
@@ -73,7 +70,6 @@ body {
    text-align:center;
  }
 
-
  .card-img-top {
   display:block;
   margin:auto;
@@ -91,9 +87,6 @@ body {
   border: 3px solid #064635;
   border-radius: 10px;
  }
-
-
-
 
 .carousel-inner .carousel-item {
   object-fit: contain;
@@ -161,6 +154,7 @@ body {
     float: none;
     border: none;
 }
+
 }
 
 .pagination a:hover {
@@ -227,8 +221,7 @@ a:visited {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #F0BB62;
-  
+    background-color: #F0BB62; 
     }
 
     #user-comments {
@@ -237,8 +230,7 @@ a:visited {
       margin-top: 15px;
       margin-bottom: 15px;
       padding: 10px;
-      background-color: #F0BB62;
-    
+      background-color: #F0BB62; 
       }
 
       #hike-show {
@@ -250,8 +242,7 @@ a:visited {
         background-color: #F0BB62;
         width: 370px;
         height: 300px;
-        text-align: center;
-      
+        text-align: center;    
         }
 
     #gear-display {
@@ -266,9 +257,7 @@ a:visited {
       border-radius: 10px;
       margin-bottom: 15px;
       padding-top: 15px;
-      width: 100%;
-
-      
+      width: 100%;  
      }
 
     .title {
@@ -287,16 +276,36 @@ a:visited {
       padding-top: 15px;
       padding-right: 15px;
       padding-bottom: 15px;
-      width: 300px;
-      
-      
+      width: 300px;    
     }
 
     #crsl-test {
-      padding-bottom: 15px;
-      
+      padding-bottom: 15px;      
     }
 
+    #camp-display {
+      text-align:center;
+      font-size:15px;
+      border: 3px solid #064635;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      height: 150px;
+      
+     }
+
+     #camp-test {
+      padding-top: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      width: 300px;
+    }
+
+    .page-title {
+      text-align: center;
+      color: #064635;
+     
+    }
    
 
 
