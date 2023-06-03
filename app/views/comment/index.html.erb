@@ -29,12 +29,21 @@
             <%if c.image.attached?%>
                 <div id="image-test">
                     <div class="card">
-                        <img class="card-img" href="<%= url_for(c.image) %> "> <%= image_tag c.image%>
+                        <img class="img" href="<%= url_for(c.image) %> "> <%= image_tag c.image%>
                         <div id="comment-test">
                             <div class="card-body">
                                 <p class="card-text"><b>Entry: </b><%= c.body%></p>
                                 <p class="card-text"><b>Hiker: </b><%= c.complete.user.first_name %></p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            <%else %>
+                <div id="comment-test">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text"><b>Entry: </b><%= c.body%></p>
+                            <p class="card-text"><b>Hiker: </b><%= c.complete.user.first_name %></p>
                         </div>
                     </div>
                 </div>
@@ -44,5 +53,4 @@
 
 
 </div>
-
 

@@ -44,4 +44,22 @@ RSpec.describe 'hike index page' do
 
     expect(page).to have_content(@hike.name)
   end
+
+  it "creates a favorite hike" do
+    visit "/users/#{@user.id}/hikes/#{@hike2.id}"
+    expect(page).to have_button("Favorite")
+    click_button("Favorite")
+
+    visit "/users/#{@user.id}"
+
+    expect(page).to have_content(@hike2.name)
+  end
+
+  it "finds nearby campgrounds" do
+    visit "/users/#{@user.id}/hikes/#{@hike2.id}"
+    expect(page).to have_button("Find Campgrounds")
+    fill_in("radius", with: 10)
+    click_button("Find Campgrounds")
+    expect(current_path).to eq("/users/#{@user.id}/hikes/#{@hike2.id}")
+  end
 end
