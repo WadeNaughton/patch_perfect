@@ -118,6 +118,12 @@ GEM
       rexml (~> 3.0)
       webrick (~> 1.7)
     cucumber-tag-expressions (4.1.0)
+    database_cleaner (2.0.2)
+      database_cleaner-active_record (>= 2, < 3)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     diff-lcs (1.5.0)
     docile (1.4.0)
     dynamic_form (1.1.4)
@@ -298,6 +304,7 @@ DEPENDENCIES
   byebug
   capybara
   cucumber-rails
+  database_cleaner
   dynamic_form
   faraday
   figaro
