@@ -151,6 +151,8 @@ https://github.com/WadeNaughton/patch_perfect_db
 <p>
   <img src="https://img.shields.io/badge/Ruby-CC0000.svg?&style=flaste&logo=ruby&logoColor=white" />
   <img src="https://img.shields.io/badge/ActiveRecord-CC0000.svg?&style=flaste&logo=rubyonrails&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS-239120?&style=flast&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML-239120?style=flast&logo=html5&logoColor=white" />
 </p>
 
 #### Tools:
@@ -158,6 +160,7 @@ https://github.com/WadeNaughton/patch_perfect_db
   <img src="https://img.shields.io/badge/Git-F05032.svg?&style=flaste&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-181717.svg?&style=flaste&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/Postman-FF6E4F.svg?&style=flat&logo=postman&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=flat&logo=bootstrap&logoColor=white" />
 </p>
 
 #### Development Principles:
