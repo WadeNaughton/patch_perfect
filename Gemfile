@@ -52,6 +52,8 @@ group :test do
   gem 'orderly'
   gem 'vcr'
   gem 'webmock'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 

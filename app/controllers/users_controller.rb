@@ -51,7 +51,6 @@ class UsersController < ApplicationController
       user = User.find_by(email: params[:email])
     if user.nil?
       render :login_form
-
     elsif user.authenticate(params[:password])
        session[:user_id] = user.id
        redirect_to user_path(user)
